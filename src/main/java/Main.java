@@ -1,4 +1,5 @@
 import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
+import com.googlecode.lanterna.gui2.dialogs.ActionListDialogBuilder;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
@@ -14,25 +15,32 @@ public class Main {
         Screen screen = new TerminalScreen(terminal);
         screen.startScreen();
 
+        // Setup WindowBasedTextGUI for dialogs
+        final WindowBasedTextGUI textGUI = new MultiWindowTextGUI(screen);
+
         // Create panel to hold components
-        Panel panel = new Panel();
-        panel.setLayoutManager(new GridLayout(2));
-
-        panel.addComponent(new Label("Forename"));
-        panel.addComponent(new TextBox());
-
-        panel.addComponent(new Label("Surname"));
-        panel.addComponent(new TextBox());
-
-        panel.addComponent(new EmptySpace(new TerminalSize(0,0))); // Empty space underneath labels
-        panel.addComponent(new Button("Submit"));
-
-        // Create window to hold the panel
-        BasicWindow window = new BasicWindow();
-        window.setComponent(panel);
-
-        // Create gui and start gui
-        MultiWindowTextGUI gui = new MultiWindowTextGUI(screen, new DefaultWindowManager(), new EmptySpace(TextColor.ANSI.BLUE));
-        gui.addWindowAndWait(window);
+        new ActionListDialogBuilder()
+                .setTitle("Action List Dialog")
+                .setDescription("Choose an item")
+                .addAction("First Item", new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do 1st thing...
+                    }
+                })
+                .addAction("Second Item", new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do 2nd thing...
+                    }
+                })
+                .addAction("Third Item", new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do 3rd thing...
+                    }
+                })
+                .build()
+                .showDialog(textGUI);
     }
 }
