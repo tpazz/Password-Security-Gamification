@@ -7,14 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4da83a4-5446-4b65-84bf-1b798be6cf70" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lanterna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lanterna.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/progress.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,20 +28,21 @@
     <session id="-92708938">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="2" />
+          <entry key="java" value="3" />
           <entry key="txt" value="4" />
           <entry key="xml" value="1" />
         </counts>
@@ -49,22 +50,22 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2030" />
-          <entry key="txt" value="39" />
+          <entry key="java" value="7274" />
+          <entry key="txt" value="41" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2030" />
-          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="JAVA" value="7274" />
+          <entry key="PLAIN_TEXT" value="41" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -75,12 +76,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="100" column="62" lean-forward="true" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
+            <state relative-caret-position="1204">
+              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#mainMenu#0;class#Main#0" />
-                <element signature="method#contGameMenu#0;class#Main#0" />
+                <element signature="e#1330#1557#0" />
+                <element signature="e#1970#1996#0" />
+                <element signature="e#1907#2134#0" />
+                <element signature="method#resetProgress#0;class#Main#0" />
+                <element signature="method#writeFile#0;class#Main#0" />
+                <element signature="method#getLevel#0;class#Main#0" />
+                <element signature="method#getBitcoin#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -90,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/progress.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret lean-forward="true" />
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -99,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/lanterna.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -187,7 +193,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582073809445" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582592447571" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -309,6 +315,7 @@
       <workItem from="1578241393102" duration="1333000" />
       <workItem from="1578243213431" duration="1408000" />
       <workItem from="1582037079156" duration="22543000" />
+      <workItem from="1582564872165" duration="12784000" />
     </task>
     <servers />
   </component>
@@ -318,13 +325,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29136000" />
+    <option name="totallyTimeSpent" value="41920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19029851" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -366,6 +373,14 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/progress.txt" />
+    <entry file="file://$PROJECT_DIR$/lanterna.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -373,31 +388,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lanterna.iml">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.4/lib/src.zip!/java.base/jdk/internal/util/Preconditions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="219">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/progress.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/progress.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" />
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="100" column="62" lean-forward="true" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
+        <state relative-caret-position="1204">
+          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#mainMenu#0;class#Main#0" />
-            <element signature="method#contGameMenu#0;class#Main#0" />
+            <element signature="e#1330#1557#0" />
+            <element signature="e#1970#1996#0" />
+            <element signature="e#1907#2134#0" />
+            <element signature="method#resetProgress#0;class#Main#0" />
+            <element signature="method#writeFile#0;class#Main#0" />
+            <element signature="method#getLevel#0;class#Main#0" />
+            <element signature="method#getBitcoin#0;class#Main#0" />
           </folding>
         </state>
       </provider>
