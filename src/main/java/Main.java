@@ -4,22 +4,24 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import ui.Helper;
 import ui.Menu;
+import ui.Profile;
 
-public class Main {
+public class Main extends Helper {
 
     public static void main(String[] args) throws Exception {
+
         // Setup terminal and screen layers
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         Screen screen = new TerminalScreen(terminal);
 
-        TextGraphics textGraphics = screen.newTextGraphics();
-
+        WindowBasedTextGUI textGUI = new MultiWindowTextGUI(screen);
         screen.startScreen();
 
-        WindowBasedTextGUI textGUI = new MultiWindowTextGUI(screen);
+        //Profile profile = new Profile(textGUI,terminal);
         // launch menu UI
-        Menu menu = new Menu();
-        menu.startScreen(textGUI);
+        Menu menu = new Menu(textGUI, terminal);
+        menu.start(textGUI);
     }
 }
