@@ -1,42 +1,65 @@
 package ui;
 
+import com.googlecode.lanterna.SGR;
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
-import com.googlecode.lanterna.gui2.dialogs.ActionListDialogBuilder;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.gui2.*;
+import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.Terminal;
 
-import javax.swing.*;
-import java.io.IOException;
-import java.util.Random;
+public class Profile extends UI {
 
-public class Profile extends Helper {
+    public static void start(WindowBasedTextGUI gui, Terminal terminal) throws Exception {
 
-//    public Profile(WindowBasedTextGUI gui, Terminal ter) {
-//        this.gui = gui;
-//        this.ter = ter;
-//    }
+        TextGraphics tg = gui.getScreen().newTextGraphics();
+        StringBuilder sb = new StringBuilder();
 
-    public void start() throws IOException {
+        gui.getScreen().clear();
+        gui.getScreen().refresh();
 
-        //while (true) {
-            Random random = new Random();
-            TerminalSize ts = gui.getScreen().getTerminalSize();
-            for(int column = 0; column < ts.getColumns(); column++) {
-                for (int row = 0; row < ts.getRows(); row++) {
-                    gui.getScreen().setCharacter(column, row, new TextCharacter(
-                            ' ',
-                            TextColor.ANSI.DEFAULT,
-                            TextColor.ANSI.RED));
+        boolean keepRunning = true;
+        int column = 5;
+        int row = 22;
+
+        tg.setForegroundColor(TextColor.ANSI.GREEN);
+        tg.putString(3, row, ">", SGR.BOLD);
+
+        gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
+        gui.getScreen().refresh();
+
+        while (keepRunning) {
+
+            KeyStroke keyStroke = terminal.pollInput();
+
+            if (keyStroke != null) {
+                switch (keyStroke.getKeyType()) {
+                    case Backspace:
+                        if (!(sb.length() < 1)) {
+                            column--;
+                            gui.getScreen().clear();
+                            gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
+                            sb.deleteCharAt(sb.length()-1);
+                            tg.putString(5,row, sb.toString(), SGR.BOLD);
+                        }
+                        break;
+                    case Character:
+                        if (!(sb.length() > 50)) {
+                            column++;
+                            gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
+                            sb.append(keyStroke.getCharacter());
+                            tg.putString(5,row, sb.toString(), SGR.FRAKTUR);
+                        }
+                        break;
+                    case Escape:
+                        Menu.start(gui, terminal);
+                        keepRunning = !keepRunning;
+                        break;
                 }
-            //}
-            gui.getScreen().refresh();
+                tg.putString(3, row, ">", SGR.BOLD);
+                gui.getScreen().refresh();
+            }
         }
-
     }
 }
