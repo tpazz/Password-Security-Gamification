@@ -29,7 +29,10 @@ public class Store extends UI {
                 .addRow("2.001", "dictionary.exe", "Dictionary attack algorithm")
                 .addRow("2.267", "combinator_dic.exe", "Multi-dictionary attack algorithm")
                 .addRow("2.455", "hybrid_dic.exe", "Brute force + dictionary attack algorithm")
-                .addRow("2.998", "keyword.exe", "User defined brute force algorithm");
+                .addRow("2.998", "keyword.exe", "User defined brute force algorithm")
+                .addRow("0.501", "english.dic", "English dictionary")
+                .addRow("0.201", "common.dic", "Common passwords")
+                .addRow("0.434", "pwnd.dic", "Most used passwords");
         table.setSelectAction(() -> {
 
             List<String> data = table.getTableModel().getRow(table.getSelectedRow());
@@ -45,7 +48,14 @@ public class Store extends UI {
                     Panel panel2 = new Panel(new GridLayout(1));
                     TerminalSize ts = new TerminalSize(0,1);
                     Button yes = new Button("Yes", () -> {
-                        try { gui.removeWindow(gui.getActiveWindow()); }
+                        try {
+                            gui.removeWindow(gui.getActiveWindow());
+                            String write;
+                            String items = getPurchaced();
+                            int sRow = table.getSelectedRow();
+                            write = items.substring(0,sRow) + '1' + items.substring(sRow+1);
+                            writeFile(0,0.0f,write);
+                        }
                         catch (Exception e) { e.printStackTrace(); }
                     }).setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER));
                     Button no = new Button("No", () -> {

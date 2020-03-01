@@ -15,19 +15,33 @@ public class Profile extends UI {
 
         TextGraphics tg = gui.getScreen().newTextGraphics();
         StringBuilder sb = new StringBuilder();
-
-        gui.getScreen().clear();
-        gui.getScreen().refresh();
+        TerminalSize ts = terminal.getTerminalSize();
 
         boolean keepRunning = true;
         int column = 5;
         int row = 22;
 
-        tg.setForegroundColor(TextColor.ANSI.GREEN);
-        tg.putString(3, row, ">", SGR.BOLD);
-
+        gui.getScreen().clear();
+        setup(tg, ts);
         gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
         gui.getScreen().refresh();
+
+        // salt is stored with the password
+        // pepper is not
+
+        // salts protect against hash table attacks
+        // peppers protect against brute force/dictionary attacks
+
+        // use bitcoin to buy hashed password + info if salt or hash is used
+        // generate hashed password along with salt
+
+        // Exe f7dx -d English -s || English
+        // Exe f7dx -h English 4 || 4 English
+        // Exe f7dx -c English Two Word
+        // Exe f7dx -b Alphanumeric 8
+        // Exe f7dx -k hello 99 cool
+        // No matches found. Perhaps try adding a salt or pepper?
+        // alpha_brute p9x01k -s
 
         while (keepRunning) {
 
@@ -41,7 +55,8 @@ public class Profile extends UI {
                             gui.getScreen().clear();
                             gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
                             sb.deleteCharAt(sb.length()-1);
-                            tg.putString(5,row, sb.toString(), SGR.BOLD);
+                            tg.putString(5,row, sb.toString());
+                            setup(tg,ts);
                         }
                         break;
                     case Character:
@@ -49,7 +64,7 @@ public class Profile extends UI {
                             column++;
                             gui.getScreen().setCursorPosition(new TerminalPosition(column, row));
                             sb.append(keyStroke.getCharacter());
-                            tg.putString(5,row, sb.toString(), SGR.FRAKTUR);
+                            tg.putString(5,row, sb.toString());
                         }
                         break;
                     case Escape:
@@ -57,9 +72,27 @@ public class Profile extends UI {
                         keepRunning = !keepRunning;
                         break;
                 }
-                tg.putString(3, row, ">", SGR.BOLD);
+                setup(tg, terminal.getTerminalSize());
                 gui.getScreen().refresh();
             }
+        }
+    }
+
+    private static void setup(TextGraphics tg, TerminalSize ts) throws Exception {
+
+        tg.setForegroundColor(TextColor.ANSI.GREEN);
+        tg.putString(3, 22, ">", SGR.BOLD);
+        tg.putString(2,1, "Available algorithms:", SGR.BOLD);
+        tg.putString(25,1, "Available dictionaries:", SGR.BOLD);
+        tg.putString(ts.getColumns()-10, ts.getRows()-23, "\u20BF" + getBitcoin(), SGR.BOLD);
+        tg.putString(ts.getColumns()-10, ts.getRows()-22, "Rank: " + getLevel(), SGR.BOLD);
+
+        for (int i = 0; i < getAlgorithms().size(); i++) {
+            tg.putString(2, 2+i, getAlgorithms().get(i));
+        }
+
+        for (int i = 0; i < getDictionaries().size(); i++) {
+            tg.putString(25, 2+i, getDictionaries().get(i));
         }
     }
 }
