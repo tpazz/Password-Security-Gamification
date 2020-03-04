@@ -1,15 +1,15 @@
 package ui;
 
+import Player.Player;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.gui2.*;
-import com.googlecode.lanterna.terminal.Terminal;
 
 import java.util.Collections;
 
-public class Achievements extends UI {
+class Achievements extends UI_Helper {
 
-    public static void start(WindowBasedTextGUI gui, Terminal terminal) {
+    static void start(Player p) {
 
         BasicWindow window = new BasicWindow();
         Panel panel = new Panel(new GridLayout(1));
@@ -29,11 +29,11 @@ public class Achievements extends UI {
         panel.addComponent(new EmptySpace(TextColor.ANSI.DEFAULT, ts));
         panel.addComponent(checkBoxList);
         panel.addComponent(new Button("OK", () -> {
-            try { Menu.start(gui, terminal); }
+            try { Menu.start(p); }
             catch (Exception e) { e.printStackTrace(); }
         }).setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER)));
 
         window.setComponent(panel);
-        gui.addWindowAndWait(window);
+        p.getGUI().addWindowAndWait(window);
     }
 }

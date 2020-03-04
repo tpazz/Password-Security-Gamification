@@ -1,36 +1,28 @@
 package ui;
-
-import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
+import Player.Player;
 import com.googlecode.lanterna.gui2.dialogs.ActionListDialogBuilder;
-import com.googlecode.lanterna.terminal.Terminal;
 
-public class Menu extends UI {
+public class Menu extends UI_Helper {
 
-    public static void start(WindowBasedTextGUI gui, Terminal terminal) throws Exception {
+    public static void start(Player p) throws Exception {
 
-        gui.removeWindow(gui.getActiveWindow());
+        p.clearWindow();
 
-        if (getLevel() == 0) { // fresh start or selecting 'New Game' will omit 'Continue' option
+        if (p.getRank() == 0) { // fresh start or selecting 'New Game' will omit 'Continue' option
             new ActionListDialogBuilder()
                     .setTitle("MAIN MENU")
                     .setDescription("\n")
                     .addAction("New game", () -> {
-                        try {
-                            Profile.start(gui, terminal);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    })
-                    .addAction("How to play", () -> message(gui, "HOW TO PLAY", HOW2PLAY))
-                    .addAction("About", () -> message(gui, "ABOUT", ABOUT))
+                        try { Profile.start(p); } catch (Exception e) { e.printStackTrace(); } })
+                    .addAction("How to play", () -> message(p.getGUI(), "HOW TO PLAY", HOW2PLAY))
+                    .addAction("About", () -> message(p.getGUI(), "ABOUT", ABOUT))
                     .addAction("Disclaimer", () -> {
-                        gui.removeWindow(gui.getActiveWindow());
-                        message(gui, "DISCLAIMER", DISCLAIMER);
-
+                        p.clearWindow();
+                        message(p.getGUI(), "DISCLAIMER", DISCLAIMER);
                     })
                     .setCanCancel(false)
                     .build()
-                    .showDialog(gui);
+                    .showDialog(p.getGUI());
         }
         else {
             new ActionListDialogBuilder()
@@ -40,39 +32,39 @@ public class Menu extends UI {
                     })
                     .addAction("New game", () -> {
                         try {
-                            Profile.start(gui, terminal);
+                            Profile.start(p);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     })
                     .addAction("Store", () -> {
                         try {
-                            Store.start(gui, terminal);
+                            Store.start(p);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     })
                     .addAction("Achievements", () -> {
                         try {
-                            Achievements.start(gui, terminal);
+                            Achievements.start(p);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     })
-                    .addAction("How to play", () -> message(gui, "HOW TO PLAY", HOW2PLAY))
-                    .addAction("About", () -> message(gui, "ABOUT", ABOUT))
+                    .addAction("How to play", () -> message(p.getGUI(), "HOW TO PLAY", HOW2PLAY))
+                    .addAction("About", () -> message(p.getGUI(), "ABOUT", ABOUT))
                     .addAction("Disclaimer", () -> {
-                        gui.removeWindow(gui.getActiveWindow());
-                        message(gui, "DISCLAIMER", DISCLAIMER);
+                        p.clearWindow();
+                        message(p.getGUI(), "DISCLAIMER", DISCLAIMER);
 
                     })
                     .setCanCancel(false)
                     .build()
-                    .showDialog(gui);
+                    .showDialog(p.getGUI());
         }
         if (msg) {
             msg = false;
-            start(gui, terminal);
+            start(p);
         }
     }
 }

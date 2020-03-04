@@ -1,24 +1,24 @@
 package ui;
 
+import Player.Player;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.gui2.*;
 import com.googlecode.lanterna.gui2.table.Table;
-import com.googlecode.lanterna.terminal.Terminal;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
-public class Store extends UI {
+class Store extends UI_Helper {
 
-    public static void start(WindowBasedTextGUI gui, Terminal terminal) throws Exception {
+    static void start(Player p) throws Exception {
 
         BasicWindow window = new BasicWindow();
         Panel panel = new Panel(new GridLayout(1));
         Table<String> table = new Table<>("\u20BFitcoin", "Algorithm", "Description");
 
-        panel.addComponent(new Label("Your bitcoin: \u20BF" + Float.toString(getBitcoin()))
+        panel.addComponent(new Label("Your bitcoin: \u20BF" + Float.toString(p.getBitcoin()))
                 .setForegroundColor(TextColor.ANSI.BLUE)
                 .setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER)));
 
@@ -38,10 +38,10 @@ public class Store extends UI {
             List<String> data = table.getTableModel().getRow(table.getSelectedRow());
 
             try {
-                if (getBitcoin() < Float.valueOf(data.get(0))) {
+                if (p.getBitcoin() < Float.valueOf(data.get(0))) {
                     DecimalFormat df = new DecimalFormat("0.000");
-                    message(gui, "ERROR", "You need \u20BF" + df.format(Float.valueOf(data.get(0))
-                            - getBitcoin()) + " more to purchase \n" + data.get(1));
+                    message(p.getGUI(), "ERROR", "You need \u20BF" + df.format(Float.valueOf(data.get(0))
+                            - p.getBitcoin()) + " more to purchase \n" + data.get(1));
                 }
                 else {
                     BasicWindow window2 = new BasicWindow();
@@ -49,17 +49,17 @@ public class Store extends UI {
                     TerminalSize ts = new TerminalSize(0,1);
                     Button yes = new Button("Yes", () -> {
                         try {
-                            gui.removeWindow(gui.getActiveWindow());
+                            p.clearWindow();
                             String write;
-                            String items = getPurchaced();
+                            String items = p.getPurchaced();
                             int sRow = table.getSelectedRow();
                             write = items.substring(0,sRow) + '1' + items.substring(sRow+1);
-                            writeFile(0,0.0f,write);
+                            p.writeProgress(0,0.0f,write,p.getColour());
                         }
                         catch (Exception e) { e.printStackTrace(); }
                     }).setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER));
                     Button no = new Button("No", () -> {
-                        try { gui.removeWindow(gui.getActiveWindow()); }
+                        try { p.clearWindow(); }
                         catch (Exception e) { e.printStackTrace(); }
                     }).setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER));
 
@@ -71,7 +71,7 @@ public class Store extends UI {
                     window2.setTitle("CONFIRM");
                     window2.setHints(Arrays.asList(Window.Hint.CENTERED));
                     window2.setComponent(panel2);
-                    gui.addWindowAndWait(window2);
+                    p.getGUI().addWindowAndWait(window2);
                 }
             } catch (Exception e) { e.printStackTrace(); }
         });
@@ -84,11 +84,11 @@ public class Store extends UI {
         panel.addComponent(table);
         panel.addComponent(new EmptySpace(TextColor.ANSI.DEFAULT, ts));
         panel.addComponent(new Button("OK", () -> {
-            try { Menu.start(gui, terminal); }
+            try { Menu.start(p); }
             catch (Exception e) { e.printStackTrace(); }
         }).setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER)));
 
         window.setComponent(panel);
-        gui.addWindowAndWait(window);
+        p.getGUI().addWindowAndWait(window);
     }
 }
