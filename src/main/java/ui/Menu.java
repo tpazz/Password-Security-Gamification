@@ -13,7 +13,7 @@ public class Menu extends UI_Helper {
                     .setTitle("MAIN MENU")
                     .setDescription("\n")
                     .addAction("New game", () -> {
-                        try { Profile.start(p); } catch (Exception e) { e.printStackTrace(); } })
+                        try { Terminal.start(p); } catch (Exception e) { e.printStackTrace(); } })
                     .addAction("How to play", () -> message(p.getGUI(), "HOW TO PLAY", HOW2PLAY))
                     .addAction("About", () -> message(p.getGUI(), "ABOUT", ABOUT))
                     .addAction("Disclaimer", () -> {
@@ -32,7 +32,7 @@ public class Menu extends UI_Helper {
                     })
                     .addAction("New game", () -> {
                         try {
-                            Profile.start(p);
+                            Terminal.start(p);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

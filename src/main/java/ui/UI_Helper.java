@@ -10,14 +10,22 @@ abstract class UI_Helper {
 
     protected static boolean msg = false;
 
-    public static final ArrayList<String> COMMANDS = new ArrayList<String>() {{
+    public static final ArrayList<String> METACOMMANDS = new ArrayList<String>() {{
+        add("help");
+        add("example");
+        add("show items");
+        add("clear");
+        add("request");
+    }};
+
+        public static final ArrayList<String> COMMANDS = new ArrayList<String>() {{
         add("[Up Arrow]   -> grab last command");
         add("[Down Arrow] -> clear command");
         add("[ENTER]      -> execute command");
         add("request      -> request a profile");
-        add("clear        -> clear terminal");
         add("example      -> example crack");
         add("show items   -> display bought tools");
+        add("hint         -> give password hint");
         add("setCol (col) -> set terminal text colour");
         add("         ↳");
     }};
@@ -26,37 +34,35 @@ abstract class UI_Helper {
         add("RED");
         add("GREEN");
         add("YELLOW");
-        add("BLUE");
         add("MAGENTA");
         add("CYAN");
         add("WHITE");
     }};
 
         public static final ArrayList<String> EXECUTE = new ArrayList<String>() {{
-        add("num_brute      [range]  [hash]");
-        add("alpha_brute    [cSpace] [hash]");
-        add("alpha_num      [cSpace] [range] [hash]");
+        add("num_brute      [range]");
+        add("alpha_brute    [cSpace] [length]");
+        add("alpha_num      [cSpace] [length] [range]");
         add("dictionary     [dic]    [hash]");
-        add("combinator_dic [dic1]   [dic2]  [hash]");
-        add("hybrid         [range]  [dic]   [hash]");
-        add("keyword        [str1]   [str2]  [str3]");
+        add("combinator_dic [dic1]   [dic2]   [hash]");
+        add("hybrid         [range]  [dic]    [hash]");
+        add("keyword        [str1]   [str2]   [str3]");
     }};
 
     public static final ArrayList<String> DESCRIPTION = new ArrayList<String>() {{
         add("  hash ~> hash value from profile");
         add("cSpace ~> char space | -a -s -as");
-        add(" range ~> integer range | 0-9999");
+        add("length ~> char length | 4");
+        add(" range ~> integer range | 9999");
         add("   dic ~> dictionary name");
         add("   str ~> arbitrary string");
-        add("  salt ~> -s");
-        add("pepper ~> -p");
     }};
 
     public static final String HOW2PLAY =
         "The objective of this game is to crack passwords from profiles. There \n" +
         "are 10 core levels, each one increasing in difficulty. \u20BFitcoin is \n" +
         "awarded for each successful crack which can be used to purchase \n" +
-        "powerful algorithms to help you progress. Profiles are randomly \n" +
+        "powerful algorithms to help you Progress. Profiles are randomly \n" +
         "generated with an associated password that is related to the profile \n" +
         "in some way, for instance: \n\n" +
         "First name: John \n" +

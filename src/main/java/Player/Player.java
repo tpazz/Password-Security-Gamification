@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Player {
 
-    private File file = new File("src\\main\\java\\player\\progress.txt");
+    private File file = new File("src\\main\\java\\player\\Progress.txt");
     private WindowBasedTextGUI windowBasedTextGUI;
     private Terminal terminal;
     private Screen screen;
