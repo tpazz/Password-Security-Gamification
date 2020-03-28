@@ -16,7 +16,6 @@ public class Main {
         Terminal terminal = new DefaultTerminalFactory().createTerminal();
         Screen screen = new TerminalScreen(terminal);
         screen.startScreen();
-
         WindowBasedTextGUI wGUI = new MultiWindowTextGUI(screen);
         TextGraphics textGraphics = screen.newTextGraphics();
         // create player object and start menu UI

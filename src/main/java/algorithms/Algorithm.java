@@ -4,6 +4,10 @@ import Generate.Generate;
 
 public class Algorithm implements Runnable {
 
+    private final char[] ALPHACHAR = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    private final char[] ALPHACHARCAP = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    private final char[] ALLCHARS = "abcdefghijklmnopqrstuvwxyzAEIOU0123456789!@#$%^&*()-_+=~`[]{}|:;<>,.?/BCDFGHJKLMNPQRSTVWXYZ".toCharArray();
+    private char[] CHARSET;
     private Generate generate;
     private String command;
     private String hashedPassword;
@@ -11,15 +15,17 @@ public class Algorithm implements Runnable {
     private String dictionary;
     private String dictionary2;
     private String alpha;
+    private String match = "No match!";
+    private String current = "";
     private String str1;
     private String str2;
     private String str3;
     private int length;
 
-    private volatile int range;
-    private volatile int i;
+    private volatile double range;
+    private volatile int i = 0;
     private volatile boolean complete = false;
-    private volatile String result;
+    private volatile String result = "";
 
     public Algorithm(Generate g, String c) {
         this.generate = g;
@@ -39,19 +45,28 @@ public class Algorithm implements Runnable {
                     break;
 
                 case "alpha_brute":
-                    alpha = String.valueOf(command.substring(start+1, start+2));
+                    alpha = String.valueOf(command.substring(start+1, start+3));
                     length = Integer.valueOf(command.substring(start+4));
-                    if ((length >0 && length <= 5) && (alpha.equals("-a") || alpha.equals("-s") || alpha.equals("-as")))
-                        valid = true;
+                    switch (alpha) {
+                        case "-l":
+                            CHARSET = ALPHACHAR;
+                            break;
+                        case "-u":
+                            CHARSET = ALPHACHARCAP;
+                            break;
+                        case "-a":
+                            CHARSET = ALLCHARS;
+                            break; }
+                    range = Math.pow(CHARSET.length,length);
                     break;
 
-                case "alpha_num":
-                    alpha = String.valueOf(command.substring(start+1, start+2));
-                    length = Integer.valueOf(command.substring(start+4, start+5));
-                    range = Integer.valueOf(command.substring(start+7));
-                    if ((length >0 && length <= 5) && (alpha.equals("-a") || alpha.equals("-s") || alpha.equals("-as")))
-                        valid = true;
-                    break;
+//                case "alpha_num":
+//                    alpha = String.valueOf(command.substring(start+1, start+2));
+//                    length = Integer.valueOf(command.substring(start+4, start+5));
+//                    range = Integer.valueOf(command.substring(start+7));
+//                    if ((length >0 && length <= 5) && (alpha.equals("-a") || alpha.equals("-s") || alpha.equals("-as")))
+//                        valid = true;
+//                    break;
 
                 case "dictionary":
                     dictionary = command.substring(start+1);
@@ -81,14 +96,23 @@ public class Algorithm implements Runnable {
         return valid;
     }
 
-    public void execute() throws Exception {
+//    private int calcSearchSpace() {
+//        return
+//    }
+
+    public void execute() {
         hashedPassword = generate.getHashedPassword();
         switch (algorithm) {
             case "num_brute":
                 result = num_brute();
+                complete = true;
                 break;
             case "alpha_brute":
-                result = alpha_brute();
+                for (int k = 1; k <= length; k++) {
+                    result = alpha_brute("", 0, k);
+                    if (!result.equals("No match!")) break;
+                }
+                complete = true;
                 break;
             case "alpha_num":
                 result = alpha_num();
@@ -109,27 +133,42 @@ public class Algorithm implements Runnable {
     }
 
     public String getCurrentPlainText() {
-        return String.valueOf(i);
+        return String.valueOf(current);
     }
 
     public String getCurrentHash() {
-        return MD5.getHashPassword(String.valueOf(i));
+        return MD5.getHashPassword(current);
     }
 
     public String num_brute() {
-        for (i = 0; i < range; i++) {
-            if (MD5.getHashPassword(String.valueOf(i)).equals(hashedPassword)) {
-                complete = true;
+        for (i = 0; i <= range; i++) {
+            current = String.valueOf(i);
+            if (MD5.getHashPassword(current).equals(hashedPassword)) {
                 return generate.getPlainTextPassword();
             }
         }
-        complete = true;
         return "No match!";
     }
 
-    public String alpha_brute() {
-
-        return null;
+    private String alpha_brute(String str, int pos, int length) {
+        if (length == 0) {
+            current = str;
+            i++;
+            if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                complete = true;
+                match = str;
+            }
+        } else {
+            if (pos != 0) {
+                pos = 0;
+            }
+            if (!complete) {
+                for (int j = pos; j < CHARSET.length; j++) {
+                    alpha_brute(str + CHARSET[j], j, length -1);
+                }
+            }
+        }
+        return match;
     }
     public String alpha_num() {
 
@@ -153,7 +192,7 @@ public class Algorithm implements Runnable {
     }
 
     public int getI() { return i; }
-    public int getRange() { return range; }
+    public double getRange() { return range; }
     public boolean getComplete() { return complete; }
     public String getResult() { return result; }
 

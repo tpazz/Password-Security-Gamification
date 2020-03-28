@@ -88,9 +88,9 @@ public class Player {
         return item;
     }
 
-    public void reserProgress() throws Exception {
+    public void resetProgress() throws Exception {
         FileWriter fw = new FileWriter(file);
-        fw.write("0\n0.0\n0000000000\nDEFAULT");
+        fw.write("1\n0.0\n0000000000\nDEFAULT");
         fw.close();
     }
 

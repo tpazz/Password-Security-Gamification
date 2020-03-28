@@ -7,19 +7,19 @@ import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.input.KeyStroke;
 import metadata.Progress;
 
-
 class Terminal extends UI_Helper {
 
     private static String lastTyped = "";
     private static String lastScreen = "";
     private static String currentCol = "";
-    private static boolean request = false;
     private static boolean profile = false;
     private static boolean once = true;
     private static boolean algorithm = false;
     private static boolean oneGen = true;
     private static boolean validAlg = false;
+    private static boolean triv = false;
     private static Generate g;
+    private static Algorithm alg;
 
     static void start(Player p) throws Exception {
 
@@ -39,9 +39,6 @@ class Terminal extends UI_Helper {
 
         // salts protect against hash table attacks
         // peppers protect against brute force/dictionary attacks
-
-        // use bitcoin to buy hashed password + info if salt or hash is used
-        // generate hashed password along with salt
 
         while (true) {
 
@@ -86,11 +83,8 @@ class Terminal extends UI_Helper {
                             column = 5; row = 22;
                             p.getScreen().clear();
                             lastTyped = sb.toString();
-                            if (validCommand()) {
-                                lastScreen = lastTyped;
-                            } else if (validCol()) {
-                                setColour(p);
-                            }
+                            if (validCommand()) lastScreen = lastTyped;
+                            else if (validCol()) setColour(p);
                             sb.delete(0, sb.length()); }
                         break;
 
@@ -108,80 +102,39 @@ class Terminal extends UI_Helper {
         }
     }
 
-    private static void displayProfile(Generate g, Player p) throws Exception {
-        profile = true;
-        TerminalSize ts = new TerminalSize(40,14);
-        TerminalPosition tp = new TerminalPosition(20,6);
-        p.getGraphics().fillRectangle(tp,ts,' ');
-//        p.getGraphics().putString(10,6,g.getHashedPassword());
-//        p.getGraphics().putString(10,7,g.getPlainTextPassword());
-//        p.getGraphics().putString(10,8,g.getFirstName());
-//        p.getGraphics().putString(10,9,g.getLastName());
-        if (algorithm) exeAlgorithm(p,g);
-    }
-
-    private static void exeAlgorithm(Player p, Generate g) throws Exception {
-        algorithm = false;
-        Algorithm alg = new Algorithm(g,lastTyped);
-        Thread t1 = new Thread(alg);
-        if (alg.validate()) {
-            Progress progress = new Progress(alg,p);
-            Thread t2 = new Thread(progress);
-            t1.start();
-            t2.start();
-        }
-    }
-
-    private static boolean validCommand() {
-        return METACOMMANDS.contains(lastTyped);
-    }
-
-    private static boolean validCol() {
-        boolean x = false;
-        try {
-            if ((lastTyped.substring(0, 6).equals("setCol")) && COLOURS.contains(lastTyped.substring(7)))
-                x = true;
-        } catch (Exception e) { x = false; }
-        return x;
-    }
-
     private static void exeCommand(Player p) {
-            try {
-                switch (lastScreen) {
-                    case "help":
-                        helpScreen(p);
-                        break;
-                    case "example":
-                        example(p);
-                        break;
-                    case "show items":
-                        showItems(p);
-                        break;
-                    case "request":
-                        request(p);
-                        break;
-                }
-            } catch (Exception ignore) {}
+        try {
+            switch (lastScreen) {
+                case "help":
+                    helpScreen(p);
+                    break;
+                case "example":
+                    example(p);
+                    break;
+                case "show items":
+                    showItems(p);
+                    break;
+                case "request":
+                    request(p);
+                    break;
+            }
+        } catch (Exception ignore) {}
     }
 
     private static void request(Player p) throws Exception {
-        request = true;
+
         if (oneGen) {
-            if (validAlg) {
-                validAlg = false;
-                p.writeProgress(1,0.0f,p.getPurchaced(),p.getColour());
-            }
             g = new Generate(p);
             oneGen = false;
         }
-        TerminalSize ts = new TerminalSize(30,10);
+
+        TerminalSize ts = new TerminalSize(30,9);
         TerminalPosition tp = new TerminalPosition(25,6);
         p.getGraphics().drawRectangle(tp,ts,'+');
-        p.getGraphics().putString(31,8, "Profile: " + g.getFirstName() + " " + g.getLastName(), SGR.UNDERLINE);
-        p.getGraphics().putString(30,10, "Reward: \u20BF" + g.getReward(), SGR.BOLD);
-        p.getGraphics().putString(30,11, "Recommended: " + g.getAlgorithm(), SGR.BOLD);
-        p.getGraphics().putString(29,14, "Do you accept? [YES/NO]", SGR.BOLD);
-        p.getGraphics().putString(22,17, "[NO] will regenerate another profile", SGR.BOLD);
+        p.getGraphics().putString(31,7, "Difficulty: " + g.getDifficulty(), SGR.ITALIC);
+        p.getGraphics().putString(30,9, "Reward: \u20BF" + g.getReward(), SGR.BOLD);
+        if (p.getRank() > 3) p.getGraphics().putString(30,10, "Recommended: " + g.getAlgorithm(), SGR.BOLD);
+        p.getGraphics().putString(34,13, "Accept? [YES]", SGR.BOLD);
 
         if ((lastTyped.equals("NO") && !profile && once)) {
             oneGen = true;
@@ -197,8 +150,85 @@ class Terminal extends UI_Helper {
         }
 
         else if (lastTyped.equals("YES") || profile) {
+            p.getGraphics().fillRectangle(tp,ts,' ');
             displayProfile(g,p);
         }
+    }
+
+    private static void displayProfile(Generate g, Player p) throws Exception {
+        profile = true;
+
+        for (int i = 0; i < g.getDescription().size(); i++) {
+            p.getGraphics().putString(3,4+i, g.getDescription().get(i));
+        }
+        if (p.getRank() == 1) {
+            if (lastTyped.equals("password123")) {
+                triv = true;
+                p.getGraphics().putString(3,16, "Correct! Type 'request' for next challenge");
+            }
+        } else if (p.getRank() == 2) {
+            if (lastTyped.equals("qjuehdxf")) {
+                triv = true;
+                p.getGraphics().putString(3,18, "Correct! Type 'request' for next challenge       ");
+            }
+        } else if (p.getRank() == 3) {
+            switch (lastTyped) {
+                case "h(qjuehdxf)":
+                    p.getGraphics().putString(39, 17, "da0cebfbcf5bbc4b22e4e1ed3d4c70c2");
+                    break;
+                case "h(letmein123)":
+                    p.getGraphics().putString(39, 17, "4ca7c5c27c2314eecc71f67501abb724");
+                    break;
+                case "h(white_gold)":
+                    p.getGraphics().putString(39, 17, "78bd36d4a3fabba1f528b9f804ce03dd");
+                    break;
+                case "h(hashingiscool)":
+                    p.getGraphics().putString(39, 17, "29a5002cf73a9852da4b12811c0897cc");
+                    p.getGraphics().putString(45,22, "Type 'request' for next challenge");
+                    triv = true;
+                    break;
+            }
+        } else {
+            if (algorithm) exeAlgorithm(p,g);
+            else if (checkAlg()) triv = true;
+        }
+
+        if (triv && lastTyped.equals("request")) {
+            System.out.println("here");
+            p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
+            profile = false;
+            triv = false;
+            oneGen = true;
+            p.getScreen().clear();
+            request(p);
+        }
+    }
+
+    private static void exeAlgorithm(Player p, Generate g) {
+        algorithm = false;
+        alg = new Algorithm(g,lastTyped);
+        Thread t1 = new Thread(alg);
+        if (alg.validate()) {
+            Progress progress = new Progress(alg,p);
+            Thread t2 = new Thread(progress);
+            t1.start();
+            t2.start();
+        }
+    }
+
+    private static boolean checkAlg() { return !alg.getResult().equals("No match!"); }
+
+    private static boolean validCommand() {
+        return METACOMMANDS.contains(lastTyped);
+    }
+
+    private static boolean validCol() {
+        boolean x = false;
+        try {
+            if ((lastTyped.substring(0, 6).equals("setCol")) && COLOURS.contains(lastTyped.substring(7)))
+                x = true;
+        } catch (Exception e) { x = false; }
+        return x;
     }
 
     private static void showItems(Player p) throws Exception {
@@ -225,7 +255,7 @@ class Terminal extends UI_Helper {
         setup(p);
     }
 
-    private static void helpScreen(Player p) throws Exception {
+    private static void helpScreen(Player p) {
         p.getGraphics().putString(2,3, "Algorithm syntax", SGR.BOLD);
         p.getGraphics().putString(2,12, "Commands", SGR.BOLD);
 

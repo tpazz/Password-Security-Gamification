@@ -4,10 +4,8 @@ import Player.Player;
 import algorithms.Algorithm;
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.Symbols;
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
-
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class Progress implements Runnable {
 
@@ -16,7 +14,7 @@ public class Progress implements Runnable {
     private int p = 0;
     private float step = 0.02f;
     float frac;
-    int range;
+    double range;
     private float tmp = 0;
 
     public Progress(Algorithm a, Player p) {
@@ -26,7 +24,7 @@ public class Progress implements Runnable {
 
     private void display() {
         player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()) + " / " +
-                String.valueOf(range));
+                new DecimalFormat("#").format(range+1));
         player.getGraphics().putString(55,18, String.format("%.1f",frac*100) + "%");
     }
 
@@ -40,9 +38,14 @@ public class Progress implements Runnable {
         long startTime = System.currentTimeMillis();
         try {
             while (!algorithm.getComplete()) {
+//                System.out.println(algorithm.getI()); // 9999
+//                System.out.println(algorithm.getResult());
+//                System.out.println(algorithm.getRange());
+//                System.out.println(algorithm.getCurrentHash());
+//                System.out.println(algorithm.getComplete());
                 player.getGraphics().putString(56,16, String.valueOf((float)(System.currentTimeMillis() - startTime)/1000));
                 player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash());
-                frac = (float)algorithm.getI()/range;
+                frac = (float) (algorithm.getI()/range);
                 if (frac >= step)  {
                     step += 0.02f;
                     player.getGraphics().putString(10+p,17, String.valueOf(Symbols.SOLID_SQUARE));
@@ -55,15 +58,18 @@ public class Progress implements Runnable {
             }
             if (algorithm.getResult().equals("No match!")) fillProgress();
             else success();
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     private void success() throws IOException {
-        frac = (float)algorithm.getI()/range;
+        frac = (float) (algorithm.getI()/range);
         player.getGraphics().putString(62,17, "Match!", SGR.BLINK);
-        player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()) + " / " + String.valueOf(range));
+        player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()) + " / " + new DecimalFormat("#").format(range+1));
         player.getGraphics().putString(55,18, String.format("%.1f",frac*100) + "%");
-        player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash());
+        player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash(), SGR.BOLD);
+        player.getGraphics().putString(45,22, "Type 'request' for next challenge");
         player.getScreen().refresh();
     }
 
@@ -74,7 +80,7 @@ public class Progress implements Runnable {
         }
         player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash());
         player.getGraphics().putString(62,17, algorithm.getResult(), SGR.BLINK);
-        player.getGraphics().putString(24,18,String.valueOf(range) + " / " + String.valueOf(range));
+        player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()) + " / " + new DecimalFormat("#").format(range+1));
         player.getGraphics().putString(55,18, "100.0%");
         player.getScreen().refresh();
     }
