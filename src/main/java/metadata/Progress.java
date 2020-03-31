@@ -4,6 +4,8 @@ import Player.Player;
 import algorithms.Algorithm;
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.Symbols;
+import com.googlecode.lanterna.TextColor;
+
 import java.io.IOException;
 import java.text.DecimalFormat;
 
@@ -25,7 +27,8 @@ public class Progress implements Runnable {
         this.player = p;
     }
 
-    public void display() {
+    public void display() throws Exception {
+        player.getGraphics().setForegroundColor(TextColor.ANSI.valueOf(player.getColour()));
         player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()+1) + " / " +
                 new DecimalFormat("#").format(range+1), SGR.ITALIC);
         player.getGraphics().putString(55,18, String.format("%.1f",frac*100) + "%", SGR.ITALIC);

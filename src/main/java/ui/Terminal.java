@@ -6,9 +6,6 @@ import algorithms.Algorithm;
 import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.input.KeyStroke;
 import metadata.Progress;
-
-import java.util.ArrayList;
-
 import static java.lang.Character.valueOf;
 
 class Terminal extends UI_Helper {
@@ -16,19 +13,20 @@ class Terminal extends UI_Helper {
     private static String lastTyped = "";
     private static String lastScreen = "";
     private static String currentCol = "";
+    private static String pwd = "";
     private static boolean profile = false;
     private static boolean once = true;
     private static boolean algorithm = true;
     private static boolean oneGen = true;
     private static boolean validAlg = false;
     private static boolean triv = false;
-    private static boolean hello = false;
     private static boolean triv2 = false;
     private static Generate g;
     private static Algorithm alg;
     private static Progress progress = new Progress(null,null);
 
     static void start(Player p) throws Exception {
+
 
         StringBuilder sb = new StringBuilder();
         getCommands(p);
@@ -125,8 +123,8 @@ class Terminal extends UI_Helper {
 
     private static void exeCommand(Player p) {
         try {
-            switch (lastScreen) {
 
+            switch (lastScreen) {
                 case "help":
                     helpScreen(p);
                     break;
@@ -172,20 +170,17 @@ class Terminal extends UI_Helper {
         for (i = 0; i < g.getDescription().size(); i++) {
             p.getGraphics().putString(3,4+i, g.getDescription().get(i));
         }
-        p.getScreen().refresh();
         if (g.getPlainTextPassword() != null) p.getGraphics().putString(3,5+i, "> " + g.getHashedPassword(), SGR.BOLD);
         if (p.getRank() == 1) {
             algorithm = false;
             if (lastTyped.equals("password123")) {
                 triv2 = true;
-                p.getGraphics().putString(45,22, "Type 'request' for next challenge");
-            }
+                p.getGraphics().putString(45,22, "Type 'request' for next challenge"); }
         } else if (p.getRank() == 2) {
             algorithm = false;
             if (lastTyped.equals("qjuehdxf")) {
                 triv2 = true;
-                p.getGraphics().putString(45,22, "Type 'request' for next challenge");
-            }
+                p.getGraphics().putString(45,22, "Type 'request' for next challenge"); }
         } else if (p.getRank() == 3) {
             algorithm = false;
             switch (lastTyped) {
@@ -208,6 +203,7 @@ class Terminal extends UI_Helper {
 
         if (triv || triv2) {
             if (checkTriv()) {
+                pwd = g.getPlainTextPassword();
                 p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
                 profile = false;
                 triv = false;
@@ -256,6 +252,9 @@ class Terminal extends UI_Helper {
     }
 
     private static void showItems(Player p) throws Exception {
+        TerminalSize ts = new TerminalSize(77,17);
+        TerminalPosition tp = new TerminalPosition(2,3);
+        p.getGraphics().fillRectangle(tp,ts,' ');
         p.getGraphics().putString(2,3, "Your algorithms", SGR.BOLD);
         for (int i=0; i<p.getAlgorithms().size();i++) {
             p.getGraphics().putString(3,4+i, p.getAlgorithms().get(i));
@@ -275,6 +274,9 @@ class Terminal extends UI_Helper {
     }
 
     private static void helpScreen(Player p) {
+        TerminalSize ts = new TerminalSize(77,17);
+        TerminalPosition tp = new TerminalPosition(2,3);
+        p.getGraphics().fillRectangle(tp,ts,' ');
         p.getGraphics().putString(2,3, "Algorithm syntax", SGR.BOLD);
         p.getGraphics().putString(2,12, "Commands", SGR.BOLD);
 
@@ -318,8 +320,9 @@ class Terminal extends UI_Helper {
         p.getGraphics().putString(2,20, "last typed: ");
         p.getGraphics().putString(3, 22, ">", SGR.BOLD);
         p.getGraphics().drawLine(14,20,50,20, ' ');
+        //System.out.println(g.getPlainTextPassword());
         if (validCommand() || lastTyped.equals("") || validCol() || lastTyped.equals("y") || validAlg
-                || profile && lastTyped.equals("req") || validSyntax())
+                || profile && lastTyped.equals("req") || validSyntax() || lastTyped.equals(pwd))
             p.getGraphics().putString(14, 20, lastTyped, SGR.ITALIC);
         else
             p.getGraphics().putString(14, 20, "Unknown command: "+ lastTyped, SGR.ITALIC);

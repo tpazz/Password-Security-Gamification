@@ -7,30 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4da83a4-5446-4b65-84bf-1b798be6cf70" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player/progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/progress.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/metadata/Progress.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/metadata/Progress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Terminal$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Terminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,15 +48,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="38" />
-          <entry key="java" value="52133" />
-          <entry key="txt" value="233" />
+          <entry key="java" value="52579" />
+          <entry key="txt" value="237" />
           <entry key="xml" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="52133" />
-          <entry key="PLAIN_TEXT" value="271" />
+          <entry key="JAVA" value="52579" />
+          <entry key="PLAIN_TEXT" value="275" />
           <entry key="XML" value="19" />
         </counts>
       </usages-collector>
@@ -85,7 +64,7 @@
         <counts>
           <entry key="MF" value="1" />
           <entry key="html" value="1" />
-          <entry key="java" value="72" />
+          <entry key="java" value="74" />
           <entry key="txt" value="18" />
           <entry key="xml" value="2" />
         </counts>
@@ -93,7 +72,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="72" />
+          <entry key="JAVA" value="74" />
           <entry key="Manifest" value="1" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="2" />
@@ -102,7 +81,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.53277636">
+    <splitter split-orientation="horizontal" split-proportion="0.49300155">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -120,13 +99,31 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="194">
-                  <caret line="229" column="41" selection-start-line="229" selection-start-column="41" selection-end-line="229" selection-end-column="41" />
+                <state relative-caret-position="3102">
+                  <caret line="256" column="49" selection-start-line="256" selection-start-column="49" selection-end-line="256" selection-end-column="49" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#7886#7887#0" expanded="true" />
                     <element signature="e#7941#7942#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/NumberFormatException.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="341">
+                  <caret line="64" selection-start-line="64" selection-end-line="64" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Integer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="591" selection-start-line="591" selection-end-line="591" />
                 </state>
               </provider>
             </entry>
@@ -155,8 +152,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="389">
-                  <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+                <state relative-caret-position="-1168">
+                  <caret line="62" selection-start-line="62" selection-end-line="62" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -177,7 +174,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
@@ -186,11 +183,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="143">
-                  <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+                <state relative-caret-position="166">
+                  <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -211,7 +208,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>writePr</find>
       <find>writePro</find>
       <find>ems</find>
       <find>currentCol</find>
@@ -225,7 +221,6 @@
       <find>setSize</find>
       <find>swing terminal</find>
       <find>validAl</find>
-      <find>validAlg</find>
       <find>genera</find>
       <find>writeProgress</find>
       <find>pos</find>
@@ -241,6 +236,8 @@
       <find>clear</find>
       <find>triv</find>
       <find>validcommand</find>
+      <find>validAlg</find>
+      <find>help</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -278,8 +275,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/metadata/Progress.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Player/progress.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Terminal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Player/progress.txt" />
       </list>
     </option>
   </component>
@@ -404,7 +401,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585587324880" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585664974211" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -588,7 +585,7 @@
       <workItem from="1585498848082" duration="13438000" />
       <workItem from="1585566030362" duration="15721000" />
       <workItem from="1585589332014" duration="3718000" />
-      <workItem from="1585648377415" duration="10156000" />
+      <workItem from="1585648377415" duration="13421000" />
     </task>
     <servers />
   </component>
@@ -601,13 +598,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439255000" />
+    <option name="totallyTimeSpent" value="442520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17352185" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17352185" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -616,7 +613,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.21475771" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18818681" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18818681" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20879121" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -688,8 +685,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/TerminalFactory.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/IOSafeTerminalAdapter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/Terminal.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/ExtendedTerminal.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1.jar!/com/googlecode/lanterna/TerminalSize.class">
@@ -919,16 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -943,27 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -980,15 +948,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="591" selection-start-line="591" selection-end-line="591" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1168">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="229" column="41" selection-start-line="229" selection-start-column="41" selection-end-line="229" selection-end-column="41" />
+        <state relative-caret-position="3102">
+          <caret line="256" column="49" selection-start-line="256" selection-start-column="49" selection-end-line="256" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7886#7887#0" expanded="true" />
             <element signature="e#7941#7942#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
