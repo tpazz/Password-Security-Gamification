@@ -61,38 +61,27 @@ public abstract class Generate_helper {
     public final ArrayList<String> LVL4ESC = new ArrayList<String>() {{
         add("Brute-force techniques are the bread and butter of all systematic");
         add("cracking algorithms. Pure brute-force approaches involve iterating through");
-        add("all possible combinations of a password until a match is found. ");
-        add("Theoretically, they are guaranteed to eventually find the password but the");
-        add("number of possible combinations can make it infeasible, even with the ");
-        add("most powerful computers.");
+        add("all possible combinations of a password until a match is found.");
+        add("In theory, they are guaranteed to eventually find the password but the");
+        add("number of possible combinations can make it infeasible.");
         add("");
-        add("Numerical brute-force algorithms are extremely proficient at cracking");
-        add("passcodes on mobile devices. Using the algorithm syntax presented in the");
-        add("help page, try to crack the following device: iPhone 4S, 4 digit passcode");
+        add("Using the algorithm syntax presented in the help page for num_brute,");
+        add("try and match the following hash and enter the plaintext password:");
     }};
 
     public final ArrayList<String> LVL5ESC = new ArrayList<String>() {{
-        add("Computers make very short work of 4 digit passcodes. Some social media");
-        add("websites such as Facebook use 6-digit numerical codes for two-factor ");
-        add("authentication; try and break into the following account:");
-        add("");
-        add("Two-factor authentication required");
-        add("You've asked us to require a 6-digit login code when someone tries to");
-        add("access your account from a new device or browser.");
-        add("Enter the 6-digit code from your code generator or third-party app");
+        add("Using the algorithm syntax presented in the help page for num_brute,");
+        add("try and match the following hash and enter the plaintext password:");
     }};
 
     public final ArrayList<String> LVL6ESC = new ArrayList<String>() {{
         add("Evidently, computers excel at cracking 'short' numerical passwords.");
         add("However, each time we add a digit to the password, the number of possible");
         add("combinations increases exponentially and will take 10 times more time");
-        add("to search the entire search space. Passport numbers are typically 8-digits");
-        add("long. Try and crack the passport number for the following profile:");
+        add("to search the entire search space.");
         add("");
-        add("Nationality: UNITED STATES OF AMERICA");
-        add("Date of birth: 22 Jan 1974");
-        add("Place of birth: Mumbai, INDIA");
-        add("Passport number: ");
+        add("Using the algorithm syntax presented in the help page for num_brute,");
+        add("try and match the following hash and enter the plaintext password:");
     }};
 
     public final ArrayList<String> LVL7ESC = new ArrayList<String>() {{
@@ -101,23 +90,37 @@ public abstract class Generate_helper {
         add("English alphabet, which works in base 26 instead of base 10 like");
         add("decimal numbers do.");
         add("");
-        add("Try cracking the following 4 character lowercase password:");
+        add("Using the algorithm syntax presented in the help page for alpha_brute,");
+        add("try and match the following hash and enter the plaintext password:");
     }};
 
     public final ArrayList<String> LVL8ESC = new ArrayList<String>() {{
         add("Although there are 26 letters in the English alphabet, if we also");
         add("consider both upper and lowercase letters we have 52 possible combinations");
-        add("for each character.");
+        add("for each character of the password.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for alpha_brute,");
+        add("experiment with the different data sets available to try and match the");
+        add("following hash and enter the plain-text password:");
     }};
 
     public final ArrayList<String> LVL9ESC = new ArrayList<String>() {{
-        add("Finally, if we also include numbers and special characters into the password");
-        add("then we have a total of 96 possible combinations for each character. A");
-        add("password of this data set with just 4 characters will contain 84,934,656");
-        add("combinations! This is why many websites will ask for certain requirements");
-        add("when creating a password so that it would be infeasible for a hacker to brute-");
-        add("force it.");
+        add("If we consider numbers and special characters in addition to both lower");
+        add("and uppercase letters into the password, we have a total of 96 possibilities ");
+        add("for each character; which produces an enormous search space of 84,934,656");
+        add("combinations for just a four-letter password. This rapid growth of complexity");
+        add("is due to the combinatorial explosion; many websites enforce their users to");
+        add("have long passwords and use a variety of different character sets for this");
+        add("reason so that it would be infeasible for a hacker to obtain your password");
+        add("through brute-force alone.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for alpha_brute,");
+        add("try and match the following hash and enter the plaintext password:");
     }};
+
+    // HASH TABLES x3
+    // SALT x3
+    // PEPPER x3
 
     protected String getRandFirstName() throws Exception {
         Random r = new Random();

@@ -15,15 +15,23 @@ abstract class UI_Helper {
         add("example");
         add("show items");
         add("clear");
-        add("request");
+        add("req");
+    }};
+
+    public static final ArrayList<String> VALIDCOMMANDS = new ArrayList<String>() {{
+        add("help");
+        add("example");
+        add("show items");
+        add("clear");
+        add("req");
+        add("y");
     }};
 
         public static final ArrayList<String> COMMANDS = new ArrayList<String>() {{
         add("[Up Arrow]   -> grab last command");
         add("[Down Arrow] -> clear command");
         add("[ENTER]      -> execute command");
-        add("request      -> request a profile");
-        add("example      -> example crack");
+        add("req          -> request a profile");
         add("show items   -> display bought tools");
         add("hint         -> give password hint");
         add("setCol (col) -> set terminal text colour");
@@ -41,17 +49,15 @@ abstract class UI_Helper {
 
         public static final ArrayList<String> EXECUTE = new ArrayList<String>() {{
         add("num_brute      [range]");
-        add("alpha_brute    [cSpace] [length]");
-        add("alpha_num      [cSpace] [length] [range]");
-        add("dictionary     [dic]    [hash]");
-        add("combinator_dic [dic1]   [dic2]   [hash]");
-        add("hybrid         [range]  [dic]    [hash]");
-        add("keyword        [str1]   [str2]   [str3]");
+        add("alpha_brute    [cType] [len]");
+        add("dictionary     [dic]");
+        add("combinator_dic [dic1]   [dic2]");
+        add("hybrid         [range]  [dic]");
+        add("keyword        [str1]   [str2] [str3]");
     }};
 
     public static final ArrayList<String> DESCRIPTION = new ArrayList<String>() {{
-        add("  hash ~> hash value from profile");
-        add("cSpace ~> char space | -a -s -as");
+        add("cSpace ~> char space | -l -u -s -a");
         add("length ~> char length | 4");
         add(" range ~> integer range | 9999");
         add("   dic ~> dictionary name");

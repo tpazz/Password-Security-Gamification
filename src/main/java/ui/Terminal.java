@@ -7,6 +7,10 @@ import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.input.KeyStroke;
 import metadata.Progress;
 
+import java.util.ArrayList;
+
+import static java.lang.Character.valueOf;
+
 class Terminal extends UI_Helper {
 
     private static String lastTyped = "";
@@ -14,17 +18,21 @@ class Terminal extends UI_Helper {
     private static String currentCol = "";
     private static boolean profile = false;
     private static boolean once = true;
-    private static boolean algorithm = false;
+    private static boolean algorithm = true;
     private static boolean oneGen = true;
     private static boolean validAlg = false;
     private static boolean triv = false;
+    private static boolean hello = false;
+    private static boolean triv2 = false;
     private static Generate g;
     private static Algorithm alg;
+    private static Progress progress = new Progress(null,null);
 
     static void start(Player p) throws Exception {
 
         StringBuilder sb = new StringBuilder();
-
+        getCommands(p);
+        System.out.println(VALIDCOMMANDS);
         int column = 5;
         int row = 22;
         currentCol = p.getColour();
@@ -44,7 +52,7 @@ class Terminal extends UI_Helper {
 
             KeyStroke keyStroke = p.getTerminal().pollInput();
 
-            if (keyStroke != null) {
+            if (keyStroke != null && !progress.inProgress) {
 
                 switch (keyStroke.getKeyType()) {
 
@@ -53,35 +61,34 @@ class Terminal extends UI_Helper {
                             column = 5+lastTyped.length();
                             String tmp = lastTyped;
                             sb.delete(0,49);
-                            p.getScreen().clear();
                             sb.append(tmp); }
                         break;
 
                     case ArrowDown:
                         column = 5; row = 22;
                         sb.delete(0,49);
-                        p.getScreen().clear();
+                        p.getGraphics().drawLine(5,22,25,22, ' ');
                         break;
 
                     case Backspace:
                         if (!(sb.length() < 1)) {
                             column--;
-                            p.getScreen().clear();
+                            p.getGraphics().putString(column,22, " ");
                             sb.deleteCharAt(sb.length()-1); }
                         break;
 
                     case Character:
-                        if (!(sb.length() > 35)) {
+                        if (!(sb.length() > 25)) {
                             column++;
                             sb.append(keyStroke.getCharacter()); }
                         break;
 
                     case Enter:
                         if (!sb.toString().equals("")) {
-                            algorithm = true;
                             once = true;
                             column = 5; row = 22;
-                            p.getScreen().clear();
+                            p.getGraphics().drawLine(5,22,25,22, ' ');
+                            algorithm = true;
                             lastTyped = sb.toString();
                             if (validCommand()) lastScreen = lastTyped;
                             else if (validCol()) setColour(p);
@@ -102,19 +109,33 @@ class Terminal extends UI_Helper {
         }
     }
 
+    private static boolean validSyntax() {
+        if (lastTyped.contains(" ")) {
+            int dlim = lastTyped.indexOf(" ");
+            System.out.println(lastTyped.substring(0, dlim));
+            return VALIDCOMMANDS.contains(lastTyped.substring(0, dlim));
+        } else {
+            return VALIDCOMMANDS.contains(lastTyped);
+        }
+    }
+
+    private static void getCommands(Player p) throws Exception {
+        VALIDCOMMANDS.addAll(p.getAlgorithms());
+    }
+
     private static void exeCommand(Player p) {
         try {
             switch (lastScreen) {
+
                 case "help":
                     helpScreen(p);
                     break;
-                case "example":
-                    example(p);
-                    break;
+
                 case "show items":
                     showItems(p);
                     break;
-                case "request":
+
+                case "req":
                     request(p);
                     break;
             }
@@ -130,26 +151,16 @@ class Terminal extends UI_Helper {
 
         TerminalSize ts = new TerminalSize(30,9);
         TerminalPosition tp = new TerminalPosition(25,6);
-        p.getGraphics().drawRectangle(tp,ts,'+');
-        p.getGraphics().putString(31,7, "Difficulty: " + g.getDifficulty(), SGR.ITALIC);
-        p.getGraphics().putString(30,9, "Reward: \u20BF" + g.getReward(), SGR.BOLD);
-        if (p.getRank() > 3) p.getGraphics().putString(30,10, "Recommended: " + g.getAlgorithm(), SGR.BOLD);
-        p.getGraphics().putString(34,13, "Accept? [YES]", SGR.BOLD);
+        drawBoarder(p);
 
-        if ((lastTyped.equals("NO") && !profile && once)) {
-            oneGen = true;
-            once = false;
-            request(p);
-        }
-
-        else if (validAlg && lastTyped.equals("request") && once) {
+        if (validAlg && lastTyped.equals("req") && once) {
             oneGen = true;
             once = false;
             profile = false;
             request(p);
         }
 
-        else if (lastTyped.equals("YES") || profile) {
+        else if (lastTyped.equals("y") || profile) {
             p.getGraphics().fillRectangle(tp,ts,' ');
             displayProfile(g,p);
         }
@@ -157,21 +168,26 @@ class Terminal extends UI_Helper {
 
     private static void displayProfile(Generate g, Player p) throws Exception {
         profile = true;
-
-        for (int i = 0; i < g.getDescription().size(); i++) {
+        int i;
+        for (i = 0; i < g.getDescription().size(); i++) {
             p.getGraphics().putString(3,4+i, g.getDescription().get(i));
         }
+        p.getScreen().refresh();
+        if (g.getPlainTextPassword() != null) p.getGraphics().putString(3,5+i, "> " + g.getHashedPassword(), SGR.BOLD);
         if (p.getRank() == 1) {
+            algorithm = false;
             if (lastTyped.equals("password123")) {
-                triv = true;
-                p.getGraphics().putString(3,16, "Correct! Type 'request' for next challenge");
+                triv2 = true;
+                p.getGraphics().putString(45,22, "Type 'request' for next challenge");
             }
         } else if (p.getRank() == 2) {
+            algorithm = false;
             if (lastTyped.equals("qjuehdxf")) {
-                triv = true;
-                p.getGraphics().putString(3,18, "Correct! Type 'request' for next challenge       ");
+                triv2 = true;
+                p.getGraphics().putString(45,22, "Type 'request' for next challenge");
             }
         } else if (p.getRank() == 3) {
+            algorithm = false;
             switch (lastTyped) {
                 case "h(qjuehdxf)":
                     p.getGraphics().putString(39, 17, "da0cebfbcf5bbc4b22e4e1ed3d4c70c2");
@@ -185,38 +201,46 @@ class Terminal extends UI_Helper {
                 case "h(hashingiscool)":
                     p.getGraphics().putString(39, 17, "29a5002cf73a9852da4b12811c0897cc");
                     p.getGraphics().putString(45,22, "Type 'request' for next challenge");
-                    triv = true;
+                    triv2 = true;
                     break;
             }
-        } else {
-            if (algorithm) exeAlgorithm(p,g);
-            else if (checkAlg()) triv = true;
         }
 
-        if (triv && lastTyped.equals("request")) {
-            System.out.println("here");
-            p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
-            profile = false;
-            triv = false;
-            oneGen = true;
-            p.getScreen().clear();
-            request(p);
+        if (triv || triv2) {
+            if (checkTriv()) {
+                p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
+                profile = false;
+                triv = false;
+                triv2 = false;
+                oneGen = true;
+                p.getScreen().clear();
+                request(p);
+            }
+        }
+        else {
+            if (algorithm && validSyntax()) exeAlgorithm(p,g);
+            else if (checkAlg()) triv = true;
         }
     }
 
+    private static boolean checkTriv() {
+        return (triv && lastTyped.equals(g.getPlainTextPassword()) || triv2 && lastTyped.equals("req"));
+    }
+
     private static void exeAlgorithm(Player p, Generate g) {
+        if (!triv) p.getGraphics().fillRectangle(new TerminalPosition(9,15),new TerminalSize(62,4), ' ');
         algorithm = false;
         alg = new Algorithm(g,lastTyped);
         Thread t1 = new Thread(alg);
         if (alg.validate()) {
-            Progress progress = new Progress(alg,p);
+            progress = new Progress(alg,p);
             Thread t2 = new Thread(progress);
             t1.start();
             t2.start();
         }
     }
 
-    private static boolean checkAlg() { return !alg.getResult().equals("No match!"); }
+    private static boolean checkAlg() { return !alg.getResult().equals("No match!") && !alg.getResult().equals(""); }
 
     private static boolean validCommand() {
         return METACOMMANDS.contains(lastTyped);
@@ -240,11 +264,6 @@ class Terminal extends UI_Helper {
         for (int j=0; j<p.getDictionaries().size();j++) {
             p.getGraphics().putString(30,4+j, p.getDictionaries().get(j));
         }
-    }
-
-    private static void example(Player p) {
-        p.getScreen().clear();
-        p.getGraphics().putString(2,4, "Example run-through", SGR.BOLD);
     }
 
     private static void setColour(Player p) throws Exception {
@@ -298,8 +317,9 @@ class Terminal extends UI_Helper {
         p.getGraphics().setForegroundColor(TextColor.ANSI.valueOf(currentCol));
         p.getGraphics().putString(2,20, "last typed: ");
         p.getGraphics().putString(3, 22, ">", SGR.BOLD);
-        if (validCommand() || lastTyped.equals("") || validCol() || lastTyped.equals("YES") || validAlg
-                || !profile && lastTyped.equals("NO")  || profile && lastTyped.equals("request"))
+        p.getGraphics().drawLine(14,20,50,20, ' ');
+        if (validCommand() || lastTyped.equals("") || validCol() || lastTyped.equals("y") || validAlg
+                || profile && lastTyped.equals("req") || validSyntax())
             p.getGraphics().putString(14, 20, lastTyped, SGR.ITALIC);
         else
             p.getGraphics().putString(14, 20, "Unknown command: "+ lastTyped, SGR.ITALIC);
@@ -307,5 +327,20 @@ class Terminal extends UI_Helper {
                 "TYPE 'help' + [ENTER] FOR COMMANDS", SGR.BOLD);
         p.getGraphics().putString(70, 1, "\u20BF " + p.getBitcoin(), SGR.BOLD);
         p.getGraphics().putString(70, 2, "Rank: " + p.getRank(), SGR.BOLD);
+    }
+
+    private static void drawBoarder(Player p) throws Exception {
+        p.getGraphics().drawLine(26, 6, 54, 6, valueOf(Symbols.DOUBLE_LINE_HORIZONTAL));
+        p.getGraphics().drawLine(26, 14, 54, 14, valueOf(Symbols.DOUBLE_LINE_HORIZONTAL));
+        p.getGraphics().drawLine(25, 7, 25, 14, valueOf(Symbols.DOUBLE_LINE_VERTICAL));
+        p.getGraphics().drawLine(54, 7, 54, 14, valueOf(Symbols.DOUBLE_LINE_VERTICAL));
+        p.getGraphics().putString(25, 6, String.valueOf(Symbols.DOUBLE_LINE_TOP_LEFT_CORNER));
+        p.getGraphics().putString(54, 6, String.valueOf(Symbols.DOUBLE_LINE_TOP_RIGHT_CORNER));
+        p.getGraphics().putString(25, 14, String.valueOf(Symbols.DOUBLE_LINE_BOTTOM_LEFT_CORNER));
+        p.getGraphics().putString(54, 14, String.valueOf(Symbols.DOUBLE_LINE_BOTTOM_RIGHT_CORNER));
+        p.getGraphics().putString(31,7, "Difficulty: " + g.getDifficulty(), SGR.ITALIC);
+        p.getGraphics().putString(30,9, "Reward: \u20BF" + g.getReward(), SGR.BOLD);
+        if (p.getRank() > 3) p.getGraphics().putString(30,10, "Required: " + g.getAlgorithm(), SGR.BOLD);
+        p.getGraphics().putString(34,13, "Accept? [y]", SGR.BOLD);
     }
 }

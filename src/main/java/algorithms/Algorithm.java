@@ -36,17 +36,17 @@ public class Algorithm implements Runnable {
         boolean valid = true;
         try {
             int dlim = command.indexOf(' ');
-            algorithm = command.substring(0,dlim);
+            algorithm = command.substring(0, dlim);
             int start = algorithm.length();
             switch (algorithm) {
 
                 case "num_brute":
-                    range = Integer.parseInt(command.substring(start+1));
+                    range = Integer.parseInt(command.substring(start + 1));
                     break;
 
                 case "alpha_brute":
-                    alpha = String.valueOf(command.substring(start+1, start+3));
-                    length = Integer.valueOf(command.substring(start+4));
+                    alpha = String.valueOf(command.substring(start + 1, start + 3));
+                    length = Integer.valueOf(command.substring(start + 4));
                     switch (alpha) {
                         case "-l":
                             CHARSET = ALPHACHAR;
@@ -56,49 +56,40 @@ public class Algorithm implements Runnable {
                             break;
                         case "-a":
                             CHARSET = ALLCHARS;
-                            break; }
-                    range = Math.pow(CHARSET.length,length);
+                            break;
+                    }
+                    range = Math.pow(CHARSET.length, length);
                     break;
 
-//                case "alpha_num":
-//                    alpha = String.valueOf(command.substring(start+1, start+2));
-//                    length = Integer.valueOf(command.substring(start+4, start+5));
-//                    range = Integer.valueOf(command.substring(start+7));
-//                    if ((length >0 && length <= 5) && (alpha.equals("-a") || alpha.equals("-s") || alpha.equals("-as")))
-//                        valid = true;
-//                    break;
-
                 case "dictionary":
-                    dictionary = command.substring(start+1);
+                    dictionary = command.substring(start + 1);
                     break;
 
                 case "combinator_dic":
-                    int delim2 = command.substring(start+1).indexOf(' ');
-                    dictionary = command.substring(start+1,delim2-1);
-                    dictionary2 = command.substring(delim2+1);
+                    int delim2 = command.substring(start + 1).indexOf(' ');
+                    dictionary = command.substring(start + 1, delim2 - 1);
+                    dictionary2 = command.substring(delim2 + 1);
                     break;
 
                 case "hybrid":
-                    delim2 = command.substring(start+1).indexOf(' ');
-                    dictionary = command.substring(start+1,delim2-1);
-                    range = Integer.parseInt(command.substring(delim2+1));
+                    delim2 = command.substring(start + 1).indexOf(' ');
+                    dictionary = command.substring(start + 1, delim2 - 1);
+                    range = Integer.parseInt(command.substring(delim2 + 1));
                     break;
 
                 case "keyword":
-                    delim2 = command.substring(start+1).indexOf(' ');
-                    int delim3 = command.substring(delim2+1).indexOf(' ');
-                    str1 = command.substring(start+1,delim2-1);
-                    str2 = command.substring(delim2+1,delim3-1);
+                    delim2 = command.substring(start + 1).indexOf(' ');
+                    int delim3 = command.substring(delim2 + 1).indexOf(' ');
+                    str1 = command.substring(start + 1, delim2 - 1);
+                    str2 = command.substring(delim2 + 1, delim3 - 1);
                     str3 = command.substring(delim3);
                     break;
             }
-        } catch (Exception e) { valid = false;}
+        } catch (NumberFormatException e) {
+            valid = false;
+        }
         return valid;
     }
-
-//    private int calcSearchSpace() {
-//        return
-//    }
 
     public void execute() {
         hashedPassword = generate.getHashedPassword();
@@ -108,7 +99,7 @@ public class Algorithm implements Runnable {
                 complete = true;
                 break;
             case "alpha_brute":
-                for (int k = 1; k <= length; k++) {
+                for (int k = 4; k <= length; k++) {
                     result = alpha_brute("", 0, k);
                     if (!result.equals("No match!")) break;
                 }
@@ -195,6 +186,10 @@ public class Algorithm implements Runnable {
     public double getRange() { return range; }
     public boolean getComplete() { return complete; }
     public String getResult() { return result; }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 
     @Override
     public void run() {

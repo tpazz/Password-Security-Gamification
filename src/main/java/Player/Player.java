@@ -55,34 +55,34 @@ public class Player {
         String item = null;
         switch (i) {
             case 0:
-                item = "num_brute.exe";
+                item = "num_brute";
                 break;
             case 1:
-                item = "alpha_brute.exe";
+                item = "alpha_brute";
                 break;
             case 2:
-                item = "alpha-num_brute.exe";
+                item = "alpha-num_brute";
                 break;
             case 3:
-                item = "dictionary.exe";
+                item = "dictionary";
                 break;
             case 4:
-                item = "combinator_dic.exe";
+                item = "combinator_dic";
                 break;
             case 5:
-                item = "hybrid_dic.exe";
+                item = "hybrid_dic";
                 break;
             case 6:
-                item = "keyword.exe";
+                item = "keyword";
                 break;
             case 7:
-                item = "english.dic";
+                item = "english";
                 break;
             case 8:
-                item = "common.dic";
+                item = "common";
                 break;
             case 9:
-                item = "pwnd.dic";
+                item = "pwnd";
                 break;
         }
         return item;
