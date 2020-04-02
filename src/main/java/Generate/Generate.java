@@ -43,9 +43,10 @@ public class Generate extends Generate_helper {
         else if (rank == 6)  genEasyLevel("num_brute", LVL6ESC, 99999999);
 
         else if (rank == 7)  genEasyLevell("alpha-brute", LVL7ESC, "zzzzz");
-        //else if (rank < 13)  genEasyLevel("alpha-num_brute", LVL4ESC);
+        // experiment combining different char sets ......
         // medium levels
         else if (rank < 16)  genMediumLevel("dictionary"); // hash tables
+
         else if (rank < 19) { // introduction of salts makes hash tables redundant
             setSalt(true);
             setPepper(false);
@@ -73,6 +74,19 @@ public class Generate extends Generate_helper {
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(3);
         return Float.valueOf(df.format(min + r.nextFloat() * (max - min)));
+    }
+
+    // -a 4
+    // -l 5
+
+    private String generateAlpha(int p) {
+        char Diff = 'z' - 'a';
+
+        char[] result = new char[p];
+        for (int k = 0; k < p; k++) {
+            result[k] = (char)('a' + Math.random() * Diff);
+        }
+        return result.toString();
     }
 
     private void genTrivialLevel(ArrayList<String> lvldesc) {

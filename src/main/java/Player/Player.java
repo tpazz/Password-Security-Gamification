@@ -32,7 +32,7 @@ public class Player {
 
     public ArrayList<String> getAlgorithms() throws Exception {
         ArrayList<String> items = new ArrayList<>();
-        for (int i = 0; i < getPurchaced().length()-3; i++) {
+        for (int i = 0; i < getPurchaced().length()-5; i++) {
             char c = getPurchaced().charAt(i);
             if (c == '1')
                 items.add(getItem(i));
@@ -42,9 +42,9 @@ public class Player {
 
     public ArrayList<String> getDictionaries() throws Exception {
         ArrayList<String> items = new ArrayList<>();
-        String dics = getPurchaced().substring(6,9);
-        for (int i = 6; i < getPurchaced().length()-1; i++) {
-            char c = dics.charAt(i-6);
+        String dics = getPurchaced().substring(5);
+        for (int i = 6; i < getPurchaced().length(); i++) {
+            char c = dics.charAt(i-5);
             if (c == '1')
                 items.add(getItem(i));
         }
@@ -61,36 +61,38 @@ public class Player {
                 item = "alpha_brute";
                 break;
             case 2:
-                item = "alpha-num_brute";
-                break;
-            case 3:
                 item = "dictionary";
                 break;
-            case 4:
+            case 3:
                 item = "combinator_dic";
                 break;
-            case 5:
+            case 4:
                 item = "hybrid_dic";
                 break;
-            case 6:
+            case 5:
                 item = "keyword";
                 break;
+            case 6:
+                item = "eng";
+                break;
             case 7:
-                item = "english";
+                item = "ned";
                 break;
             case 8:
-                item = "common";
+                item = "f_name";
                 break;
             case 9:
-                item = "pwnd";
+                item = "s_name";
                 break;
+            case 10:
+                item = "10k_common";
         }
         return item;
     }
 
     public void resetProgress() throws Exception {
         FileWriter fw = new FileWriter(file);
-        fw.write("1\n0.0\n0000000000\nDEFAULT");
+        fw.write("1\n0.0\n00000000000\nDEFAULT");
         fw.close();
     }
 

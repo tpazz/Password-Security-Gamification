@@ -5,6 +5,7 @@ import algorithms.Algorithm;
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.Symbols;
 import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -27,8 +28,7 @@ public class Progress implements Runnable {
         this.player = p;
     }
 
-    public void display() throws Exception {
-        player.getGraphics().setForegroundColor(TextColor.ANSI.valueOf(player.getColour()));
+    public void display() {
         player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()+1) + " / " +
                 new DecimalFormat("#").format(range+1), SGR.ITALIC);
         player.getGraphics().putString(55,18, String.format("%.1f",frac*100) + "%", SGR.ITALIC);
@@ -66,9 +66,7 @@ public class Progress implements Runnable {
 
     public void success() throws IOException {
         frac = (float) (algorithm.getI()/range);
-        for (int i = 0; i <= Math.floor(frac); i++) {
-            player.getGraphics().putString(10+i, 17, String.valueOf(Symbols.SOLID_SQUARE));
-        }
+        player.getGraphics().drawLine(10,17, 10 + (int) Math.floor(frac*50), 17, Symbols.SOLID_SQUARE);
         player.getGraphics().putString(62,17, "Match!", SGR.BLINK);
         player.getGraphics().putString(56,16, String.valueOf(time));
         player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()+1) + " / " + new DecimalFormat("#").format(range+1),SGR.ITALIC);
@@ -87,10 +85,7 @@ public class Progress implements Runnable {
     }
 
     public void fillProgress() throws IOException {
-        System.out.println("here");
-        for (int i = 0; i <= 50; i++) {
-            player.getGraphics().putString(10+i, 17, String.valueOf(Symbols.SOLID_SQUARE));
-        }
+        player.getGraphics().drawLine(10,17, 60, 17, Symbols.SOLID_SQUARE);
         player.getGraphics().putString(20, 16, String.format("%,.0f",algorithm.getI() - tmp) + "   ");
         player.getGraphics().putString(56,16, String.valueOf(time));
         player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash());

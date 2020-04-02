@@ -15,14 +15,16 @@ class Terminal extends UI_Helper {
     private static String currentCol = "";
     private static String pwd = "";
     private static boolean profile = false;
+    private static boolean clearAlg = false;
     private static boolean once = true;
+    private static boolean syntax = false;
     private static boolean algorithm = true;
     private static boolean oneGen = true;
     private static boolean validAlg = false;
     private static boolean triv = false;
     private static boolean triv2 = false;
     private static Generate g;
-    private static Algorithm alg;
+    private static Algorithm alg = new Algorithm(null, null);
     private static Progress progress = new Progress(null,null);
 
     static void start(Player p) throws Exception {
@@ -30,7 +32,6 @@ class Terminal extends UI_Helper {
 
         StringBuilder sb = new StringBuilder();
         getCommands(p);
-        System.out.println(VALIDCOMMANDS);
         int column = 5;
         int row = 22;
         currentCol = p.getColour();
@@ -88,8 +89,11 @@ class Terminal extends UI_Helper {
                             p.getGraphics().drawLine(5,22,25,22, ' ');
                             algorithm = true;
                             lastTyped = sb.toString();
-                            if (validCommand()) lastScreen = lastTyped;
-                            else if (validCol()) setColour(p);
+                            Algorithm x = new Algorithm(g,lastTyped);
+                            syntax = x.validate();
+                            if (validCommand() && !checkAlg()) lastScreen = lastTyped;
+                            else if (validCol() && !checkAlg()) setColour(p);
+                            exeCommand(p);
                             sb.delete(0, sb.length()); }
                         break;
 
@@ -100,7 +104,6 @@ class Terminal extends UI_Helper {
                 }
                 p.getScreen().setCursorPosition(new TerminalPosition(column, row));
                 p.getGraphics().putString(5,row, sb.toString(), SGR.BORDERED);
-                exeCommand(p);
                 setup(p);
                 p.getScreen().refresh();
             }
@@ -110,7 +113,6 @@ class Terminal extends UI_Helper {
     private static boolean validSyntax() {
         if (lastTyped.contains(" ")) {
             int dlim = lastTyped.indexOf(" ");
-            System.out.println(lastTyped.substring(0, dlim));
             return VALIDCOMMANDS.contains(lastTyped.substring(0, dlim));
         } else {
             return VALIDCOMMANDS.contains(lastTyped);
@@ -123,20 +125,19 @@ class Terminal extends UI_Helper {
 
     private static void exeCommand(Player p) {
         try {
-
-            switch (lastScreen) {
-                case "help":
-                    helpScreen(p);
-                    break;
-
-                case "show items":
-                    showItems(p);
-                    break;
-
-                case "req":
-                    request(p);
-                    break;
+            if (!checkAlg()) {
+                if (elValido()) p.getScreen().clear();
+                switch (lastScreen) {
+                    case "help":
+                        helpScreen(p);
+                        break;
+                    case "show items":
+                        showItems(p);
+                        break;
+                }
             }
+            if (lastScreen.equals("req")) request(p);
+
         } catch (Exception ignore) {}
     }
 
@@ -199,23 +200,35 @@ class Terminal extends UI_Helper {
                     triv2 = true;
                     break;
             }
+        } else {
+            if (algorithm && validSyntax() && syntax && !checkAlg()) {
+                exeAlgorithm(p,g);
+            }
+            else if (alg.getComplete() && !checkAlg() && clearAlg) {
+                progress.staticFields();
+                progress.fillProgress();
+            }
         }
+        clearAlg = true;
+        if (checkAlg()) {
+            triv = true;
+            pwd = g.getPlainTextPassword();
+        }
+        System.out.println(pwd);
+
 
         if (triv || triv2) {
             if (checkTriv()) {
-                pwd = g.getPlainTextPassword();
                 p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
                 profile = false;
                 triv = false;
                 triv2 = false;
                 oneGen = true;
+                clearAlg = false;
+                alg.setResult("No match!");
                 p.getScreen().clear();
                 request(p);
             }
-        }
-        else {
-            if (algorithm && validSyntax()) exeAlgorithm(p,g);
-            else if (checkAlg()) triv = true;
         }
     }
 
@@ -224,19 +237,22 @@ class Terminal extends UI_Helper {
     }
 
     private static void exeAlgorithm(Player p, Generate g) {
-        if (!triv) p.getGraphics().fillRectangle(new TerminalPosition(9,15),new TerminalSize(62,4), ' ');
-        algorithm = false;
-        alg = new Algorithm(g,lastTyped);
-        Thread t1 = new Thread(alg);
-        if (alg.validate()) {
-            progress = new Progress(alg,p);
-            Thread t2 = new Thread(progress);
-            t1.start();
-            t2.start();
-        }
+
+            p.getGraphics().fillRectangle(new TerminalPosition(9,15),new TerminalSize(62,4), ' ');
+            algorithm = false;
+            alg = new Algorithm(g,lastTyped);
+            Thread t1 = new Thread(alg);
+            if (alg.validate()) {
+                syntax = true;
+                progress = new Progress(alg,p);
+                Thread t2 = new Thread(progress);
+                t1.start();
+                t2.start();
+            }
+
     }
 
-    private static boolean checkAlg() { return !alg.getResult().equals("No match!") && !alg.getResult().equals(""); }
+    private static boolean checkAlg() { return !alg.getResult().equals("No match!"); }
 
     private static boolean validCommand() {
         return METACOMMANDS.contains(lastTyped);
@@ -252,9 +268,7 @@ class Terminal extends UI_Helper {
     }
 
     private static void showItems(Player p) throws Exception {
-        TerminalSize ts = new TerminalSize(77,17);
-        TerminalPosition tp = new TerminalPosition(2,3);
-        p.getGraphics().fillRectangle(tp,ts,' ');
+
         p.getGraphics().putString(2,3, "Your algorithms", SGR.BOLD);
         for (int i=0; i<p.getAlgorithms().size();i++) {
             p.getGraphics().putString(3,4+i, p.getAlgorithms().get(i));
@@ -273,10 +287,10 @@ class Terminal extends UI_Helper {
         setup(p);
     }
 
+
+
     private static void helpScreen(Player p) {
-        TerminalSize ts = new TerminalSize(77,17);
-        TerminalPosition tp = new TerminalPosition(2,3);
-        p.getGraphics().fillRectangle(tp,ts,' ');
+
         p.getGraphics().putString(2,3, "Algorithm syntax", SGR.BOLD);
         p.getGraphics().putString(2,12, "Commands", SGR.BOLD);
 
@@ -315,14 +329,17 @@ class Terminal extends UI_Helper {
         }
     }
 
+    private static boolean elValido() {
+        return (validCommand() || lastTyped.equals("") || validCol() || lastTyped.equals("y") || validAlg
+                || profile && lastTyped.equals("req") || validSyntax() && syntax || lastTyped.equals(pwd));
+    }
+
     private static void setup(Player p) throws Exception {
         p.getGraphics().setForegroundColor(TextColor.ANSI.valueOf(currentCol));
         p.getGraphics().putString(2,20, "last typed: ");
         p.getGraphics().putString(3, 22, ">", SGR.BOLD);
         p.getGraphics().drawLine(14,20,50,20, ' ');
-        //System.out.println(g.getPlainTextPassword());
-        if (validCommand() || lastTyped.equals("") || validCol() || lastTyped.equals("y") || validAlg
-                || profile && lastTyped.equals("req") || validSyntax() || lastTyped.equals(pwd))
+        if (elValido())
             p.getGraphics().putString(14, 20, lastTyped, SGR.ITALIC);
         else
             p.getGraphics().putString(14, 20, "Unknown command: "+ lastTyped, SGR.ITALIC);

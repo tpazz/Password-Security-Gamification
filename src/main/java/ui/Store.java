@@ -25,14 +25,15 @@ class Store extends UI_Helper {
         table.getTableModel()
                 .addRow("1.223", "num_brute.exe", "Numerical brute force algorithm")
                 .addRow("1.255", "alpha_brute.exe", "Alphabetic brute force algorithm")
-                .addRow("1.702", "alpha-num_brute.exe", "Alphanumeric brute force algorithm")
                 .addRow("2.001", "dictionary.exe", "Dictionary attack algorithm")
                 .addRow("2.267", "combinator_dic.exe", "Multi-dictionary attack algorithm")
                 .addRow("2.455", "hybrid_dic.exe", "Brute force + dictionary attack algorithm")
                 .addRow("2.998", "keyword.exe", "User defined brute force algorithm")
-                .addRow("0.501", "english.dic", "English dictionary")
-                .addRow("0.201", "common.dic", "Common passwords")
-                .addRow("0.434", "pwnd.dic", "Most used passwords");
+                .addRow("0.501", "english.dic", "English language dictionary")
+                .addRow("0.201", "nederland.dic", "Dutch language dictionary")
+                .addRow("0.434", "first_name.dic", "Common English first names")
+                .addRow("0.567", "surname.dic", "Common english surnames")
+                .addRow("0.599", "10k_common.dic", "10K most common passwords");
         table.setSelectAction(() -> {
 
             List<String> data = table.getTableModel().getRow(table.getSelectedRow());
