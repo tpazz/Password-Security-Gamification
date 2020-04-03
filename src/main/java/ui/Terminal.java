@@ -25,7 +25,7 @@ class Terminal extends UI_Helper {
     private static boolean triv2 = false;
     private static Generate g;
     private static Algorithm alg = new Algorithm(null, null);
-    private static Progress progress = new Progress(null,null);
+    private static Progress progress = new Progress(null,null, null);
 
     static void start(Player p) throws Exception {
 
@@ -51,7 +51,7 @@ class Terminal extends UI_Helper {
 
             KeyStroke keyStroke = p.getTerminal().pollInput();
 
-            if (keyStroke != null && !progress.inProgress) {
+            if (keyStroke != null && !progress.inProgress) { // user cannot type during algorithm execution
 
                 switch (keyStroke.getKeyType()) {
 
@@ -89,11 +89,12 @@ class Terminal extends UI_Helper {
                             p.getGraphics().drawLine(5,22,25,22, ' ');
                             algorithm = true;
                             lastTyped = sb.toString();
-                            Algorithm x = new Algorithm(g,lastTyped);
-                            syntax = x.validate();
-                            if (validCommand() && !checkAlg()) lastScreen = lastTyped;
-                            else if (validCol() && !checkAlg()) setColour(p);
-                            exeCommand(p);
+                            Algorithm x = new Algorithm(g,lastTyped); // dummy algorithm
+                            syntax = x.validate(); // valid algorithm syntax?
+                            if (validCommand() && !checkAlg()) lastScreen = lastTyped; // change screens
+                            else if (validCol()) setColour(p); // can set terminal colour at any stage
+                            exeCommand(p); // command is always executed, validation performed after
+                            setup(p); // header and other permanent display elements always shown
                             sb.delete(0, sb.length()); }
                         break;
 
@@ -104,7 +105,6 @@ class Terminal extends UI_Helper {
                 }
                 p.getScreen().setCursorPosition(new TerminalPosition(column, row));
                 p.getGraphics().putString(5,row, sb.toString(), SGR.BORDERED);
-                setup(p);
                 p.getScreen().refresh();
             }
         }
@@ -152,7 +152,7 @@ class Terminal extends UI_Helper {
         TerminalPosition tp = new TerminalPosition(25,6);
         drawBoarder(p);
 
-        if (validAlg && lastTyped.equals("req") && once) {
+        if (validAlg && lastTyped.equals("req") && once) { // not sure why validAlg is needed but it works
             oneGen = true;
             once = false;
             profile = false;
@@ -200,25 +200,24 @@ class Terminal extends UI_Helper {
                     triv2 = true;
                     break;
             }
-        } else {
+        } else { // levels > 3
             if (algorithm && validSyntax() && syntax && !checkAlg()) {
-                exeAlgorithm(p,g);
+                exeAlgorithm(p,g); // execute algorithm if player owns it + correct syntax
             }
-            else if (alg.getComplete() && !checkAlg() && clearAlg) {
+            else if (alg.getComplete() && clearAlg) { // display results after execution
                 progress.staticFields();
-                progress.fillProgress();
+                if (!checkAlg()) progress.fillProgress(); // no match
+                else progress.success();                  // match
             }
         }
-        clearAlg = true;
-        if (checkAlg()) {
+
+        if (checkAlg()) { // check if there has been a match
             triv = true;
             pwd = g.getPlainTextPassword();
         }
-        System.out.println(pwd);
-
 
         if (triv || triv2) {
-            if (checkTriv()) {
+            if (checkTriv()) { // if match + user has typed password correctly
                 p.writeProgress(1,g.getReward(),p.getPurchaced(),p.getColour());
                 profile = false;
                 triv = false;
@@ -237,19 +236,18 @@ class Terminal extends UI_Helper {
     }
 
     private static void exeAlgorithm(Player p, Generate g) {
-
-            p.getGraphics().fillRectangle(new TerminalPosition(9,15),new TerminalSize(62,4), ' ');
-            algorithm = false;
-            alg = new Algorithm(g,lastTyped);
-            Thread t1 = new Thread(alg);
-            if (alg.validate()) {
-                syntax = true;
-                progress = new Progress(alg,p);
-                Thread t2 = new Thread(progress);
-                t1.start();
-                t2.start();
-            }
-
+        p.getGraphics().fillRectangle(new TerminalPosition(9,15),new TerminalSize(62,4), ' ');
+        algorithm = false;
+        clearAlg = true;
+        alg = new Algorithm(g,lastTyped);
+        Thread t1 = new Thread(alg);
+        if (alg.validate()) {
+            syntax = true;
+            progress = new Progress(alg,p,g);
+            Thread t2 = new Thread(progress);
+            t1.start();
+            t2.start();
+        }
     }
 
     private static boolean checkAlg() { return !alg.getResult().equals("No match!"); }
@@ -286,8 +284,6 @@ class Terminal extends UI_Helper {
         exeCommand(p);
         setup(p);
     }
-
-
 
     private static void helpScreen(Player p) {
 

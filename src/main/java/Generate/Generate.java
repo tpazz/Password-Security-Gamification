@@ -1,22 +1,16 @@
 package Generate;
 
 import Player.Player;
+import algorithms.Algorithm;
 import algorithms.MD5;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Generate extends Generate_helper {
-
-    private final String INTRO = "INTRO";
-    private final String BEGGINER = "BEGGINER";
-    private final String INTERMEDIATE = "INTERMEDIATE";
-    private final String DIFFICULT = "HARD";
-    private final String FINALLEVEL = "FINAL LEVEL";
 
     private int rank;
     private float reward;
@@ -34,38 +28,72 @@ public class Generate extends Generate_helper {
     public Generate(Player p) throws Exception {
         this.rank = p.getRank();
         // introductory levels
-        if      (rank == 1)  genTrivialLevel(LVL1DESC);
-        else if (rank == 2)  genTrivialLevel(LVL2DESC);
-        else if (rank == 3)  genTrivialLevel(LVL3DESC);
+        if (rank == 1) {
+            setDifficulty(INTRO);
+            setDescription(LVL1DESC);
+            setReward(generateReward(0.5f,0.6f));
+        }
+        else if (rank == 2) {
+            setDifficulty(INTRO);
+            setDescription(LVL2DESC);
+            setReward(generateReward(0.6f,0.7f));
+        }
+        else if (rank == 3) {
+            setDifficulty(INTRO);
+            setDescription(LVL3DESC);
+            setReward(generateReward(0.7f,0.8f));
+        }
+        else if (rank == 4) {
+            Random r = new Random();
+            setDifficulty(BEGGINER);
+            setDescription(LVL4ESC);
+            setAlgorithm(NUMBRUTE);
+            setPlainTextPassword(String.valueOf(r.nextInt(9999)));
+            setReward(generateReward(0.8f,1.0f));
+        }
         // easy levels
-        else if (rank == 4)  genEasyLevel("num_brute", LVL4ESC, 9999);
-        else if (rank == 5)  genEasyLevel("num_brute", LVL5ESC, 999999);
-        else if (rank == 6)  genEasyLevel("num_brute", LVL6ESC, 99999999);
+        else if (rank == 5) {
+            Random r = new Random();
+            setDifficulty(BEGGINER);
+            setDescription(LVL5ESC);
+            setAlgorithm(NUMBRUTE);
+            setPlainTextPassword(String.valueOf(r.nextInt(99999)));
+            setReward(generateReward(0.9f,1.2f));
+        }
+        else if (rank == 6) {
+            Random r = new Random();
+            setDifficulty(BEGGINER);
+            setDescription(LVL6ESC);
+            setAlgorithm(NUMBRUTE);
+            setPlainTextPassword(String.valueOf(r.nextInt(999999)));
+            setReward(generateReward(1.0f,1.3f));
 
-        else if (rank == 7)  genEasyLevell("alpha-brute", LVL7ESC, "zzzzz");
-        // experiment combining different char sets ......
-        // medium levels
-        else if (rank < 16)  genMediumLevel("dictionary"); // hash tables
+        }
+        else if (rank == 7) {
+            setDifficulty(BEGGINER);
+            setDescription(LVL7ESC);
+            setAlgorithm(ALPHABRUTE);
+            String pp = generateCharSet(4,1);
+            setPlainTextPassword(pp);
+            System.out.println(pp);
+            setReward(generateReward(1.2f,1.35f));
 
-        else if (rank < 19) { // introduction of salts makes hash tables redundant
-            setSalt(true);
-            setPepper(false);
-            genMediumLevel("combinator_dic");
         }
-        else if (rank < 22) { // introduction of peppers
-            setSalt(false);
-            setPepper(true);
-            genMediumLevel("hybrid_dic");
+        else if (rank == 8) {
+            setDifficulty(BEGGINER);
+            setDescription(LVL8ESC);
+            setAlgorithm(ALPHABRUTE);
+            String pp = generateCharSet(4, 2);
+            System.out.println(pp);
+            setPlainTextPassword(pp);
+            setReward(generateReward(1.3f,1.5f));
         }
-        // hard levels
-        else if (rank < 25) { // salt + pepper
-            setSalt(true);
-            setPepper(true);
-            genHardLevel("keyword");
-        }
-        // final (very hard) level
-        else if (rank == 25) {
-            genLastLevel(null);
+        else if (rank == 9) {
+            setDifficulty(BEGGINER);
+            setDescription(LVL9ESC);
+            setAlgorithm(ALPHABRUTE);
+            setPlainTextPassword(generateCharSet(5, 2));
+            setReward(generateReward(1.5f,1.7f));
         }
     }
 
@@ -76,80 +104,50 @@ public class Generate extends Generate_helper {
         return Float.valueOf(df.format(min + r.nextFloat() * (max - min)));
     }
 
-    // -a 4
-    // -l 5
-
-    private String generateAlpha(int p) {
-        char Diff = 'z' - 'a';
-
-        char[] result = new char[p];
-        for (int k = 0; k < p; k++) {
-            result[k] = (char)('a' + Math.random() * Diff);
+    private String randNum() {
+        ArrayList<Integer> list = new ArrayList<>();
+        StringBuilder tmp = new StringBuilder();
+        for (int i=0; i<4; i++) {
+            list.add(i);
         }
-        return result.toString();
+        System.out.println(list);
+        Collections.shuffle(list);
+        for (int i = 0; i < 2; i++) {
+            tmp.append(list.get(i));
+        }
+        System.out.println(tmp);
+        return tmp.toString();
     }
 
-    private void genTrivialLevel(ArrayList<String> lvldesc) {
-        setDifficulty(INTRO);
-        setDescription(lvldesc);
-        setReward(generateReward(0.5f,1.0f));
-    }
-
-    private void genEasyLevel(String alg, ArrayList<String> lvldesc, int r) {
-        Random rnd = new Random();
-        setDescription(lvldesc);
-        setDifficulty(BEGGINER);
-        setAlgorithm(alg);
-        setPlainTextPassword(String.valueOf(rnd.nextInt(r)));
-        setReward(generateReward(0.6f,1.2f));
-    }
-
-    private void genEasyLevell(String alg, ArrayList<String> lvldesc, String pwd) {
-        Random rnd = new Random();
-        setDescription(lvldesc);
-        setDifficulty(BEGGINER);
-        setAlgorithm(alg);
-        setPlainTextPassword(pwd);
-        setReward(generateReward(0.6f,1.2f));
-    }
-
-    private void genMediumLevel(String alg) {
-        Random rand = null;
-        setDescription(LVL1DESC);
-        setAlgorithm(null);
-        setDictionary(null);
-        setFirstName("John");
-        setLastName("Smith");
-        setPlainTextPassword(String.valueOf(1000000001));
-        setPepper(false);
-        setSalt(false);
-        setReward(Float.valueOf(getPlainTextPassword()));
-    }
-
-    private void genHardLevel(String alg) {
-        Random rand = null;
-        setDescription(LVL1DESC);
-        setAlgorithm(null);
-        setDictionary(null);
-        setFirstName("John");
-        setLastName("Smith");
-        setPlainTextPassword(String.valueOf(1000000001));
-        setPepper(false);
-        setSalt(false);
-        setReward(Float.valueOf(getPlainTextPassword()));
-    }
-
-    private void genLastLevel(String alg) {
-        Random rand = null;
-        setDescription(LVL1DESC);
-        setAlgorithm(null);
-        setDictionary(null);
-        setFirstName("John");
-        setLastName("Smith");
-        setPlainTextPassword(String.valueOf(1000000001));
-        setPepper(false);
-        setSalt(false);
-        setReward(Float.valueOf(getPlainTextPassword()));
+    private String generateCharSet(int length, int sets) {
+        Random r = new Random();
+        Algorithm tmp = new Algorithm(null,null);
+        StringBuilder sb = new StringBuilder();
+        StringBuilder bs = new StringBuilder();
+        String g = randNum();
+        int i;
+        for (int x = 0; x < sets; x++) {
+            i = Integer.valueOf(g.substring(x,x+1));
+            System.out.println(i);
+            switch (i) {
+                case 0:
+                    sb.append(tmp.LOWERCASE);
+                    break;
+                case 1:
+                    sb.append(tmp.UPPERCASE);
+                    break;
+                case 2:
+                    sb.append(tmp.NUMBERS);
+                    break;
+                case 3:
+                    sb.append(tmp.SPECIAL);
+                    break;
+            }
+        }
+        for (int b = 0; b < length; b++) {
+            bs.append(sb.charAt(r.nextInt(sb.length())));
+        }
+        return bs.toString();
     }
 
     public String getDifficulty() {

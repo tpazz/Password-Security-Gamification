@@ -4,11 +4,11 @@ import Generate.Generate;
 
 public class Algorithm implements Runnable {
 
-    private final char[] LOWERCASE = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    private final char[] UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-    private final char[] NUMBERS = "0123456789".toCharArray();
-    private final char[] SPECIAL = "!@#$%^&*()-_+=~`[]{}|:;<>,.?/".toCharArray();
-    private final char[] ALLCHARS = "abcdefghijklmnopqrstuvwxyzAEIOU0123456789!@#$%^&*()-_+=~`[]{}|:;<>,.?/BCDFGHJKLMNPQRSTVWXYZ".toCharArray();
+    public final char[] LOWERCASE = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    public final char[] UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    public final char[] NUMBERS = "0123456789".toCharArray();
+    public final char[] SPECIAL = "!@#$%^&*()-_+=~`[]{}|:;<>,.?/".toCharArray();
+    //public final char[] ALLCHARS = "abcdefghijklmnopqrstuvwxyzAEIOU0123456789!@#$%^&*()-_+=~`[]{}|:;<>,.?/BCDFGHJKLMNPQRSTVWXYZ".toCharArray();
 
     private char[] CHARSET;
     private Generate generate;
@@ -25,6 +25,7 @@ public class Algorithm implements Runnable {
     private String str2;
     private String str3;
     private int length;
+    private boolean brute = false;
 
     private volatile double range;
     private volatile int i = 0;
@@ -70,9 +71,9 @@ public class Algorithm implements Runnable {
                         case "-s":
                             CHARSET = SPECIAL;
                             break;
-                        case "-a":
-                            CHARSET = ALLCHARS;
-                            break;
+//                        case "-a":
+//                            CHARSET = ALLCHARS;
+//                            break;
                     }
 
                     if (!alpha1.equals(alpha2) && !alpha1.equals("-a") && command.length() > 16) {
@@ -185,14 +186,14 @@ public class Algorithm implements Runnable {
             current = str;
             i++;
             if (MD5.getHashPassword(current).equals(hashedPassword)) {
-                complete = true;
+                brute = true;
                 match = str;
             }
         } else {
             if (pos != 0) {
                 pos = 0;
             }
-            if (!complete) {
+            if (!brute) {
                 for (int j = pos; j < CHARSET.length; j++) {
                     alpha_brute(str + CHARSET[j], j, length -1);
                 }
@@ -221,6 +222,9 @@ public class Algorithm implements Runnable {
         return null;
     }
 
+    public String getAlgorithm() {
+        return algorithm;
+    }
     public int getI() { return i; }
     public double getRange() { return range; }
     public boolean getComplete() { return complete; }
