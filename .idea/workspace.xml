@@ -8,13 +8,48 @@
   <component name="ChangeListManager">
     <list default="true" id="d4da83a4-5446-4b65-84bf-1b798be6cf70" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/10k-most-common.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/1m-most-common.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionaries/1mmc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/espanol.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/first-names.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionaries/fnames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/francais.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/italiano.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/nederlands.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/surnames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionaries/snames.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generate/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generate/Generate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player/progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/progress.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Achievements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Achievements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/metadata/Progress.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/metadata/Progress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Terminal$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Terminal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,35 +68,35 @@
     <session id="-92708938">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.11" value="5" />
           <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.15" value="4" />
+          <entry key="project.open.time.16" value="4" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="38" />
-          <entry key="java" value="59575" />
-          <entry key="txt" value="299" />
+          <entry key="java" value="90024" />
+          <entry key="txt" value="638" />
           <entry key="xml" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="59575" />
-          <entry key="PLAIN_TEXT" value="337" />
+          <entry key="JAVA" value="90024" />
+          <entry key="PLAIN_TEXT" value="676" />
           <entry key="XML" value="19" />
         </counts>
       </usages-collector>
@@ -69,172 +104,32 @@
         <counts>
           <entry key="MF" value="1" />
           <entry key="html" value="1" />
-          <entry key="java" value="79" />
-          <entry key="txt" value="23" />
+          <entry key="java" value="103" />
+          <entry key="tmp" value="1" />
+          <entry key="txt" value="29" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="79" />
+          <entry key="JAVA" value="103" />
           <entry key="Manifest" value="1" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="PLAIN_TEXT" value="30" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4810409">
+    <splitter split-orientation="horizontal" split-proportion="0.4903599">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="552">
-                  <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#4347#4348#0" expanded="true" />
-                    <element signature="e#4380#4381#0" expanded="true" />
-                    <element signature="e#4432#4433#0" expanded="true" />
-                    <element signature="e#4476#4477#0" expanded="true" />
-                    <element signature="e#4504#4505#0" expanded="true" />
-                    <element signature="e#4531#4532#0" expanded="true" />
-                    <element signature="e#4568#4569#0" expanded="true" />
-                    <element signature="e#4600#4601#0" expanded="true" />
-                    <element signature="e#4632#4633#0" expanded="true" />
-                    <element signature="e#4661#4662#0" expanded="true" />
-                    <element signature="e#4704#4705#0" expanded="true" />
-                    <element signature="e#4740#4741#0" expanded="true" />
-                    <element signature="e#4771#4772#0" expanded="true" />
-                    <element signature="e#4798#4799#0" expanded="true" />
-                    <element signature="e#4839#4840#0" expanded="true" />
-                    <element signature="e#4871#4872#0" expanded="true" />
-                    <element signature="e#4904#4905#0" expanded="true" />
-                    <element signature="e#4933#4934#0" expanded="true" />
-                    <element signature="e#4978#4979#0" expanded="true" />
-                    <element signature="e#5014#5015#0" expanded="true" />
-                    <element signature="e#5050#5051#0" expanded="true" />
-                    <element signature="e#5082#5083#0" expanded="true" />
-                    <element signature="e#5132#5133#0" expanded="true" />
-                    <element signature="e#5174#5175#0" expanded="true" />
-                    <element signature="e#5211#5212#0" expanded="true" />
-                    <element signature="e#5244#5245#0" expanded="true" />
-                    <element signature="e#5296#5297#0" expanded="true" />
-                    <element signature="e#5340#5341#0" expanded="true" />
-                    <element signature="e#5389#5390#0" expanded="true" />
-                    <element signature="e#5423#5424#0" expanded="true" />
-                    <element signature="e#5488#5489#0" expanded="true" />
-                    <element signature="e#5534#5535#0" expanded="true" />
-                    <element signature="e#5578#5579#0" expanded="true" />
-                    <element signature="e#5618#5619#0" expanded="true" />
-                    <element signature="e#5684#5685#0" expanded="true" />
-                    <element signature="e#5742#5743#0" expanded="true" />
-                    <element signature="e#5783#5784#0" expanded="true" />
-                    <element signature="e#5844#5845#0" expanded="true" />
-                    <element signature="e#5904#5905#0" expanded="true" />
-                    <element signature="e#5956#5957#0" expanded="true" />
-                    <element signature="e#5992#5993#0" expanded="true" />
-                    <element signature="e#6024#6025#0" expanded="true" />
-                    <element signature="e#6074#6075#0" expanded="true" />
-                    <element signature="e#6116#6117#0" expanded="true" />
-                    <element signature="e#6151#6152#0" expanded="true" />
-                    <element signature="e#6182#6183#0" expanded="true" />
-                    <element signature="e#6230#6231#0" expanded="true" />
-                    <element signature="e#6270#6271#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="734">
-                  <caret line="319" column="24" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1649">
-                  <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="208">
-                  <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="1" selection-start-column="1" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2408">
-                  <caret line="16" column="37" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="955">
-                  <caret line="61" selection-start-line="61" selection-end-line="61" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/nederlands.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="159">
-                  <caret line="43052" column="11" lean-forward="true" selection-start-line="43052" selection-start-column="11" selection-end-line="43052" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/italiano.txt">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="667">
-                  <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+                <state relative-caret-position="742">
+                  <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -245,8 +140,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+                <state relative-caret-position="-92">
+                  <caret line="32" column="69" lean-forward="true" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -255,15 +150,199 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/surnames.txt">
-              <provider selected="true" editor-type-id="text-editor" />
+            <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-600">
+                  <caret line="182" column="30" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#8403#8404#0" expanded="true" />
+                    <element signature="e#8431#8432#0" expanded="true" />
+                    <element signature="e#8473#8474#0" expanded="true" />
+                    <element signature="e#8507#8508#0" expanded="true" />
+                    <element signature="e#8535#8536#0" expanded="true" />
+                    <element signature="e#8562#8563#0" expanded="true" />
+                    <element signature="e#8599#8600#0" expanded="true" />
+                    <element signature="e#8631#8632#0" expanded="true" />
+                    <element signature="e#8663#8664#0" expanded="true" />
+                    <element signature="e#8692#8693#0" expanded="true" />
+                    <element signature="e#8735#8736#0" expanded="true" />
+                    <element signature="e#8771#8772#0" expanded="true" />
+                    <element signature="e#8802#8803#0" expanded="true" />
+                    <element signature="e#8829#8830#0" expanded="true" />
+                    <element signature="e#8869#8870#0" expanded="true" />
+                    <element signature="e#8901#8902#0" expanded="true" />
+                    <element signature="e#8933#8934#0" expanded="true" />
+                    <element signature="e#8962#8963#0" expanded="true" />
+                    <element signature="e#9006#9007#0" expanded="true" />
+                    <element signature="e#9042#9043#0" expanded="true" />
+                    <element signature="e#9059#9060#0" expanded="true" />
+                    <element signature="e#9090#9091#0" expanded="true" />
+                    <element signature="e#9149#9150#0" expanded="true" />
+                    <element signature="e#9189#9190#0" expanded="true" />
+                    <element signature="e#9078#9079#0" expanded="true" />
+                    <element signature="e#9110#9111#0" expanded="true" />
+                    <element signature="e#9160#9161#0" expanded="true" />
+                    <element signature="e#9202#9203#0" expanded="true" />
+                    <element signature="e#9239#9240#0" expanded="true" />
+                    <element signature="e#9272#9273#0" expanded="true" />
+                    <element signature="e#9324#9325#0" expanded="true" />
+                    <element signature="e#9368#9369#0" expanded="true" />
+                    <element signature="e#9417#9418#0" expanded="true" />
+                    <element signature="e#9451#9452#0" expanded="true" />
+                    <element signature="e#9516#9517#0" expanded="true" />
+                    <element signature="e#9562#9563#0" expanded="true" />
+                    <element signature="e#9606#9607#0" expanded="true" />
+                    <element signature="e#9646#9647#0" expanded="true" />
+                    <element signature="e#9712#9713#0" expanded="true" />
+                    <element signature="e#9770#9771#0" expanded="true" />
+                    <element signature="e#10129#10130#0" expanded="true" />
+                    <element signature="e#10161#10162#0" expanded="true" />
+                    <element signature="e#10211#10212#0" expanded="true" />
+                    <element signature="e#10253#10254#0" expanded="true" />
+                    <element signature="e#10288#10289#0" expanded="true" />
+                    <element signature="e#10319#10320#0" expanded="true" />
+                    <element signature="e#10367#10368#0" expanded="true" />
+                    <element signature="e#10407#10408#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="322">
+                  <caret line="56" column="59" lean-forward="true" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1824">
+                  <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="291">
+                  <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="529">
+                  <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/snames.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="115">
+                  <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-99">
+                  <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#11044#11045#0" expanded="true" />
+                    <element signature="e#11099#11100#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/fnames.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="112263">
+                  <caret line="4881" column="4" selection-start-line="4881" selection-start-column="4" selection-end-line="4881" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2245">
+                  <caret line="186" column="31" selection-start-line="186" selection-start-column="31" selection-end-line="186" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="69">
+                  <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="322">
+                  <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+                </state>
+              </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+                <state relative-caret-position="314">
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-422">
+                  <caret line="203" column="79" selection-start-line="203" selection-start-column="79" selection-end-line="203" selection-end-column="79" />
                 </state>
               </provider>
             </entry>
@@ -281,36 +360,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>length</find>
-      <find>complete</find>
-      <find>getR</find>
-      <find>getResult</find>
-      <find>algorithm</find>
-      <find>checkAlg</find>
-      <find>request</find>
-      <find>validcommand</find>
+      <find>checkDic</find>
+      <find>linecount</find>
+      <find>linec</find>
+      <find>lineCount</find>
+      <find>setPepp</find>
+      <find>validS</find>
+      <find>linecou</find>
+      <find>lineC</find>
+      <find>genC</find>
       <find>help</find>
-      <find>setCol</find>
-      <find>terminalsiz</find>
-      <find>setFore</find>
-      <find>dics</find>
-      <find>exeCommand</find>
-      <find>validSy</find>
-      <find>terminalsize</find>
-      <find>validAlg</find>
-      <find>result</find>
-      <find>triv</find>
-      <find>System.ou</find>
-      <find>pwd</find>
-      <find>validCol</find>
-      <find>getCommand</find>
-      <find>VALIDCOMM</find>
-      <find>validSynt</find>
-      <find>getRes</find>
-      <find>no ma</find>
-      <find>algorithm.getI</find>
-      <find>validSyntax</find>
-      <find>clear</find>
+      <find>generateHash</find>
+      <find>genCheck</find>
+      <find>writehash</find>
+      <find>fetchCh</find>
+      <find>generateChe</find>
+      <find>fetchChec</find>
+      <find>looking</find>
+      <find>fetching</find>
+      <find>looking up</find>
+      <find>helpScre</find>
+      <find>setDiff</find>
+      <find>descri</find>
+      <find>show items</find>
+      <find>show item</find>
+      <find>showi</find>
+      <find>profile</find>
+      <find>request</find>
+      <find>next leve</find>
+      <find>getResult</find>
+      <find>rank</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -324,8 +403,6 @@
         <option value="$PROJECT_DIR$/src/main/java/progress.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/UI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Menu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Achievements.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Terminal2.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Request.java" />
@@ -341,15 +418,19 @@
         <option value="$PROJECT_DIR$/src/main/java/metadata/Time.java" />
         <option value="$PROJECT_DIR$/lanterna-master/src/main/java/com/googlecode/lanterna/terminal/swing/SwingTerminalFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dictionaries/surnames.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Dictionaries/first-names.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Store.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Generate/Generate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/metadata/Progress.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Terminal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Menu.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player/progress.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Achievements.java" />
       </list>
     </option>
   </component>
@@ -371,10 +452,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="x" value="-7" />
+    <option name="width" value="814" />
+    <option name="height" value="867" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -382,7 +462,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -415,6 +494,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
+              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Dictionaries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
@@ -460,13 +547,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585944271069" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586648864964" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -654,7 +742,14 @@
       <workItem from="1585698672534" duration="1619000" />
       <workItem from="1585746466155" duration="13071000" />
       <workItem from="1585841114607" duration="15700000" />
-      <workItem from="1585912728164" duration="22955000" />
+      <workItem from="1585912728164" duration="25711000" />
+      <workItem from="1585994259469" duration="22131000" />
+      <workItem from="1586170879589" duration="5094000" />
+      <workItem from="1586253047265" duration="27398000" />
+      <workItem from="1586344816777" duration="17316000" />
+      <workItem from="1586425216364" duration="24274000" />
+      <workItem from="1586507485055" duration="37480000" />
+      <workItem from="1586597009992" duration="33544000" />
     </task>
     <servers />
   </component>
@@ -667,13 +762,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="505223000" />
+    <option name="totallyTimeSpent" value="675216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13560411" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15938303" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -681,8 +776,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.21475771" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18681319" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.21428572" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23763736" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20879121" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -754,8 +849,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/Terminal.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/ExtendedTerminal.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1.jar!/com/googlecode/lanterna/TerminalSize.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -789,14 +882,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/english.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/espanol.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2070" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/espanol.txt" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/gui2/Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -869,13 +955,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Time.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Hashes.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lanterna-master/target/site/jacoco/com.googlecode.lanterna.terminal.swing/SwingTerminalImplementation.java.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -890,46 +969,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/norsk.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/10k-most-common.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/first-names.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/StringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2438">
           <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/1m-most-common.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22999977">
-          <caret line="999999" selection-start-line="999999" selection-end-line="999999" />
         </state>
       </provider>
     </entry>
@@ -956,132 +1000,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/deutsch.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/dansk.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/italiano.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Hash_Tables/english_Hash_Table.tmp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/nederlands.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/italiano.txt" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="370">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/MD5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/surnames.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/english.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="368499" column="7" selection-start-line="368499" selection-end-line="368499" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/1mmc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/snames.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/fnames.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112263">
+          <caret line="4881" column="4" selection-start-line="4881" selection-start-column="4" selection-end-line="4881" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="314">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/nederlands.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="43052" column="11" lean-forward="true" selection-start-line="43052" selection-start-column="11" selection-end-line="43052" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4347#4348#0" expanded="true" />
-            <element signature="e#4380#4381#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="e#4476#4477#0" expanded="true" />
-            <element signature="e#4504#4505#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
-            <element signature="e#4568#4569#0" expanded="true" />
-            <element signature="e#4600#4601#0" expanded="true" />
-            <element signature="e#4632#4633#0" expanded="true" />
-            <element signature="e#4661#4662#0" expanded="true" />
-            <element signature="e#4704#4705#0" expanded="true" />
-            <element signature="e#4740#4741#0" expanded="true" />
-            <element signature="e#4771#4772#0" expanded="true" />
-            <element signature="e#4798#4799#0" expanded="true" />
-            <element signature="e#4839#4840#0" expanded="true" />
-            <element signature="e#4871#4872#0" expanded="true" />
-            <element signature="e#4904#4905#0" expanded="true" />
-            <element signature="e#4933#4934#0" expanded="true" />
-            <element signature="e#4978#4979#0" expanded="true" />
-            <element signature="e#5014#5015#0" expanded="true" />
-            <element signature="e#5050#5051#0" expanded="true" />
-            <element signature="e#5082#5083#0" expanded="true" />
-            <element signature="e#5132#5133#0" expanded="true" />
-            <element signature="e#5174#5175#0" expanded="true" />
-            <element signature="e#5211#5212#0" expanded="true" />
-            <element signature="e#5244#5245#0" expanded="true" />
-            <element signature="e#5296#5297#0" expanded="true" />
-            <element signature="e#5340#5341#0" expanded="true" />
-            <element signature="e#5389#5390#0" expanded="true" />
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5488#5489#0" expanded="true" />
-            <element signature="e#5534#5535#0" expanded="true" />
-            <element signature="e#5578#5579#0" expanded="true" />
-            <element signature="e#5618#5619#0" expanded="true" />
-            <element signature="e#5684#5685#0" expanded="true" />
-            <element signature="e#5742#5743#0" expanded="true" />
-            <element signature="e#5783#5784#0" expanded="true" />
-            <element signature="e#5844#5845#0" expanded="true" />
-            <element signature="e#5904#5905#0" expanded="true" />
-            <element signature="e#5956#5957#0" expanded="true" />
-            <element signature="e#5992#5993#0" expanded="true" />
-            <element signature="e#6024#6025#0" expanded="true" />
-            <element signature="e#6074#6075#0" expanded="true" />
-            <element signature="e#6116#6117#0" expanded="true" />
-            <element signature="e#6151#6152#0" expanded="true" />
-            <element signature="e#6182#6183#0" expanded="true" />
-            <element signature="e#6230#6231#0" expanded="true" />
-            <element signature="e#6270#6271#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1649">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        <state relative-caret-position="1824">
+          <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2408">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="322">
+          <caret line="56" column="59" lean-forward="true" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1090,18 +1083,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="319" column="24" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
+        <state relative-caret-position="-99">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#11044#11045#0" expanded="true" />
+            <element signature="e#11099#11100#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        <state relative-caret-position="69">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="32" column="69" lean-forward="true" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="182" column="30" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8403#8404#0" expanded="true" />
+            <element signature="e#8431#8432#0" expanded="true" />
+            <element signature="e#8473#8474#0" expanded="true" />
+            <element signature="e#8507#8508#0" expanded="true" />
+            <element signature="e#8535#8536#0" expanded="true" />
+            <element signature="e#8562#8563#0" expanded="true" />
+            <element signature="e#8599#8600#0" expanded="true" />
+            <element signature="e#8631#8632#0" expanded="true" />
+            <element signature="e#8663#8664#0" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8735#8736#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8802#8803#0" expanded="true" />
+            <element signature="e#8829#8830#0" expanded="true" />
+            <element signature="e#8869#8870#0" expanded="true" />
+            <element signature="e#8901#8902#0" expanded="true" />
+            <element signature="e#8933#8934#0" expanded="true" />
+            <element signature="e#8962#8963#0" expanded="true" />
+            <element signature="e#9006#9007#0" expanded="true" />
+            <element signature="e#9042#9043#0" expanded="true" />
+            <element signature="e#9059#9060#0" expanded="true" />
+            <element signature="e#9090#9091#0" expanded="true" />
+            <element signature="e#9149#9150#0" expanded="true" />
+            <element signature="e#9189#9190#0" expanded="true" />
+            <element signature="e#9078#9079#0" expanded="true" />
+            <element signature="e#9110#9111#0" expanded="true" />
+            <element signature="e#9160#9161#0" expanded="true" />
+            <element signature="e#9202#9203#0" expanded="true" />
+            <element signature="e#9239#9240#0" expanded="true" />
+            <element signature="e#9272#9273#0" expanded="true" />
+            <element signature="e#9324#9325#0" expanded="true" />
+            <element signature="e#9368#9369#0" expanded="true" />
+            <element signature="e#9417#9418#0" expanded="true" />
+            <element signature="e#9451#9452#0" expanded="true" />
+            <element signature="e#9516#9517#0" expanded="true" />
+            <element signature="e#9562#9563#0" expanded="true" />
+            <element signature="e#9606#9607#0" expanded="true" />
+            <element signature="e#9646#9647#0" expanded="true" />
+            <element signature="e#9712#9713#0" expanded="true" />
+            <element signature="e#9770#9771#0" expanded="true" />
+            <element signature="e#10129#10130#0" expanded="true" />
+            <element signature="e#10161#10162#0" expanded="true" />
+            <element signature="e#10211#10212#0" expanded="true" />
+            <element signature="e#10253#10254#0" expanded="true" />
+            <element signature="e#10288#10289#0" expanded="true" />
+            <element signature="e#10319#10320#0" expanded="true" />
+            <element signature="e#10367#10368#0" expanded="true" />
+            <element signature="e#10407#10408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-422">
+          <caret line="203" column="79" selection-start-line="203" selection-start-column="79" selection-end-line="203" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
         </state>
       </provider>
     </entry>

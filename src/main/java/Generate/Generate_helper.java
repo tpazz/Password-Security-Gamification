@@ -12,7 +12,6 @@ public abstract class Generate_helper {
     protected final String BEGGINER = "BEGGINER";
     protected final String INTERMEDIATE = "INTERMEDIATE";
     protected final String DIFFICULT = "HARD";
-    protected final String FINALLEVEL = "FINAL LEVEL";
     protected final String NUMBRUTE = "num_brute";
     protected final String ALPHABRUTE = "alpha_brute";
     protected final String DICTIONARY = "dictionary";
@@ -122,36 +121,138 @@ public abstract class Generate_helper {
     public final ArrayList<String> LVL9ESC = new ArrayList<String>() {{
         add("If we consider all 'typeable' characters on a standard keyboard, we have a");
         add("total of 96 possibilities for each character - which will amount to ");
-        add("782,757,789,696 combinations for just a 6-character password. This rapid growth");
-        add("of complexity is known as the combinatorial explosion; many websites enforce");
-        add("their users to have long passwords and use a variety of different character");
-        add("sets for this reason so that it would be infeasible for a hacker to obtain your");
-        add("your password through brute-force alone.");
+        add("782,757,789,696 combinations for just a 6-character password. Many websites");
+        add("enforce their users to have long and random passwords for this reason so");
+        add("that hackers won't be able to crack your password through brute-force alone.");
         add("");
         add("Using the algorithm syntax presented in the help page for alpha_brute,");
+        add("experiment with different data sets and lengths to match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL10ESC = new ArrayList<String>() {{
+        add("Another technique for cracking passwords is through dictionary attacks. They");
+        add("work by iterating over commonly used words or phrases to guess a password, ");
+        add("and are generally considered to be much more effective than brute-force due");
+        add("to the simple fact that most passwords consist of words rather than arbitrary");
+        add("characters.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for dic,");
         add("try and match the following hash and enter the plaintext password:");
     }};
 
-    // HASH TABLES x3
-    // SALT x3
-    // PEPPER x3
+    public final ArrayList<String> LVL11ESC = new ArrayList<String>() {{
+        add("Instead of having to compute and check the hash each time for every word in");
+        add("a dictionary, we can store the plain-text password along with its associated");
+        add("hash as a pair in a hash table so that we can look up the hash much quicker");
+        add("in subsequent searches.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for dic,");
+        add("generate, search and write a hash table to match the following hash:");
+    }};
 
-    protected String getRandFirstName() throws Exception {
-        Random r = new Random();
-        File file = new File("src\\main\\java\\Dictionaries\\first-names.txt");
-        int l = r.nextInt(Files.readAllLines(Paths.get(String.valueOf(file))).size());
-        return Files.readAllLines(Paths.get(String.valueOf(file))).get(l);
-    }
+    public final ArrayList<String> LVL12ESC = new ArrayList<String>() {{
+        add("As you can see, looking up a hash key in a table is extremely fast. This is");
+        add("because hash-tables are able to lookup data on the order O(1); in other");
+        add("words 1 operation, independent of the size. Of course there is no free lunch");
+        add("here as there is a trade-off between time and memory when it comes to");
+        add("generating hash tables, so pre-computed hashes can be very practical.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for dic,");
+        add("fetch the pre-computed hash table and match the following hash:");
+    }};
 
-    protected String getRandSurName() throws Exception {
+    public final ArrayList<String> LVL13ESC = new ArrayList<String>() {{
+        add("There exists a few counter-measures for the use of hash-tables to prevent");
+        add("easy look-up of password hashes such as salts. A salt is a non-secret");
+        add("value which is appended to the password before it gets hashed thus producing");
+        add("a different hash from the password by itself: stored hash = hash(salt+pwd)");
+        add("The salt is usually stored as plain-text next to the hash...");
+        add("");
+        add("Using the algorithm syntax presented in the help page for dic,");
+        add("add the salt to the algorithm and match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL14ESC = new ArrayList<String>() {{
+        add("Although salting renders hash tables useless, brute-force and dictionary");
+        add("attacks will still be an issue assuming an attacker takes into account");
+        add("the salt and knows where to put it in his/her guesses. Combinator dictionary");
+        add("attacks will append each word to every word in its own dictionary, or use");
+        add("multiple dictionaries which can be very effective for 2-word passwords.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for comb_dic,");
+        add("try and match the following hash and enter the plaintext password:");
+    }};
+
+    public final ArrayList<String> LVL15ESC = new ArrayList<String>() {{
+        add("Peppers are another tool used to prevent hash-table look-ups. A pepper is");
+        add("a very short random string added to the password before it is hashed, but");
+        add("its value is not stored. In order to determine the hashed password+pepper,");
+        add("every combination of the pepper will have to be computed until a match is");
+        add("found. A pepper could be adding a single letter to the password...");
+        add("");
+        add("Using the algorithm syntax presented in the help page for comb_dic,");
+        add("add a numerical pepper to the algorithm and match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL16ESC = new ArrayList<String>() {{
+        add("As you can see, peppers are very effective against brute-force attacks.");
+        add("Adding just one secret letter to the password means 10 possible hashes");
+        add("that would need to be cycled through; as a result, it would take 10 times");
+        add("longer to compute every possible hash for each password. Not only are");
+        add("peppers useful for mitigating dictionary attacks, but brute-force as well.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for comb_dic,");
+        add("experiment adding different peppers to match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL17ESC = new ArrayList<String>() {{
+        add("Hybrid dictionary attacks are a combination of brute-force and dictionary");
+        add("attacks. They work by either appending or prepending a brute-force keyspace");
+        add("to each of the words from the dictionary.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for hybrid_dic,");
+        add("append the numerical keyspace to the algorithm to match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL18ESC = new ArrayList<String>() {{
+        add("Both combinator and hybrid dictionary attacks are effective as they tackle");
+        add("common password traits. Joining two words together or having a word followed");
+        add("by a sequence of numbers (e.g. a date) are examples of habitual pitfalls");
+        add("that attackers  can take advantage of.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for hybrid_dic,");
+        add("experiment with different peppers to match the following hash:");
+    }};
+
+    public final ArrayList<String> LVL19ESC = new ArrayList<String>() {{
+        add("Any form of dictionary attack is only as effective as the dictionary it is");
+        add("using. In addition to using an effective dictionary, combining salts and");
+        add("peppers to passwords ensures a good level of security that will make life");
+        add("difficult for an attacker to obtain a password.");
+        add("");
+        add("Using the algorithm syntax presented in the help page for hybrid_dic,");
+        add("add the salt and experiment with different peppers to match the following");
+        add("hash:");
+    }};
+
+    public final ArrayList<String> PRE20DESC = new ArrayList<String>() {{
+        add("You have now completed all the pre-cursor levels! Use all of the");
+        add("algorithms, dictionaries and password security wisdom you have acquired");
+        add("to complete the following levels on your own with little guidance.");
+        add("");
+        add("The following features have been added:");
+        add(" > alpha_brute now computes all combinations up to specified length");
+        add(" > alpha_brute can now use all 96 combined character types (-a)");
+        add(" > salts and/or peppers can be added to any DICTIONARY attack");
+        add(" > hash tables can be generated for any DICTIONARY attack (-g)");
+        add(" > writing and fetching hash tables has been DISABLED");
+        add("");
+        add("Good luck!");
+    }};
+
+    protected String getRandPassword(String dictionary) throws Exception {
         Random r = new Random();
-        File file = new File("src\\main\\java\\Dictionaries\\surnames.txt");
-        int l = r.nextInt(Files.readAllLines(Paths.get(String.valueOf(file))).size());
-        return Files.readAllLines(Paths.get(String.valueOf(file))).get(l);
-    }
-    private String getRandPassword() throws Exception {
-        Random r = new Random();
-        File file = new File("src\\main\\java\\Dictionaries\\first-names.txt");
+        File file = new File("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
         int l = r.nextInt(Files.readAllLines(Paths.get(String.valueOf(file))).size());
         return Files.readAllLines(Paths.get(String.valueOf(file))).get(l);
     }

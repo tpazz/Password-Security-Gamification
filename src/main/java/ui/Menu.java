@@ -8,7 +8,7 @@ public class Menu extends UI_Helper {
 
         p.clearWindow();
 
-        if (p.getRank() == 0) { // fresh start or selecting 'New Game' will omit 'Continue' option
+        if (p.getRank() == 1) { // fresh start or selecting 'New Game' will omit 'Continue' option
             new ActionListDialogBuilder()
                     .setTitle("MAIN MENU")
                     .setDescription("\n")
@@ -29,8 +29,6 @@ public class Menu extends UI_Helper {
                     .setTitle("MAIN MENU")
                     .setDescription("\n")
                     .addAction("Continue", () -> {
-                    })
-                    .addAction("New game", () -> {
                         try {
                             Terminal.start(p);
                         } catch (Exception e) {
@@ -39,7 +37,7 @@ public class Menu extends UI_Helper {
                     })
                     .addAction("Store", () -> {
                         try {
-                            Store.start(p);
+                            Store.start(p,0);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

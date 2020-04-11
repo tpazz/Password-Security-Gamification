@@ -14,7 +14,7 @@ abstract class UI_Helper {
         add("help");
         add("example");
         add("show items");
-        add("clear");
+        add("syntax");
         add("req");
     }};
 
@@ -25,17 +25,19 @@ abstract class UI_Helper {
         add("clear");
         add("req");
         add("y");
+        add("syntax");
     }};
 
         public static final ArrayList<String> COMMANDS = new ArrayList<String>() {{
         add("[Up Arrow]   -> grab last command");
         add("[Down Arrow] -> clear command");
         add("[ENTER]      -> execute command");
-        add("req          -> request a profile");
+        add("[End]        -> terminate algorithm in progress");
+        add("syntax       -> display algorithm syntax");
+        add("req          -> request a profile/return to profile page");
         add("show items   -> display bought tools");
-        add("hint         -> give password hint");
-        add("setCol (col) -> set terminal text colour");
-        add("         ↳");
+        add("setCol (COL) -> set terminal text colour (case sensitive)");
+        add("         ↳ ");
     }};
 
     public static final ArrayList<String> COLOURS = new ArrayList<String>() {{
@@ -48,20 +50,21 @@ abstract class UI_Helper {
     }};
 
         public static final ArrayList<String> EXECUTE = new ArrayList<String>() {{
-        add("num_brute      [range]");
-        add("alpha_brute    [cType] [len]");
-        add("dictionary     [dic]");
-        add("combinator_dic [dic1]   [dic2]");
-        add("hybrid         [range]  [dic]");
-        add("keyword        [str1]   [str2] [str3]");
-    }};
-
-    public static final ArrayList<String> DESCRIPTION = new ArrayList<String>() {{
-        add("cSpace ~> char space | -l -u -s -a");
-        add("length ~> char length | 4");
-        add(" range ~> integer range | 9999");
-        add("   dic ~> dictionary name");
-        add("   str ~> arbitrary string");
+        add("num_brute   [range]           ~ num_brute 9999");
+        add("alpha_brute [cType] [len]     ~ alpha_brute -l 4");
+        add("dic         [dic] -n          ~ dic english -n");
+        add("comb_dic    [dic1]  [dic2] -n ~ comb_dic fnames snames -n");
+        add("hybrid_dic  [range] [dic] -n  ~ hybrid 9999 english -n");
+        add("");
+        add("cType  > char space      ~ -l -u -n -s, lower/upper/numerical/special");
+        add("length > char length     ~ 4 = all possible combinations of length 4");
+        add("range  > integer range   ~ 9999 = combinations from 0 - 9999");
+        add("dic    > dictionary name ~ excluding .dic or .txt, e.g. dictionary surnames");
+        add("salt   > -s [salt]       ~ example: dic english -s @LQM");
+        add("pepper > -p [l/u/n/s]    ~ example: comb_dic fnames snames -p l");
+        add("generate hash table > -g ~ this command cannot be used with salt or pepper!");
+        add("");
+        add("-s, -p, -g are optional and replace -n ~ example: dic english -s @#2Q -p s");
     }};
 
     public static final String HOW2PLAY =

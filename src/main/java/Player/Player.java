@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Player {
@@ -43,11 +44,18 @@ public class Player {
     public ArrayList<String> getDictionaries() throws Exception {
         ArrayList<String> items = new ArrayList<>();
         String dics = getPurchaced().substring(5);
-        for (int i = 6; i < getPurchaced().length(); i++) {
+        for (int i = 5; i < getPurchaced().length(); i++) {
             char c = dics.charAt(i-5);
             if (c == '1')
                 items.add(getItem(i));
         }
+        return items;
+    }
+
+    public ArrayList<String> getAllItmes() throws Exception {
+        ArrayList<String> items = new ArrayList<>();
+        items.addAll(getAlgorithms());
+        items.addAll(getDictionaries());
         return items;
     }
 
@@ -61,44 +69,42 @@ public class Player {
                 item = "alpha_brute";
                 break;
             case 2:
-                item = "dictionary";
+                item = "dic";
                 break;
             case 3:
-                item = "combinator_dic";
+                item = "comb_dic";
                 break;
             case 4:
                 item = "hybrid_dic";
                 break;
             case 5:
-                item = "keyword";
+                item = "english";
                 break;
             case 6:
-                item = "eng";
+                item = "fnames";
                 break;
             case 7:
-                item = "ned";
+                item = "snames";
                 break;
             case 8:
-                item = "f_name";
+                item = "10kmc";
                 break;
             case 9:
-                item = "s_name";
+                item = "1mmc";
                 break;
-            case 10:
-                item = "10k_common";
         }
         return item;
     }
 
     public void resetProgress() throws Exception {
         FileWriter fw = new FileWriter(file);
-        fw.write("1\n0.0\n00000000000\nDEFAULT");
+        fw.write("1\n0.0\n0000000000\nGREEN");
         fw.close();
     }
 
     public void writeProgress(int i, float f, String a, String c) throws Exception {
         int level = i + getRank();
-        float bitcoin = f + getBitcoin();
+        float bitcoin = Math.round((f + getBitcoin()) * 1000f) / 1000f;
         FileWriter fw = new FileWriter(file);
         fw.write(Integer.toString(level) + "\n" + Float.toString(bitcoin) + "\n" + a + "\n" + c);
         fw.close();

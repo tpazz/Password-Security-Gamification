@@ -14,14 +14,14 @@ public class Generate extends Generate_helper {
 
     private int rank;
     private float reward;
-    private boolean salt;
-    private boolean pepper;
+    private String salt;
+    private String pepper;
     private String algorithm;
     private String dictionary;
     private ArrayList<String> description;
     private String plainTextPassword;
-    private String hashedPassword;
-    private String difficulty;
+    private ArrayList<String> required = new ArrayList<>();
+    private String title;
     private String firstName;
     private String lastName;
 
@@ -29,24 +29,26 @@ public class Generate extends Generate_helper {
         this.rank = p.getRank();
         // introductory levels
         if (rank == 1) {
-            setDifficulty(INTRO);
+            setTitle("Written passwords");
             setDescription(LVL1DESC);
             setReward(generateReward(0.5f,0.6f));
         }
         else if (rank == 2) {
-            setDifficulty(INTRO);
+            setTitle("Plain-text passwords");
             setDescription(LVL2DESC);
             setReward(generateReward(0.6f,0.7f));
         }
         else if (rank == 3) {
-            setDifficulty(INTRO);
+            setTitle(INTRO);
             setDescription(LVL3DESC);
             setReward(generateReward(0.7f,0.8f));
         }
         else if (rank == 4) {
             Random r = new Random();
-            setDifficulty(BEGGINER);
+            setTitle("Hash functions");
             setDescription(LVL4ESC);
+            required.add("num_brute");
+            setRequired(required);
             setAlgorithm(NUMBRUTE);
             setPlainTextPassword(String.valueOf(r.nextInt(9999)));
             setReward(generateReward(0.8f,1.0f));
@@ -54,46 +56,176 @@ public class Generate extends Generate_helper {
         // easy levels
         else if (rank == 5) {
             Random r = new Random();
-            setDifficulty(BEGGINER);
+            setTitle("Brute-force 1");
+            required.add("num_brute");
+            setRequired(required);
             setDescription(LVL5ESC);
             setAlgorithm(NUMBRUTE);
             setPlainTextPassword(String.valueOf(r.nextInt(99999)));
             setReward(generateReward(0.9f,1.2f));
         }
+
         else if (rank == 6) {
             Random r = new Random();
-            setDifficulty(BEGGINER);
+            setTitle("Brute-force 2");
             setDescription(LVL6ESC);
+            required.add("num_brute");
+            setRequired(required);
             setAlgorithm(NUMBRUTE);
             setPlainTextPassword(String.valueOf(r.nextInt(999999)));
             setReward(generateReward(1.0f,1.3f));
-
         }
+
         else if (rank == 7) {
-            setDifficulty(BEGGINER);
+            setTitle("Brute-force 3");
             setDescription(LVL7ESC);
+            required.add("alpha_brute");
+            setRequired(required);
             setAlgorithm(ALPHABRUTE);
             String pp = generateCharSet(4,1);
             setPlainTextPassword(pp);
             System.out.println(pp);
             setReward(generateReward(1.2f,1.35f));
-
         }
+
         else if (rank == 8) {
-            setDifficulty(BEGGINER);
+            setTitle("Brute-force 4");
             setDescription(LVL8ESC);
+            required.add("alpha_brute");
+            setRequired(required);
             setAlgorithm(ALPHABRUTE);
-            String pp = generateCharSet(4, 2);
+            String pp = generateCharSet(3, 2);
             System.out.println(pp);
             setPlainTextPassword(pp);
             setReward(generateReward(1.3f,1.5f));
         }
+
         else if (rank == 9) {
-            setDifficulty(BEGGINER);
+            setTitle("Brute-force 5");
             setDescription(LVL9ESC);
+            required.add("alpha_brute");
+            setRequired(required);
             setAlgorithm(ALPHABRUTE);
-            setPlainTextPassword(generateCharSet(5, 2));
+            setPlainTextPassword(generateCharSet(4, 2));
             setReward(generateReward(1.5f,1.7f));
+        }
+
+        else if (rank == 10) { // english
+            setTitle("Dictionary attack 1");
+            setDescription(LVL10ESC);
+            required.add("dic");
+            required.add("english");
+            setRequired(required);
+            setAlgorithm(DICTIONARY);
+            setPlainTextPassword(getRandPassword("english"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 11) {
+            setTitle("Hash tables 1");
+            setDescription(LVL11ESC);
+            required.add("dic");
+            required.add("english");
+            setRequired(required);
+            setAlgorithm(DICTIONARY);
+            setPlainTextPassword(getRandPassword("english"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 12) {
+            setTitle("Hash tables 2");
+            setDescription(LVL12ESC);
+            required.add("dic");
+            required.add("english");
+            setRequired(required);
+            setAlgorithm(DICTIONARY);
+            setPlainTextPassword(getRandPassword("english"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 13) {
+            setSalt(generateCharSet(4,2));
+            setTitle("Salts");
+            setDescription(LVL13ESC);
+            required.add("dic");
+            required.add("english");
+            setRequired(required);
+            setAlgorithm(DICTIONARY);
+            setPlainTextPassword(getRandPassword("english"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 14) { // first + surnames
+            setSalt(generateCharSet(4,2));
+            setTitle("Dictionary attack 2");
+            setDescription(LVL14ESC);
+            required.add("comb_dic");
+            required.add("fnames");
+            required.add("snames");
+            setRequired(required);
+            setAlgorithm(COMBINATOR);
+            setPlainTextPassword(getRandPassword("fnames") + getRandPassword("snames"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 15) {
+            Random r = new Random();
+            setPepper(String.valueOf(r.nextInt(9)));
+            setTitle("Peppers 1");
+            setDescription(LVL15ESC);
+            required.add("comb_dic");
+            required.add("fnames");
+            required.add("snames");
+            setRequired(required);
+            setAlgorithm(COMBINATOR);
+            setPlainTextPassword(getRandPassword("fnames") + getRandPassword("snames"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 16) {
+            setPepper(generateCharSet(1,4));
+            setTitle("Peppers 2");
+            setDescription(LVL16ESC);
+            required.add("comb_dic");
+            required.add("fnames");
+            required.add("snames");
+            setRequired(required);
+            setAlgorithm(COMBINATOR);
+            setPlainTextPassword(getRandPassword("fnames") + getRandPassword("snames"));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 17) { // 10k
+            Random r = new Random();
+            setTitle("Dictionary attack 3");
+            setDescription(LVL17ESC);
+            required.add("hybrid_dic");
+            required.add("10kmc");
+            setRequired(required);
+            setAlgorithm(HYBRID);
+            setPlainTextPassword(getRandPassword("10kmc") + String.valueOf(r.nextInt(2000)));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 18) { // 10k
+            Random r = new Random();
+            setPepper(generateCharSet(1,4));
+            setTitle("Dictionary attack 4");
+            required.add("hybrid_dic");
+            required.add("10kmc");
+            setRequired(required);
+            setDescription(LVL18ESC);
+            setAlgorithm(HYBRID);
+            setPlainTextPassword(isPepper() + getRandPassword("10kmc") + String.valueOf(r.nextInt(2000)));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 19) { // 10k
+            Random r = new Random();
+            setPepper(generateCharSet(1,4));
+            setSalt(generateCharSet(4,2));
+            setTitle("Salt & Pepper");
+            required.add("hybrid_dic");
+            required.add("10kmc");
+            setRequired(required);
+            setDescription(LVL19ESC);
+            setAlgorithm(HYBRID);
+            setPlainTextPassword(isPepper() + getRandPassword("10kmc") + String.valueOf(r.nextInt(2000)));
+            setReward(generateReward(1.5f,1.7f));
+        }
+        else if (rank == 20) { // 10k
+
         }
     }
 
@@ -121,7 +253,7 @@ public class Generate extends Generate_helper {
 
     private String generateCharSet(int length, int sets) {
         Random r = new Random();
-        Algorithm tmp = new Algorithm(null,null);
+        Algorithm tmp = new Algorithm(null,null,null);
         StringBuilder sb = new StringBuilder();
         StringBuilder bs = new StringBuilder();
         String g = randNum();
@@ -150,12 +282,13 @@ public class Generate extends Generate_helper {
         return bs.toString();
     }
 
-    public String getDifficulty() {
-        return difficulty;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getRank() {
@@ -174,20 +307,28 @@ public class Generate extends Generate_helper {
         this.reward = reward;
     }
 
-    public boolean isSalt() {
+    public String getSalt() {
         return salt;
     }
 
-    public void setSalt(boolean salt) {
+    public void setSalt(String salt) {
         this.salt = salt;
     }
 
-    public boolean isPepper() {
+    public String isPepper() {
         return pepper;
     }
 
-    public void setPepper(boolean pepper) {
+    public void setPepper(String pepper) {
         this.pepper = pepper;
+    }
+
+    public ArrayList<String> getRequired() {
+        return required;
+    }
+
+    public void setRequired(ArrayList<String> required) {
+        this.required = required;
     }
 
     public String getAlgorithm() {
@@ -223,12 +364,10 @@ public class Generate extends Generate_helper {
     }
 
     public String getHashedPassword() {
-        return MD5.getHashPassword(plainTextPassword);
+        if (getSalt() != null) return MD5.getSaltHashPassword(plainTextPassword, getSalt().getBytes());
+        else return MD5.getHashPassword(plainTextPassword);
     }
 
-    public void setHashedPassword(String hashedPassword) {
-        this.hashedPassword = hashedPassword;
-    }
 
     public String getFirstName() {
         return firstName;
