@@ -1,5 +1,6 @@
 package ui;
 
+import Generate.Generate;
 import Player.Player;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -16,23 +17,24 @@ class Store extends UI_Helper {
 
         BasicWindow window = new BasicWindow();
         Panel panel = new Panel(new GridLayout(1));
-        Table<String> table = new Table<>("\u20BFitcoin", "Algorithm", "Description");
+        Table<String> table = new Table<>("\u20BFitcoin", "Item", "Description");
         table.setSelectedRow(selectedRow);
         panel.addComponent(new Label("Your bitcoin: \u20BF" + Float.toString(p.getBitcoin()))
                 .setForegroundColor(TextColor.ANSI.BLUE)
                 .setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.END, GridLayout.Alignment.CENTER)));
 
         table.getTableModel()
-                .addRow("1.223", "num_brute", "Numerical brute force algorithm")
-                .addRow("1.255", "alpha_brute", "Alphabetic brute force algorithm")
-                .addRow("2.001", "dic", "Dictionary attack algorithm")
-                .addRow("2.267", "comb_dic", "Multi-dictionary attack algorithm")
-                .addRow("2.455", "hybrid_dic", "Brute force + dictionary attack algorithm")
-                .addRow("0.501", "english", "English language dictionary")
-                .addRow("0.434", "fnames", "Common English first names")
-                .addRow("0.567", "snames", "Common english surnames")
-                .addRow("0.599", "10kmc", "10K most common passwords")
-                .addRow("1.234", "1mmc", "1m most common passwords");
+                .addRow("1.800", "num_brute", "Numerical brute force algorithm")
+                .addRow("2.752", "alpha_brute", "Alphabetic brute force algorithm")
+                .addRow("2.211", "dic", "Dictionary attack algorithm")
+                .addRow("3.998", "comb_dic", "Multi-dictionary attack algorithm")
+                .addRow("4.566", "hybrid_dic", "Brute force + dictionary attack algorithm")
+                .addRow("1.422", "english", "English language dictionary")
+                .addRow("1.101", "fnames", "Common english first names")
+                .addRow("1.009", "snames", "Common english surnames")
+                .addRow("1.567", "10kmc", "10K most common passwords")
+                .addRow("1.691", "hobbies", "List of hobbies")
+                .addRow("1.704", "jobs", "List of professions");
         table.setSelectAction(() -> {
 
             List<String> data = table.getTableModel().getRow(table.getSelectedRow());
@@ -56,7 +58,7 @@ class Store extends UI_Helper {
                             String items = p.getPurchaced();
                             int sRow = table.getSelectedRow();
                             write = items.substring(0,sRow) + '1' + items.substring(sRow+1);
-                            p.writeProgress(0, price*-1 ,write,p.getColour());
+                            p.writeProgress(0, price*-1 ,write,p.getColour(),p.getAchievements());
                             p.getGUI().getActiveWindow().close();
                             start(p, table.getSelectedRow());
                         }

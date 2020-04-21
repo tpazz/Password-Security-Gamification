@@ -10,6 +10,28 @@ abstract class UI_Helper {
 
     protected static boolean msg = false;
 
+    public static final String ACHIEVEMENT1 = "Crack your first password";
+    public static final String ACHIEVEMENT2 = "Complete all brute-force levels";
+    public static final String ACHIEVEMENT3 = "Complete all dictionary attack levels";
+    public static final String ACHIEVEMENT4 = "Complete core game";
+    public static final String ACHIEVEMENT5 = "Create a top-10 common password";
+    public static final String ACHIEVEMENT6 = "Create a password with a Score of 1";
+    public static final String ACHIEVEMENT7 = "Create a password with a Score of 2";
+    public static final String ACHIEVEMENT8 = "Create a password with a Score of 3";
+    public static final String ACHIEVEMENT9 = "Create a password with at least 60 entropy";
+
+    public static final ArrayList<String> ACHIEVEMENTS = new ArrayList<String>() {{
+        add(ACHIEVEMENT1);
+        add(ACHIEVEMENT2);
+        add(ACHIEVEMENT3);
+        add(ACHIEVEMENT4);
+        add(ACHIEVEMENT5);
+        add(ACHIEVEMENT6);
+        add(ACHIEVEMENT7);
+        add(ACHIEVEMENT8);
+        add(ACHIEVEMENT9);
+    }};
+
     public static final ArrayList<String> METACOMMANDS = new ArrayList<String>() {{
         add("help");
         add("example");
@@ -32,7 +54,7 @@ abstract class UI_Helper {
         add("[Up Arrow]   -> grab last command");
         add("[Down Arrow] -> clear command");
         add("[ENTER]      -> execute command");
-        add("[End]        -> terminate algorithm in progress");
+        add("[Esc]        -> terminate algorithm in progress");
         add("syntax       -> display algorithm syntax");
         add("req          -> request a profile/return to profile page");
         add("show items   -> display bought tools");
@@ -50,53 +72,49 @@ abstract class UI_Helper {
     }};
 
         public static final ArrayList<String> EXECUTE = new ArrayList<String>() {{
-        add("num_brute   [range]           ~ num_brute 9999");
-        add("alpha_brute [cType] [len]     ~ alpha_brute -l 4");
-        add("dic         [dic] -n          ~ dic english -n");
-        add("comb_dic    [dic1]  [dic2] -n ~ comb_dic fnames snames -n");
-        add("hybrid_dic  [range] [dic] -n  ~ hybrid 9999 english -n");
+        add("num_brute   [range]                ~ num_brute 9999");
+        add("alpha_brute [cType] [cType] [len]  ~ alpha_brute -l 4");
+        add("dic         [dic]   [extn]         ~ dic english -n");
+        add("comb_dic    [dic1]  [dic2]  [extn] ~ comb_dic fnames snames -s asdf");
+        add("hybrid_dic  [range] [dic]   [extn] ~ hybrid 9999 english -p n");
         add("");
         add("cType  > char space      ~ -l -u -n -s, lower/upper/numerical/special");
         add("length > char length     ~ 4 = all possible combinations of length 4");
         add("range  > integer range   ~ 9999 = combinations from 0 - 9999");
         add("dic    > dictionary name ~ excluding .dic or .txt, e.g. dictionary surnames");
-        add("salt   > -s [salt]       ~ example: dic english -s @LQM");
-        add("pepper > -p [l/u/n/s]    ~ example: comb_dic fnames snames -p l");
-        add("generate hash table > -g ~ this command cannot be used with salt or pepper!");
+        add("extn   > extension       ~ -n for standard, -g to generate hash table");
+        add("                           -s [salt], -p [pepper] => l | u | n | s");
+        add("example >> dic english -s asdf; dic english -p n; dic english -g;");
         add("");
         add("-s, -p, -g are optional and replace -n ~ example: dic english -s @#2Q -p s");
     }};
 
     public static final String HOW2PLAY =
-        "The objective of this game is to crack passwords from profiles. There \n" +
-        "are 10 core levels, each one increasing in difficulty. \u20BFitcoin is \n" +
-        "awarded for each successful crack which can be used to purchase \n" +
-        "powerful algorithms to help you Progress. Profiles are randomly \n" +
-        "generated with an associated password that is related to the profile \n" +
-        "in some way, for instance: \n\n" +
-        "First name: John \n" +
-        "Last name: Smith \n" +
-        "DoB: 15/07/1988 \n\n" +
-        "Password: j0hnSm1th88 \n\n" +
-        "If you are stuck on a particular profile, you can request another \n" +
-        "or ask for a hint - a maximum of 3 profiles can be active at a time.";
+        "The objective of this game is to learn about password security\n" +
+        "by cracking various types of passwords, ranging from simple\n" +
+        "brute-force numerical passcodes to complex multi-dictionary and\n" +
+        "hybrid passwords. The first 19 levels will walk you through \n" +
+        "several cracking techniques and countermeasures in order to \n" +
+        "familiarise yourself with the mechanics of the algorithms and\n" +
+        "how they work. Levels 20-27 will involve attempting to crack\n" +
+        "randomly generated hashed passwords using all of the acquired\n" +
+        "knowledge from previous levels and items from the store, which\n" +
+        "can be bought with \u20BFitcoin earned by completing the levels\n" +
+        "and creating strong passwords based on their entropy value from\n" +
+        "the Password Strength page.\n\n" +
+        "Select 'Terminal' from the Main Menu to start. Enjoy!";
 
     public static final String ABOUT =
         "This artifact is part of an undergraduate research project \n" +
         "created by Theo Koorehpaz that aims to increase password \n" +
         "security and awareness by exposing participants to powerful \n" +
-        "password cracking techniques against common password datasets. \n\n" +
+        "password cracking techniques against password datasets. \n\n" +
         "Project title:   Password Security Gamification \n" +
         "Lead Researcher: Theo Koorehpaz \n" +
         "Institute:       University of Sheffield \n" +
         "Supervisor:      Ramsay Taylor \n" +
-        "Module code:     COMxxx \n" +
+        "Module code:     COM3610 \n" +
         "Department:      Computer Science";
-
-    public static final String DISCLAIMER =
-        "This is an educational simulation of \n" +
-        "password cracking and does not promote \n" +
-        "computer or information misuse in any way.";
 
     // helper messageDialogBuilder to display custom message
     public static void message(WindowBasedTextGUI gui, String title, String message) {

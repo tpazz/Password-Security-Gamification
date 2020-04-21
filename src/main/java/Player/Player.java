@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Player {
@@ -33,7 +32,7 @@ public class Player {
 
     public ArrayList<String> getAlgorithms() throws Exception {
         ArrayList<String> items = new ArrayList<>();
-        for (int i = 0; i < getPurchaced().length()-5; i++) {
+        for (int i = 0; i < getPurchaced().length()-6; i++) {
             char c = getPurchaced().charAt(i);
             if (c == '1')
                 items.add(getItem(i));
@@ -90,7 +89,10 @@ public class Player {
                 item = "10kmc";
                 break;
             case 9:
-                item = "1mmc";
+                item = "hobbies";
+                break;
+            case 10:
+                item = "jobs";
                 break;
         }
         return item;
@@ -98,15 +100,15 @@ public class Player {
 
     public void resetProgress() throws Exception {
         FileWriter fw = new FileWriter(file);
-        fw.write("1\n0.0\n0000000000\nGREEN");
+        fw.write("1\n0.0\n0000000000\nGREEN\n00000");
         fw.close();
     }
 
-    public void writeProgress(int i, float f, String a, String c) throws Exception {
+    public void writeProgress(int i, float f, String a, String c, String h) throws Exception {
         int level = i + getRank();
         float bitcoin = Math.round((f + getBitcoin()) * 1000f) / 1000f;
         FileWriter fw = new FileWriter(file);
-        fw.write(Integer.toString(level) + "\n" + Float.toString(bitcoin) + "\n" + a + "\n" + c);
+        fw.write(Integer.toString(level) + "\n" + Float.toString(bitcoin) + "\n" + a + "\n" + c + "\n" + h);
         fw.close();
     }
 
@@ -126,6 +128,10 @@ public class Player {
 
     public String getColour() throws Exception {
         return Files.readAllLines(Paths.get(String.valueOf(file))).get(3);
+    }
+
+    public String getAchievements() throws Exception {
+        return Files.readAllLines(Paths.get(String.valueOf(file))).get(4);
     }
 
     public WindowBasedTextGUI getGUI() {

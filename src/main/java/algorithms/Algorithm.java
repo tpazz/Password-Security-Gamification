@@ -2,20 +2,16 @@ package algorithms;
 
 import Generate.Generate;
 import Player.Player;
-import com.googlecode.lanterna.SGR;
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TerminalSize;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Currency;
+import java.util.Arrays;
 import java.util.Hashtable;
 
 public class Algorithm implements Runnable {
 
+    private char[] CHARSET;
     public final char[] LOWERCASE = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     public final char[] UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
     public final char[] NUMBERS = "0123456789".toCharArray();
@@ -23,50 +19,57 @@ public class Algorithm implements Runnable {
     public final char[] ALLCHARS = ("abcdefghijklmnopqrstuvwxyzAEIOU0123456789" +
             "!@#$%^&*()-_+=~`[]{}|:;<>,.?/BCDFGHJKLMNPQRSTVWXYZ").toCharArray();
 
-    private char[] CHARSET;
+    private String dictionary;
+    private String dictionary2;
     private Generate generate;
     private Player player;
-    private String pepper;
+    private FileInputStream file1;
+    private BufferedReader br1;
+    private BufferedReader br2;
+    private FileInputStream file2;
+
     private String command;
     private String hashedPassword;
     private String algorithm;
-    private String dictionary;
-    private String dicCommand;
-    private String dictionary2;
+
     private String alpha1;
     private String alpha2;
-    public String foundHash;
-    public boolean fetched = false;
-    public boolean genCheckWriteCheck = false;
-    public boolean writeCheck = false;
-    public boolean fetchCheck = false;
-    public boolean standard = false;
-    public boolean salt = false;
-    public boolean peppoink = false;
-    public boolean genCheck = false;
-    private String salty;
+    private String salt;
     private String match = "No match!";
     private String current = "";
-    private String str1;
-    private String str2;
-    private String str3;
-    private int length;
-    private int hybridLength;
-    private boolean brute = false;
-    public boolean hashTable = false;
-    public boolean lookup = false;
-    public boolean writeTable = false;
-    private long startTime1;
-    private long startTime2;
-    private long startTime3;
     private String startTime11;
     private String startTime22;
     private String startTime33;
+
+    private boolean fetched = false;
+    private boolean genCheckWriteCheck = false;
+    private boolean fetchCheck = false;
+    private boolean standard = false;
+    private boolean hasSalt = false;
+    private boolean hasPepper = false;
+    private boolean genCheck = false;
+    private boolean brute = false;
+    private boolean hashTable = false;
+    private boolean lookup = false;
+    private boolean writeTable = false;
+
+    private int length;
+    private int hybridLength;
+
+    private long startTime1;
+    private long startTime2;
+    private long startTime3;
 
     private volatile double range;
     private volatile int i = 0;
     private volatile boolean complete = false;
     private volatile String result = "No match!";
+
+    @Override
+    public void run() {
+        try { execute(); }
+        catch (Exception e) { e.printStackTrace(); }
+    }
 
     public Algorithm(Generate g, String c, Player p) {
         this.generate = g;
@@ -80,6 +83,10 @@ public class Algorithm implements Runnable {
             int dlim = command.indexOf(' ');
             algorithm = command.substring(0, dlim);
             int start = algorithm.length();
+            String c = "x";
+            int i = 0;
+            int tmp;
+            String dicCommand;
             switch (algorithm) {
 
                 case "num_brute":
@@ -91,9 +98,7 @@ public class Algorithm implements Runnable {
                     if (command.length() > 16) {
                         alpha2 = String.valueOf(command.substring(start + 4, start + 6));
                         length = Integer.valueOf(command.substring(start + 7));
-                    } else {
-                        length = Integer.valueOf(command.substring(start + 4));
-                    }
+                    } else length = Integer.valueOf(command.substring(start + 4));
 
                     switch (alpha1) {
                         case "-l":
@@ -109,7 +114,8 @@ public class Algorithm implements Runnable {
                             CHARSET = SPECIAL;
                             break;
                         case "-a":
-                            CHARSET = ALLCHARS;
+                            if (player.getRank() > 19) CHARSET = ALLCHARS;
+                            else valid = false;
                             break;
                     }
 
@@ -135,23 +141,24 @@ public class Algorithm implements Runnable {
                                 break;
                         }
                     }
-                    range = Math.pow(CHARSET.length, length);
+                    if (player.getRank() > 19 && !Arrays.equals(CHARSET, NUMBERS)) {
+                        for (int q = 0; q < length; q++) {
+                            range += Math.pow(CHARSET.length, length - q);
+                        }
+                    } else range = Math.pow(CHARSET.length, length);
                     break;
 
                 case "dic":
-                    String ch = "x";
-                    int i = 0;
-                    while (!ch.equals(" ")) {
-                        ch = command.substring(start+1+i,start+2+i);
-                        i++;
-                    }
+                    c = "x";
+                    while (!c.equals(" ")) { c = command.substring(start+1+i,start+2+i); i++; }
                     dictionary = command.substring(start + 1, start+i).trim();
-                    int tmp = start + dictionary.length();
+
+                    tmp = start + dictionary.length();
                     dicCommand = String.valueOf(command.substring(tmp + 2, tmp +4));
 
                     if (player.getRank() < 14) {
                         switch (dicCommand) {
-                            case "-g":
+                            case "-w":
                                 genCheckWriteCheck = true;
                                 break;
                             case "-f":
@@ -161,142 +168,116 @@ public class Algorithm implements Runnable {
                                 standard = true;
                                 break;
                             case "-s":
-                                salt = true;
+                                hasSalt = true;
                                 break;
                             default:
                                 valid = false;
                         }
-                        if (standard) {
-                            if (player.getRank() < 10 || (player.getRank() > 10 && player.getRank() < 13)) valid = false;
-                        }
-                        if (salt) {
-                            if (player.getRank() < 13) valid = false;
-                        }
-                        if (genCheckWriteCheck) {
-                            if (player.getRank() < 11 || player.getRank() == 12 || player.getRank() == 13) valid = false;
-                        }
-                        if (fetchCheck) {
-                            if (!checkTMP() || player.getRank() < 12) valid = false;
-                        }
-                        if (!checkDictionary(dictionary)) valid = false;
-                        if (salt) salty = command.substring(tmp + dicCommand.length() + 3);
-
+                        if (hasSalt) salt = command.substring(tmp + dicCommand.length() + 3);
+                        if (fetchCheck && !checkTMP()) valid = false;
                     } else {
-                        if (dicCommand.equals("-g")) {
-                            genCheck = true;
-                        } else {
-                            saltAndPepper(tmp+2);
-                        }
+                        if (dicCommand.equals("-g")) genCheck = true;
+                        else hasSaltAndPepper(tmp+2, dicCommand);
+                    }
+                    if (!checkDictionary(dictionary)) valid = false;
+                    else {
+                        file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
+                        br1 = new BufferedReader(new InputStreamReader(file1));
                     }
                     break;
 
                 case "comb_dic":
-                    String c = "x";
-                    int x = 0;
-                    while (!c.equals(" ")) {
-                        c = command.substring(start+1+x,start+2+x);
-                        x++;
-                    }
-                    dictionary = command.substring(start + 1, start+x).trim();
-                    int y = start+dictionary.length()+2;
-                    String p = "x";
-                    while (!p.equals(" ")) {
-                        p = command.substring(y,y+1);
-                        y++;
-                    }
-                    dictionary2 = command.substring(start + dictionary.length()+2, y).trim();
-                    dicCommand = command.substring(y,y+2);
+                    i = 0;
+                    while (!c.equals(" ")) { c = command.substring(start+1+i,start+2+i); i++; }
+                    dictionary = command.substring(start + 1, start+i).trim();
 
-                    if (command.substring(y).equals("-g")) {
-                        genCheck = true;
-                    } else {
-                        valid = saltAndPepper(y);
+                    i = start+dictionary.length()+2;
+                    c = "x";
+                    while (!c.equals(" ")) { c = command.substring(i,i+1); i++; }
+                    dictionary2 = command.substring(start + dictionary.length()+2, i).trim();
+                    dicCommand = command.substring(i,i+2);
+
+                    if (!checkDictionary(dictionary) || !checkDictionary(dictionary2)) valid = false;
+                    else {
+                        file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
+                        br1 = new BufferedReader(new InputStreamReader(file1));
+                        file2 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary2 + ".txt");
+                        br2 = new BufferedReader(new InputStreamReader(file2));
                     }
 
-                    if (!checkDictionary(dictionary)) valid = false;
-                    if (!checkDictionary(dictionary2)) valid = false;
-
+                    if (command.substring(i).equals("-g")) genCheck = true;
+                    else valid = hasSaltAndPepper(i, dicCommand);
                     break;
 
                 case "hybrid_dic":
-                    String h = "x";
-                    int g = 0;
-                    while (!h.equals(" ")) {
-                        h = command.substring(start+1+g,start+2+g);
-                        g++;
-                    }
-                    System.out.println(command.substring(start + 1));
-                    dictionary = command.substring(start + 1, start+g).trim();
-
+                    c = "x";
+                    i = 0;
+                    while (!c.equals(" ")) { c = command.substring(start+1+i,start+2+i); i++; }
+                    dictionary = command.substring(start + 1, start+i).trim();
                     tmp = start + dictionary.length() + 2;
-                    String m = "m";
-                    int u = 0;
-                    while (!m.equals(" ")) {
-                        m = command.substring(tmp+u,tmp+u+1);
-                        u++;
-                    }
-                    hybridLength = Integer.valueOf(command.substring(tmp,tmp+u-1));
+
+                    c = "m";
+                    i = 0;
+                    while (!c.equals(" ")) { c = command.substring(tmp+i,tmp+i+1); i++; }
+                    hybridLength = Integer.valueOf(command.substring(tmp,tmp+i-1));
+
                     CHARSET = NUMBERS;
-                    tmp = tmp + u -2;
-                    System.out.println(command.substring(tmp));
+                    tmp = tmp + i - 2;
                     dicCommand = String.valueOf(command.substring(tmp + 2, tmp +4));
 
-                    if (command.substring(tmp+2).equals("-g")) genCheck = true;
-                    else valid = saltAndPepper(tmp);
-
-                    if (!checkDictionary(dictionary)) {
-                        valid = false;
+                    if (!checkDictionary(dictionary)) valid = false;
+                    else {
+                        file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
+                        br1 = new BufferedReader(new InputStreamReader(file1));
                     }
+                    if (command.substring(tmp+2).equals("-g")) genCheck = true;
+                    else valid = hasSaltAndPepper(tmp+2, dicCommand);
                     break;
-
             }
-        } catch (Exception e) {
-            System.out.println(e);
-            valid = false;
-        }
+
+        } catch (Exception e) { valid = false; }
         return valid;
     }
 
-    public boolean saltAndPepper(int tmp) {
+    private boolean hasSaltAndPepper(int tmp, String dicCommand) {
+        String x = "x";
+        String pepper;
         boolean valid = true;
         if (dicCommand.equals("-s") && command.contains("-p")) {
-            salt = true;
-            String k = "x";
-            int v = tmp + dicCommand.length() +3;
-            while (!k.equals(" ")) {
-                k = command.substring(v,v+1);
-                v++;
-            }
-            salty = command.substring(tmp + dicCommand.length() + 3, v);
-            if (command.substring(v, v+2).equals("-p")) {
-                peppoink = true;
-                pepper = command.substring(v+3);
-                getPepper();
-            }
-        } else if (dicCommand.equals("-p") && command.contains("-s")) {
-            peppoink = true;
-            pepper = command.substring(tmp + dicCommand.length() +3, tmp + dicCommand.length()+4);
+            hasSalt = true;
+            int i = tmp+dicCommand.length()+3;
+            while (!x.equals(" ")) { x = command.substring(i,i+1); i++; }
+            salt = command.substring(tmp+dicCommand.length()+1,i-1);
 
-            if (command.substring(tmp + dicCommand.length() +5, tmp + dicCommand.length() +7).equals("-s")) {
-                salt = true;
-                salty = command.substring(tmp+dicCommand.length()+8);
-            }
+            if (command.substring(i,i+2).equals("-p")) {
+                hasPepper = true;
+                pepper = command.substring(i+3);
+                getPepper(pepper); }
+
+        } else if (dicCommand.equals("-p") && command.contains("-s")) {
+            hasPepper = true;
+            pepper = command.substring(tmp+dicCommand.length()+1,tmp+dicCommand.length()+2);
+            getPepper(pepper);
+
+            if (command.substring(tmp+dicCommand.length()+3,tmp+dicCommand.length()+5).equals("-s")) {
+                hasSalt = true;
+                salt = command.substring(tmp+dicCommand.length()+6); }
+
         } else if (dicCommand.equals("-s") && !command.contains("-p")) {
-            salt = true;
-            salty = command.substring(tmp + dicCommand.length() +3);
+            hasSalt = true;
+            salt = command.substring(tmp+dicCommand.length()+1);
+
         } else if (dicCommand.equals("-p") && !command.contains("-s")) {
-            peppoink = true;
-            pepper = command.substring(tmp + dicCommand.length() +3);
-        } else if (dicCommand.equals("-n")) {
-            standard = true;
-        }
-        else if (!dicCommand.equals("-n")) {
-            valid = false;
-        }
+            hasPepper = true;
+            pepper = command.substring(tmp+dicCommand.length()+1);
+            getPepper(pepper); }
+
+        else if (dicCommand.equals("-n")) standard = true;
+        else if (!dicCommand.equals("-n")) valid = false;
         return valid;
     }
 
-    public void getPepper() {
+    private void getPepper(String pepper) {
         switch (pepper) {
             case "l":
                 CHARSET = LOWERCASE;
@@ -313,77 +294,48 @@ public class Algorithm implements Runnable {
         }
     }
 
-    public boolean isGenCheck() {
-        return genCheck;
-    }
-
-    public boolean isFetchCheck() {
-        return fetchCheck;
-    }
-
-    public boolean isStandard() {
-        return standard;
-    }
-
     public void execute() throws Exception {
         if (generate.getSalt() != null) hashedPassword = MD5.getSaltHashPassword(generate.getPlainTextPassword(),generate.getSalt().getBytes());
         else hashedPassword = generate.getHashedPassword();
+
         switch (algorithm) {
+
             case "num_brute":
                 result = num_brute();
                 complete = true;
                 break;
+
             case "alpha_brute":
-                //for (int k = 4; k <= length; k++) {
-                result = alpha_brute("", 0, length);
-                    //if (!result.equals("No match!")) break;
-                //}
+                if (player.getRank() > 19 && !Arrays.equals(CHARSET, NUMBERS)) {
+                    for (int k = 1; k <= length; k++) {
+                        result = alpha_brute("", 0, k);
+                        if (!result.equals("No match!")) break; } }
+                else result = alpha_brute("", 0, length);
                 complete = true;
                 break;
+
             case "dic":
                 result = dictionary();
                 complete = true;
                 break;
+
             case "comb_dic":
                 result = combinator_dic();
                 complete = true;
                 break;
+
             case "hybrid_dic":
                 result = hybrid();
                 complete = true;
                 break;
-            case "keyword":
-                result = keyword();
-                break;
         }
     }
 
-    private boolean checkTMP() {
-        File file = new File("src\\main\\java\\Hash_Tables\\" + dictionary + "_Hash_Table.tmp");
-        return file.exists();
-    }
-
-    private boolean checkDictionary(String dic) {
-        File file = new File("src\\main\\java\\Dictionaries\\" + dic + ".txt");
-        System.out.println(file);
-        return file.exists();
-    }
-
-    public String getCurrentPlainText() {
-        return String.valueOf(current);
-    }
-
-    public String getCurrentHash() {
-        if (salt) return MD5.getSaltHashPassword(current,salty.getBytes());
-        else return MD5.getHashPassword(current);
-    }
-
-    public String num_brute() {
+    private String num_brute() {
         for (i = 0; i <= range; i++) {
             current = String.valueOf(i);
-            if (MD5.getHashPassword(current).equals(hashedPassword)) {
+            if (MD5.getHashPassword(current).equals(hashedPassword))
                 return generate.getPlainTextPassword();
-            }
         }
         return "No match!";
     }
@@ -401,41 +353,189 @@ public class Algorithm implements Runnable {
                 pos = 0;
             }
             if (!brute) {
-                for (int j = pos; j < CHARSET.length; j++) {
+                for (int j = pos; j < CHARSET.length; j++)
                     alpha_brute(str + CHARSET[j], j, length -1);
-                }
             }
         }
         return match;
     }
 
-    private void updateUI() throws Exception {
-        player.getScreen().refresh();
+    // compute and check hash for each word in supplied dictionary
+    private String dictionary() throws Exception {
+        String st;
+        if (genCheck || genCheckWriteCheck) result = generateCheckWrite(false);
+        else if (fetchCheck) result = fetchCheck();
+        else {
+            if (hasSalt & hasPepper) {
+                for (int j = 0; j < CHARSET.length; j++) {
+                    while ((st = br1.readLine()) != null) {
+                        current = st.replaceAll("\\s+","") + CHARSET[j];
+                        i++;
+                        if (MD5.getSaltHashPassword(st, salt.getBytes()).equals(hashedPassword)) {
+                            match = st;
+                            return match; } }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); } }
+
+            else if (hasSalt) {
+                while ((st = br1.readLine()) != null) {
+                    current = st.replaceAll("\\s+","");
+                    i++;
+                    if (MD5.getSaltHashPassword(current, salt.getBytes()).equals(hashedPassword)) {
+                        match = st;
+                        return match; } } }
+
+            else if (hasPepper) {
+                for (int j = 0; j < CHARSET.length; j++) {
+                    while ((st = br1.readLine()) != null) {
+                        current = st.replaceAll("\\s+","") + CHARSET[j];
+                        i++;
+                        if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                            match = st;
+                            return match; } }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); } }
+
+            else {
+                while ((st = br1.readLine()) != null) {
+                    current = st.replaceAll("\\s+","");
+                    i++;
+                    if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                        match = st;
+                        return match; } } }
+        }
+        return match;
     }
 
-    public String dictionary() throws Exception {
-        if (genCheck && player.getRank() > 13) {
-            result = generateCheckWrite(false);
-        } else {
-            if (player.getRank() != 11 && player.getRank() != 12 && (standard || salt)) {
-                result = checkHash();
-            }
-            else if (genCheckWriteCheck && player.getRank() != 12 && player.getRank() != 13) {
-                System.out.println("here");
-                result = generateCheckWrite(false);
-            }
-            else if (fetchCheck) {
-                result = fetchCheck();
-                lookup = true;
-                startTime22 = (float) (System.currentTimeMillis() - startTime2)/1000 + "s";
-            }
-        }
+    private String combinator_dic() throws Exception {
+        if (genCheck) match = generateCheckWrite(true);
+        else {
+            String st1;
+            String st2;
+            if (hasSalt && hasPepper) {
+                for (int j = 0; j < CHARSET.length; j++) {
+                    while ((st1 = br1.readLine()) != null) {
+                        while ((st2 = br2.readLine()) != null) {
+                            i++;
+                            current = (st1 + st2).replaceAll("\\s+","") + CHARSET[j];
+                            if (MD5.getSaltHashPassword(current, salt.getBytes()).equals(hashedPassword)) {
+                                match = current;
+                                return match; } }
+                        file2.getChannel().position(0);
+                        br2 = new BufferedReader(new InputStreamReader(file2)); }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); } }
 
+            else if (hasPepper) {
+                for (int z = 0; z < CHARSET.length; z++) {
+                    while ((st1 = br1.readLine()) != null) {
+                        while ((st2 = br2.readLine()) != null) {
+                            i++;
+                            current = (st1+st2).replaceAll("\\s+","") + CHARSET[z];
+                            if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                                match = current;
+                                return match; } }
+                        file2.getChannel().position(0);
+                        br2 = new BufferedReader(new InputStreamReader(file2)); }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); }
+
+            } else if (hasSalt) {
+                while ((st1 = br1.readLine()) != null) {
+                    while ((st2 = br2.readLine()) != null) {
+                        i++;
+                        current = (st1+st2).replaceAll("\\s+","");
+                        if (MD5.getSaltHashPassword(current, salt.getBytes()).equals(hashedPassword)) {
+                            match = current;
+                            return match; } }
+                    file2.getChannel().position(0);
+                    br2 = new BufferedReader(new InputStreamReader(file2)); } }
+
+            else {
+                while ((st1 = br1.readLine()) != null) {
+                    while ((st2 = br2.readLine()) != null) {
+                        i++;
+                        current = (st1+st2).replaceAll("\\s+","");
+                        if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                            match = current;
+                            return match; } }
+                    file2.getChannel().position(0);
+                    br2 = new BufferedReader(new InputStreamReader(file2)); } }
+        }
+        return match;
+    }
+
+    private String hybrid() throws Exception {
+        if (genCheck) match = generateCheckWrite( false);
+        else {
+            String st;
+            if (hasSalt && hasPepper) {
+                for (int j = 0; j < CHARSET.length; j++) {
+                    while ((st = br1.readLine()) != null) {
+                        for (int k = 0; k < hybridLength; k++) {
+                            i++;
+                            current = st.replaceAll("\\s+","") + String.valueOf(k) + CHARSET[j];
+                            if (MD5.getSaltHashPassword(current, salt.getBytes()).equals(hashedPassword)) {
+                                match = current;
+                                return match; } } }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); }
+
+            } else if (hasPepper) {
+                for (int j = 0; j < CHARSET.length; j++) {
+                    while ((st = br1.readLine()) != null) {
+                        for (int k = 0; k < hybridLength; k++) {
+                            i++;
+                            current = st.replaceAll("\\s+","") + String.valueOf(k) + CHARSET[j];
+                            if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                                match = current;
+                                return match; } } }
+                    file1.getChannel().position(0);
+                    br1 = new BufferedReader(new InputStreamReader(file1)); }
+
+            } else if (hasSalt) {
+                while ((st = br1.readLine()) != null) {
+                    for (int k = 0; k < hybridLength; k++) {
+                        i++;
+                        current = st.replaceAll("\\s+","") + String.valueOf(k);
+                        if (MD5.getSaltHashPassword(current, salt.getBytes()).equals(hashedPassword)) {
+                            match = current;
+                            return match; } } }
+
+            } else {
+                while ((st = br1.readLine()) != null) {
+                    for (int k = 0; k < hybridLength; k++) {
+                        i++;
+                        current = st.replaceAll("\\s+","") + String.valueOf(k);
+                        if (MD5.getHashPassword(current).equals(hashedPassword)) {
+                            match = current;
+                            return match; } } } }
+        }
+        return match;
+    }
+
+    private String genCheck(Hashtable h) {
+        if (h.containsKey(hashedPassword)) {
+            match = (String) h.get(hashedPassword);
+            return match;
+        } else
+            return match;
+    }
+
+    // fetches the saved hash table, searches for password in fetched table
+    private String fetchCheck() throws Exception {
+        startTime1 = System.currentTimeMillis();
+        Hashtable h = getHashTable();
+        fetched = true;
+        startTime11 = (float) (System.currentTimeMillis() - startTime1)/1000+ "s";
+
+        startTime2 = System.currentTimeMillis();
+        result = genCheck(h);
+        lookup = true;
         return result;
     }
 
     private String generateCheckWrite(boolean combinator) throws Exception {
-        String tmp;
         startTime1 = System.currentTimeMillis();
         Hashtable h = generateHashTable(combinator);
         hashTable = true;
@@ -452,300 +552,15 @@ public class Algorithm implements Runnable {
         return result;
     }
 
-    public boolean isGenCheckWriteCheck() {
-        return genCheckWriteCheck;
-    }
-
-    public long getStartTime1() {
-        return startTime1;
-    }
-
-    public long getStartTime2() {
-        return startTime2;
-    }
-
-    public long getStartTime3() {
-        return startTime3;
-    }
-
-    public float getStartTime11() {
-        return (float) (System.currentTimeMillis() - startTime1)/1000;
-    }
-
-    public float getStartTime22() {
-        return (float) (System.currentTimeMillis() - startTime2)/1000;
-    }
-
-    public float getStartTime33() {
-        return (float) (System.currentTimeMillis() - startTime3)/1000;
-    }
-
-    public boolean isHashTable() {
-        return hashTable;
-    }
-
-    public boolean isLookup() {
-        return lookup;
-    }
-
-    public boolean isWriteTable() {
-        return writeTable;
-    }
-
-    public String combinator_dic() throws Exception {
-        if (genCheck) {
-            match = generateCheckWrite(true);
-        } else {
-            FileInputStream file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
-            FileInputStream file2 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary2 + ".txt");
-            BufferedReader br1 = new BufferedReader(new InputStreamReader(file1));
-            BufferedReader br2 = new BufferedReader(new InputStreamReader(file2));
-            String st1;
-            String st2;
-            if (salt && peppoink) {
-                for (int j = 0; j < CHARSET.length; j++) {
-                    while ((st1 = br1.readLine()) != null) {
-                        while ((st2 = br2.readLine()) != null) {
-                            i++;
-                            current = CHARSET[j] + st1 + st2;
-                            if (MD5.getSaltHashPassword(current, salty.getBytes()).equals(hashedPassword)) {
-                                match = current;
-                                return match;
-                            }
-                        }
-                        file2.getChannel().position(0);
-                        br2 = new BufferedReader(new InputStreamReader(file2));
-                    }
-                    file1.getChannel().position(0);
-                    br1 = new BufferedReader(new InputStreamReader(file1));
-                }
-            }
-            else if (peppoink) {
-                for (int z = 0; z < CHARSET.length; z++) {
-                    while ((st1 = br1.readLine()) != null) {
-                        while ((st2 = br2.readLine()) != null) {
-                            i++;
-                            current = CHARSET[z]+st1+st2;
-                            if (MD5.getHashPassword(current).equals(hashedPassword)) {
-                                match = current;
-                                return match;
-                            }
-                        }
-                        file2.getChannel().position(0);
-                        br2 = new BufferedReader(new InputStreamReader(file2));
-                    }
-                    file1.getChannel().position(0);
-                    br1 = new BufferedReader(new InputStreamReader(file1));
-                }
-            } else if (salt) {
-                while ((st1 = br1.readLine()) != null) {
-                    while ((st2 = br2.readLine()) != null) {
-                        i++;
-                        current = st1+st2;
-                        if (MD5.getSaltHashPassword(current, salty.getBytes()).equals(hashedPassword)) {
-                            match = current;
-                            return match;
-                        }
-                    }
-                    file2.getChannel().position(0);
-                    br2 = new BufferedReader(new InputStreamReader(file2));
-                }
-            }
-            else {
-                while ((st1 = br1.readLine()) != null) {
-                    while ((st2 = br2.readLine()) != null) {
-                        i++;
-                        current = st1+st2;
-                        if (MD5.getHashPassword(current).equals(hashedPassword)) {
-                            match = current;
-                            return match;
-                        }
-                    }
-                    file2.getChannel().position(0);
-                    br2 = new BufferedReader(new InputStreamReader(file2));
-                }
-            }
-        }
-        return match;
-    }
-    public String hybrid() throws Exception {
-        if (genCheck) {
-            match = generateCheckWrite( false);
-        } else {
-            FileInputStream file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
-            BufferedReader br = new BufferedReader(new InputStreamReader(file1));
-            String st;
-            if (salt && peppoink) {
-                for (int j = 0; j < CHARSET.length; j++) {
-                    while ((st = br.readLine()) != null) {
-                        for (int k = 0; k < hybridLength; k++) {
-                            i++;
-                            current = CHARSET[j] + st + String.valueOf(k);
-                            if (MD5.getSaltHashPassword(current, salty.getBytes()).equals(hashedPassword)) {
-                                match = current;
-                                return match;
-                            }
-                        }
-                    }
-                    file1.getChannel().position(0);
-                    br = new BufferedReader(new InputStreamReader(file1));
-                }
-            } else if (peppoink) {
-                for (int j = 0; j < CHARSET.length; j++) {
-                    while ((st = br.readLine()) != null) {
-                        for (int k = 0; k < hybridLength; k++) {
-                            i++;
-                            current = CHARSET[j] + st + String.valueOf(k);
-                            if (MD5.getHashPassword(current).equals(hashedPassword)) {
-                                match = current;
-                                return match;
-                            }
-                        }
-                    }
-                    file1.getChannel().position(0);
-                    br = new BufferedReader(new InputStreamReader(file1));
-                }
-            } else if (salt) {
-                while ((st = br.readLine()) != null) {
-                    for (int k = 0; k < hybridLength; k++) {
-                        i++;
-                        current = st + String.valueOf(k);
-                        if (MD5.getSaltHashPassword(current, salty.getBytes()).equals(hashedPassword)) {
-                            match = current;
-                            return match;
-                        }
-                    }
-                }
-            } else {
-                while ((st = br.readLine()) != null) {
-                    for (int k = 0; k < hybridLength; k++) {
-                        i++;
-                        current = st + String.valueOf(k);
-                        if (MD5.getHashPassword(current).equals(hashedPassword)) {
-                            match = current;
-                            return match;
-                        }
-                    }
-                }
-            }
-        }
-        return match;
-    }
-    public String keyword() {
-
-        return null;
-    }
-
-    public String getAlgorithm() {
-        return algorithm;
-    }
-    public int getI() { return i; }
-    public double getRange() { return range; }
-    public boolean getComplete() { return complete; }
-    public String getResult() { return result; }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    @Override
-    public void run() {
-        try { execute(); }
-        catch (Exception e) { e.printStackTrace(); }
-    }
-
-    // generates hash table, searches for password in generated table, writes
-    // and saves hash table for faster lookup on subsequent searches
-    private String genCheck(Hashtable h) throws Exception {
-        if (h.containsKey(hashedPassword)) {
-            match = (String) h.get(hashedPassword);
-            return match;
-        } else {
-            return match;
-        }
-    }
-
-    public boolean isFetched() {
-        return fetched;
-    }
-
-    // fetches the saved hash table, searches for password in fetched table
-    private String fetchCheck() throws Exception {
-        startTime1 = System.currentTimeMillis();
-        Hashtable h = getHashTable();
-        fetched = true;
-        startTime11 = (float) (System.currentTimeMillis() - startTime1)/1000+ "s";
-        startTime2 = System.currentTimeMillis();
-        if (h.containsKey(hashedPassword)) {
-            result = (String) h.get(hashedPassword);
-            return result;
-        } else {
-            return result;
-        }
-    }
-
-    public long lineCount() throws Exception {
-        Path path = Paths.get("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
-        Path path2 = Paths.get("src\\main\\java\\Dictionaries\\" + dictionary2 + ".txt");
-        if (algorithm.equals("hybrid_dic") && peppoink) {
-            return Files.lines(path).count() * hybridLength * CHARSET.length;
-        }
-        else if (algorithm.equals("hybrid_dic")) {
-            return Files.lines(path).count() * hybridLength;
-        }
-        else if (algorithm.equals("combinator_dic") && peppoink) {
-            return Files.lines(path).count() * Files.lines(path2).count() * CHARSET.length;
-        }
-        else if (algorithm.equals("combinator_dic")) {
-            return Files.lines(path).count() * Files.lines(path2).count();
-        }
-        else {
-            return Files.lines(path).count();
-        }
-    }
-
-    // compute and check hash for each word in supplied dictionary
-    private String checkHash() throws Exception {
-        if (generate.getSalt() != null) hashedPassword = MD5.getSaltHashPassword(generate.getPlainTextPassword(),generate.getSalt().getBytes());
-        File file = new File("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String st;
-        if (salt) {
-            while ((st = br.readLine()) != null) {
-                current = st;
-                i++;
-                if (MD5.getSaltHashPassword(st, salty.getBytes()).equals(hashedPassword)) {
-                    match = st;
-                    return match;
-                }
-            }
-        }
-        else {
-            while ((st = br.readLine()) != null) {
-                current = st;
-                i++;
-                if (MD5.getHashPassword(st).equals(hashedPassword)) {
-                    match = st;
-                    return match;
-                }
-            }
-        }
-        return match;
-    }
-
     private Hashtable generateHashTable(boolean combinator) throws Exception {
         Hashtable hashTable = new Hashtable<>();
-        FileInputStream file1 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
-        BufferedReader br1 = new BufferedReader(new InputStreamReader(file1));
         String st;
         if (combinator) {
-            FileInputStream file2 = new FileInputStream("src\\main\\java\\Dictionaries\\" + dictionary2 + ".txt");
-            BufferedReader br2 = new BufferedReader(new InputStreamReader(file2));
             String st2;
             while ((st = br1.readLine()) != null) {
                 while ((st2 = br2.readLine()) != null) {
                     i++;
-                    hashTable.put(MD5.getHashPassword(st+st2), st);
+                    hashTable.put(MD5.getHashPassword((st+st2).replaceAll("\\s+","")), st.replaceAll("\\s+",""));
                 }
                 file2.getChannel().position(0);
                 br2 = new BufferedReader(new InputStreamReader(file2));
@@ -753,7 +568,7 @@ public class Algorithm implements Runnable {
         } else {
             while ((st = br1.readLine()) != null) {
                 i++;
-                hashTable.put(MD5.getHashPassword(st), st);
+                hashTable.put(MD5.getHashPassword(st.replaceAll("\\s+","")), st.replaceAll("\\s+",""));
             }
         }
         return hashTable;
@@ -768,13 +583,84 @@ public class Algorithm implements Runnable {
     private Hashtable getHashTable() throws Exception {
         FileInputStream fileIn = new FileInputStream("src\\main\\java\\Hash_Tables\\" + dictionary + "_Hash_Table.tmp");
         ObjectInputStream in = new ObjectInputStream(fileIn);
-        Hashtable h = (Hashtable)in.readObject();
-        return h;
+        return (Hashtable)in.readObject();
     }
-    public boolean isSalt() {
-        return this.salt;
+
+    public long lineCount() throws Exception {
+        Path path = Paths.get("src\\main\\java\\Dictionaries\\" + dictionary + ".txt");
+        Path path2 = Paths.get("src\\main\\java\\Dictionaries\\" + dictionary2 + ".txt");
+        if (algorithm.equals("hybrid_dic") && hasPepper) {
+            return Files.lines(path).count() * hybridLength * CHARSET.length;
+        }
+        else if (algorithm.equals("hybrid_dic")) {
+            return Files.lines(path).count() * hybridLength;
+        }
+        else if (algorithm.equals("comb_dic") && hasPepper) {
+            return Files.lines(path).count() * Files.lines(path2).count() * CHARSET.length;
+        }
+        else if (algorithm.equals("comb_dic")) {
+            return Files.lines(path).count() * Files.lines(path2).count();
+        }
+        else if (algorithm.equals("dic") && hasPepper) {
+            return Files.lines(path).count() * CHARSET.length;
+        }
+        else {
+            return Files.lines(path).count();
+        }
     }
-    public String getSalty() {
-        return salty;
+
+    private boolean checkTMP() {
+        File file = new File("src\\main\\java\\Hash_Tables\\" + dictionary + "_Hash_Table.tmp");
+        return file.exists();
     }
+
+    private boolean checkDictionary(String dic) {
+        boolean valid = true;
+        File file = new File("src\\main\\java\\Dictionaries\\" + dic + ".txt");
+        return file.exists();
+    }
+
+    public String getCurrentHash() {
+        if (hasSalt) return MD5.getSaltHashPassword(current,salt.getBytes());
+        else return MD5.getHashPassword(current);
+    }
+
+    public boolean isFetched() { return fetched; }
+
+    public String getCurrentPlainText() { return String.valueOf(current); }
+
+    public boolean isSalt() { return this.hasSalt; }
+
+    public String getSalt() { return salt; }
+
+    public String getAlgorithm() { return algorithm; }
+
+    public int getI() { return i; }
+
+    public double getRange() { return range; }
+
+    public boolean getComplete() { return complete; }
+
+    public String getResult() { return result; }
+
+    public void setResult(String result) { this.result = result; }
+
+    public boolean isGenCheck() { return genCheck; }
+
+    public boolean isFetchCheck() { return fetchCheck; }
+
+    public boolean isStandard() { return standard; }
+
+    public boolean isGenCheckWriteCheck() { return genCheckWriteCheck; }
+
+    public float getStartTime11() { return (float) (System.currentTimeMillis() - startTime1)/1000; }
+
+    public float getStartTime33() { return (float) (System.currentTimeMillis() - startTime3)/1000; }
+
+    public boolean isHashTable() { return hashTable; }
+
+    public boolean isLookup() { return lookup; }
+
+    public boolean isWriteTable() { return writeTable; }
+
 }

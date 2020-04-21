@@ -9,25 +9,21 @@ import java.util.Random;
 public abstract class Generate_helper {
 
     protected final String INTRO = "INTRO";
-    protected final String BEGGINER = "BEGGINER";
-    protected final String INTERMEDIATE = "INTERMEDIATE";
-    protected final String DIFFICULT = "HARD";
     protected final String NUMBRUTE = "num_brute";
     protected final String ALPHABRUTE = "alpha_brute";
     protected final String DICTIONARY = "dictionary";
     protected final String COMBINATOR = "combinator_dic";
     protected final String HYBRID = "hybrid_dic";
-    protected final String KEYWORD = "keyword";
 
     public final ArrayList<String> LVL1DESC = new ArrayList<String>() {{
        add("Passwords do not always have to be obtained systematically. One of the");
        add("easiest and most straight forward ways of obtaining a password is to find");
-       add("it written down on a piece of paper or stored in a text file on a");
-       add("computer, which can make it very easy for someone to gain possession ");
-       add("of a password without having to crack it.");
+       add("it written down on a piece of paper or stored in a text file on a computer");
+       add("which can make it very easy for someone to gain possession of a password");
+       add("without having to crack it.");
        add("");
        add("Your boss has left his desk to get a coffee. You notice there are a few");
-       add("post-it notes stuck around his monitor, one of which has 'g-mail password'");
+       add("post-it notes stuck around his monitor, one of which has 'log-in password'");
        add("written on the front, and on the other side is written 'password123'.");
        add("");
        add("Enter the password.");
@@ -52,13 +48,13 @@ public abstract class Generate_helper {
     }};
 
     public final ArrayList<String> LVL3DESC = new ArrayList<String>() {{
-        add("Hashing is a technique that can be used to scramble data so that it is ");
+        add("Hashing is a technique that can be used to scramble data so that it is");
         add("impossible for a human to read. A hash function will take a string of");
         add("arbitrary size and through a series of mathematical operations, output a");
-        add("seemingly random string of characters. A property of hash functions is that");
-        add("they one-way pseudorandom, meaning that you cannot work backwards from the");
-        add("hash output. So, in order to verify the original text you must put it through");
-        add("the same hash function and see if the output matches the hash you have.");
+        add("seemingly random string of characters. A property of hash functions is");
+        add("that they one-way pseudorandom, meaning that you cannot work backwards ");
+        add("from the output. So, in order to verify the original text you must pass it");
+        add("to the same hash function and see if the output matches the hash you have.");
         add("");
         add("Try hashing some of the plain-text passwords to match the hash below.");
         add("The syntax for hashing is 'h( [text] )' for example, h(password123).");
@@ -70,11 +66,11 @@ public abstract class Generate_helper {
     }};
 
     public final ArrayList<String> LVL4ESC = new ArrayList<String>() {{
-        add("Brute-force techniques are the bread and butter of all systematic cracking");
+        add("Brute-force techniques are the bread and butter of systematic cracking");
         add("algorithms. Pure brute-force approaches involve iterating through all");
         add("possible combinations of a password until a match is found - in theory,");
-        add("they are guaranteed to eventually find the password but the sheer number of");
-        add("possible combinations can make it infeasible.");
+        add("they are guaranteed to eventually find the password but the sheer number ");
+        add("of possible combinations can make it infeasible.");
         add("");
         add("Using the algorithm syntax presented in the help page for num_brute,");
         add("try and match the following hash and enter the plaintext password:");
@@ -82,8 +78,8 @@ public abstract class Generate_helper {
 
     public final ArrayList<String> LVL5ESC = new ArrayList<String>() {{
         add("As you can see, computers can crack 4-digit numerical passwords almost");
-        add("instantly. Perhaps increasing the length of the password will prove to");
-        add("be a bit more challenging...");
+        add("instantly. Perhaps increasing the length of the password will prove to be");
+        add("a bit more challenging...");
         add("");
         add("Using the algorithm syntax presented in the help page for num_brute,");
         add("try and match the following hash and enter the plaintext password:");
@@ -92,7 +88,7 @@ public abstract class Generate_helper {
     public final ArrayList<String> LVL6ESC = new ArrayList<String>() {{
         add("Despite taking slightly longer, 6-digit numerical passwords are still no");
         add("match for computers to crack. However, each time we add a digit to the");
-        add("password the number of possible combinations increases exponentially and ");
+        add("password the number of possible combinations increases exponentially and");
         add("will take 10 times more time to search the entire search space.");
         add("");
         add("Using the algorithm syntax presented in the help page for num_brute,");
@@ -119,54 +115,54 @@ public abstract class Generate_helper {
     }};
 
     public final ArrayList<String> LVL9ESC = new ArrayList<String>() {{
-        add("If we consider all 'typeable' characters on a standard keyboard, we have a");
+        add("Consider all 'typeable' characters on a standard keyboard, we have a total");
         add("total of 96 possibilities for each character - which will amount to ");
-        add("782,757,789,696 combinations for just a 6-character password. Many websites");
-        add("enforce their users to have long and random passwords for this reason so");
-        add("that hackers won't be able to crack your password through brute-force alone.");
+        add("782,757,789,696 combinations for just a 6-character password. Websites");
+        add("enforce the use of long and random passwords for this reason so that");
+        add("hackers won't be able to crack your password through brute-force alone.");
         add("");
         add("Using the algorithm syntax presented in the help page for alpha_brute,");
         add("experiment with different data sets and lengths to match the following hash:");
     }};
 
     public final ArrayList<String> LVL10ESC = new ArrayList<String>() {{
-        add("Another technique for cracking passwords is through dictionary attacks. They");
-        add("work by iterating over commonly used words or phrases to guess a password, ");
-        add("and are generally considered to be much more effective than brute-force due");
-        add("to the simple fact that most passwords consist of words rather than arbitrary");
-        add("characters.");
+        add("Another technique for cracking passwords is through dictionary attacks.");
+        add("They work by iterating over commonly used words or phrases to guess a");
+        add("password, and are generally considered to be much more effective than");
+        add("brute-force due to the simple fact that most passwords consist of words");
+        add("rather than random characters.");
         add("");
         add("Using the algorithm syntax presented in the help page for dic,");
         add("try and match the following hash and enter the plaintext password:");
     }};
 
     public final ArrayList<String> LVL11ESC = new ArrayList<String>() {{
-        add("Instead of having to compute and check the hash each time for every word in");
-        add("a dictionary, we can store the plain-text password along with its associated");
-        add("hash as a pair in a hash table so that we can look up the hash much quicker");
-        add("in subsequent searches.");
+        add("Instead of having to compute and check the hash each time for every word");
+        add("in a dictionary, we can store the plain-text password along with its ");
+        add("associated hash as a pair in a hash table so that we can look up the hash");
+        add("much quicker in subsequent searches.");
         add("");
-        add("Using the algorithm syntax presented in the help page for dic,");
-        add("generate, search and write a hash table to match the following hash:");
+        add("Using the algorithm syntax presented in the help page for dic, append -w");
+        add("to generate, search and write a hash table to match the following hash:");
     }};
 
     public final ArrayList<String> LVL12ESC = new ArrayList<String>() {{
-        add("As you can see, looking up a hash key in a table is extremely fast. This is");
-        add("because hash-tables are able to lookup data on the order O(1); in other");
-        add("words 1 operation, independent of the size. Of course there is no free lunch");
-        add("here as there is a trade-off between time and memory when it comes to");
-        add("generating hash tables, so pre-computed hashes can be very practical.");
+        add("As you can see, looking up a hash key in a table is extremely fast. This");
+        add("is because hash-tables are able to lookup data on the order O(1); in other");
+        add("words 1 operation, independent of the size. Of course there is no free");
+        add("lunch here as there is a trade-off between time and memory when it comes");
+        add("to generating hash tables, so pre-computed hashes can be very practical.");
         add("");
-        add("Using the algorithm syntax presented in the help page for dic,");
-        add("fetch the pre-computed hash table and match the following hash:");
+        add("Using the algorithm syntax presented in the help page for dic, append -f");
+        add("to fetch the pre-computed hash table and match the following hash:");
     }};
 
     public final ArrayList<String> LVL13ESC = new ArrayList<String>() {{
-        add("There exists a few counter-measures for the use of hash-tables to prevent");
-        add("easy look-up of password hashes such as salts. A salt is a non-secret");
-        add("value which is appended to the password before it gets hashed thus producing");
-        add("a different hash from the password by itself: stored hash = hash(salt+pwd)");
-        add("The salt is usually stored as plain-text next to the hash...");
+        add("One way to prevent the use of hash-tables is by using salts. A salt is a");
+        add("non-secret value which is appended to the password before it gets hashed,");
+        add("thus outputting a different hash from just the password itself: stored");
+        add("hash = hash(salt + password). They are non-secret because they are stored");
+        add("alongside the hash as plain-text.");
         add("");
         add("Using the algorithm syntax presented in the help page for dic,");
         add("add the salt to the algorithm and match the following hash:");
@@ -175,7 +171,7 @@ public abstract class Generate_helper {
     public final ArrayList<String> LVL14ESC = new ArrayList<String>() {{
         add("Although salting renders hash tables useless, brute-force and dictionary");
         add("attacks will still be an issue assuming an attacker takes into account");
-        add("the salt and knows where to put it in his/her guesses. Combinator dictionary");
+        add("the salt and knows where to put it in their guesses. Combinator dictionary");
         add("attacks will append each word to every word in its own dictionary, or use");
         add("multiple dictionaries which can be very effective for 2-word passwords.");
         add("");
@@ -186,9 +182,9 @@ public abstract class Generate_helper {
     public final ArrayList<String> LVL15ESC = new ArrayList<String>() {{
         add("Peppers are another tool used to prevent hash-table look-ups. A pepper is");
         add("a very short random string added to the password before it is hashed, but");
-        add("its value is not stored. In order to determine the hashed password+pepper,");
-        add("every combination of the pepper will have to be computed until a match is");
-        add("found. A pepper could be adding a single letter to the password...");
+        add("unlike salts their value is not stored. In order to determine the hashed");
+        add("password+pepper, every combination of the pepper will have to be computed");
+        add("until a match is found.");
         add("");
         add("Using the algorithm syntax presented in the help page for comb_dic,");
         add("add a numerical pepper to the algorithm and match the following hash:");
@@ -196,10 +192,10 @@ public abstract class Generate_helper {
 
     public final ArrayList<String> LVL16ESC = new ArrayList<String>() {{
         add("As you can see, peppers are very effective against brute-force attacks.");
-        add("Adding just one secret letter to the password means 10 possible hashes");
-        add("that would need to be cycled through; as a result, it would take 10 times");
-        add("longer to compute every possible hash for each password. Not only are");
-        add("peppers useful for mitigating dictionary attacks, but brute-force as well.");
+        add("Adding just one secret letter to the password means that an extra 26 (or");
+        add("52 if both upper and lowercase are used) hashes would need to be computed");
+        add("for each possible password, thus taking 26 (or 52) times longer to cycle");
+        add("through every password");
         add("");
         add("Using the algorithm syntax presented in the help page for comb_dic,");
         add("experiment adding different peppers to match the following hash:");
@@ -207,8 +203,8 @@ public abstract class Generate_helper {
 
     public final ArrayList<String> LVL17ESC = new ArrayList<String>() {{
         add("Hybrid dictionary attacks are a combination of brute-force and dictionary");
-        add("attacks. They work by either appending or prepending a brute-force keyspace");
-        add("to each of the words from the dictionary.");
+        add("attacks. They work by either appending or prepending a (numerical) brute-");
+        add("force keyspace to each of the words from the dictionary.");
         add("");
         add("Using the algorithm syntax presented in the help page for hybrid_dic,");
         add("append the numerical keyspace to the algorithm to match the following hash:");
@@ -216,9 +212,9 @@ public abstract class Generate_helper {
 
     public final ArrayList<String> LVL18ESC = new ArrayList<String>() {{
         add("Both combinator and hybrid dictionary attacks are effective as they tackle");
-        add("common password traits. Joining two words together or having a word followed");
-        add("by a sequence of numbers (e.g. a date) are examples of habitual pitfalls");
-        add("that attackers  can take advantage of.");
+        add("common password traits. Joining two words together or having a word ");
+        add("followed by a sequence of numbers (e.g. a date) are examples of habitual ");
+        add("pitfalls that attackers can take advantage of.");
         add("");
         add("Using the algorithm syntax presented in the help page for hybrid_dic,");
         add("experiment with different peppers to match the following hash:");
@@ -236,18 +232,28 @@ public abstract class Generate_helper {
     }};
 
     public final ArrayList<String> PRE20DESC = new ArrayList<String>() {{
-        add("You have now completed all the pre-cursor levels! Use all of the");
-        add("algorithms, dictionaries and password security wisdom you have acquired");
-        add("to complete the following levels on your own with little guidance.");
+        add("You have now completed all the pre-cursor levels! The following section");
+        add("will involve having to crack passwords from randomly generated profiles.");
         add("");
         add("The following features have been added:");
         add(" > alpha_brute now computes all combinations up to specified length");
         add(" > alpha_brute can now use all 96 combined character types (-a)");
         add(" > salts and/or peppers can be added to any DICTIONARY attack");
         add(" > hash tables can be generated for any DICTIONARY attack (-g)");
-        add(" > writing and fetching hash tables has been DISABLED");
+        add(" > writing and fetching hash tables has been DISABLED (-w, -f)");
         add("");
-        add("Good luck!");
+        add("The password will be associated with the generated profile. It can be");
+        add("cracked using any of the algorithms and/or dictionaries - good luck!");
+    }};
+
+    public final ArrayList<String> THANKYOU = new ArrayList<String>() {{
+        add("You have reached the end of the levels! Thank you for taking part in this");
+        add("research, hopefully you have learned something new and now understand the");
+        add("semantics behind a strong password. If you haven't already, try and unlock");
+        add("the rest of the achievements by creating various passwords in the Password");
+        add("Strength page from the Main Menu.");
+        add("");
+        add("Please remember take part in the short post-game questionnaire ☺");
     }};
 
     protected String getRandPassword(String dictionary) throws Exception {
@@ -256,5 +262,4 @@ public abstract class Generate_helper {
         int l = r.nextInt(Files.readAllLines(Paths.get(String.valueOf(file))).size());
         return Files.readAllLines(Paths.get(String.valueOf(file))).get(l);
     }
-
 }

@@ -12,18 +12,16 @@ import java.text.DecimalFormat;
 public class Progress implements Runnable {
 
     public boolean inProgress = false;
-    Algorithm algorithm;
-    Player player;
-    Generate generate;
+    private Algorithm algorithm;
+    private Player player;
+    private Generate generate;
     private int p = 0;
     private float step = 0.02f;
-    float frac;
-    double range;
+    private float frac;
+    private double range;
     private float tmp = 0;
-    private long startTime;
     private float time;
     private float time2;
-    private float time3;
 
     public Progress(Algorithm a, Player p, Generate g) {
         this.algorithm = a;
@@ -92,16 +90,14 @@ public class Progress implements Runnable {
             }
             else {
                 if (algorithm.getAlgorithm().equals("num_brute")) range += 1;
-                startTime = System.currentTimeMillis();
+                long startTime = System.currentTimeMillis();
                 staticFields();
-
                 while (!algorithm.getComplete()) {
                     time = (float) (System.currentTimeMillis() - startTime) / 1000;
                     player.getGraphics().putString(56, 16, String.valueOf(time));
-                    if (algorithm.isSalt())
-                        player.getGraphics().putString(20, 15, algorithm.getSalty() + algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash() + "                       ");
-                    else
-                        player.getGraphics().putString(20, 15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash() + "                       ");
+                    if (algorithm.isSalt()) player.getGraphics().putString(10, 15, algorithm.getCurrentHash() + " <- "+ algorithm.getSalt() + algorithm.getCurrentPlainText() +  "                       ");
+                    else player.getGraphics().putString(10, 15, algorithm.getCurrentHash() + " <- "+ algorithm.getCurrentPlainText() +  "                       ");
+
                     frac = (float) (algorithm.getI() / range);
                     if (frac >= step) {
                         step += 0.02f;
@@ -118,10 +114,8 @@ public class Progress implements Runnable {
                 if (algorithm.getResult().equals("No match!")) fillProgress();
                 else success();
             }
-        } catch (Exception e) {
-                System.out.println(e);
-            }
-        inProgress = false;
+            inProgress = false;
+        } catch (Exception e) { System.out.println(e); }
     }
 
     public void success() throws IOException {
@@ -132,14 +126,13 @@ public class Progress implements Runnable {
         player.getGraphics().putString(24,18,String.valueOf(algorithm.getI()+1) + " / " + new DecimalFormat("#").format(range),SGR.ITALIC);
         player.getGraphics().putString(55,18, String.format("%.1f",frac*100) + "%",SGR.ITALIC);
         player.getGraphics().putString(20, 16, String.format("%,.0f",algorithm.getI() - tmp) + "   ");
-        if (generate.getSalt() != null) player.getGraphics().putString(20,15,  generate.getSalt() + generate.getPlainTextPassword() + " -> " + generate.getHashedPassword() + "                          ", SGR.BOLD);
-        else player.getGraphics().putString(20,15,  generate.getPlainTextPassword() + " -> " + generate.getHashedPassword() + "                          ", SGR.BOLD);
+        if (generate.getSalt() != null) player.getGraphics().putString(10,15, generate.getHashedPassword() + " <- " + generate.getSalt() + generate.getPlainTextPassword() + "                          ", SGR.BOLD);
+        else player.getGraphics().putString(10,15, generate.getHashedPassword() + " <- " + generate.getPlainTextPassword() + "                          ", SGR.BOLD);
         player.getGraphics().putString(50,22, "Type the password to advance", SGR.BOLD, SGR.ITALIC);
         player.getScreen().refresh();
     }
 
     public void staticFields() {
-        player.getGraphics().putString(10,15, "Password: ");
         player.getGraphics().putString(10,16, "Hashes/s: ");
         player.getGraphics().putString(40,16, "Time elapsed/s: ");
         player.getGraphics().putString(10,18, "Search-space: ", SGR.ITALIC);
@@ -149,16 +142,12 @@ public class Progress implements Runnable {
         player.getGraphics().drawLine(10,17, 60, 17, Symbols.SOLID_SQUARE);
         player.getGraphics().putString(20, 16, String.format("%,.0f",algorithm.getI() - tmp) + "   ");
         player.getGraphics().putString(56,16, String.valueOf(time));
-        if (algorithm.isSalt()) player.getGraphics().putString(20,15,algorithm.getSalty() + algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash() + "                          ");
-        else player.getGraphics().putString(20,15, algorithm.getCurrentPlainText() + " -> " + algorithm.getCurrentHash() + "                          ");
+        if (algorithm.isSalt()) player.getGraphics().putString(10,15, algorithm.getCurrentHash() + " <- "+ algorithm.getSalt() + algorithm.getCurrentPlainText() + "                          ");
+        else player.getGraphics().putString(10,15, algorithm.getCurrentHash() + " <- " + algorithm.getCurrentPlainText() + "                          ");
         player.getGraphics().putString(62,17, algorithm.getResult(), SGR.BLINK, SGR.BOLD);
         player.getGraphics().putString(24,18,new DecimalFormat("#").format(range) + " / " + new DecimalFormat("#").format(range),SGR.ITALIC);
         player.getGraphics().putString(55,18, "100.0%", SGR.ITALIC);
         player.getScreen().refresh();
-    }
-
-    public void setInProgress(boolean inProgress) {
-        this.inProgress = inProgress;
     }
 
     public void displayGenCheckWrite() throws Exception {
@@ -181,7 +170,7 @@ public class Progress implements Runnable {
         displaySuccFail();
         updateUI();
     }
-    public void displaySuccFail() {
+    private void displaySuccFail() {
         player.getGraphics().putString(3,17, "Looking up hash", SGR.BOLD);
         if (!algorithm.getResult().equals("No match!")) {
             player.getGraphics().putString(43, 17, "[SUCCESS] -> ", SGR.BOLD, SGR.BLINK);
@@ -192,10 +181,13 @@ public class Progress implements Runnable {
         }
     }
 
-    public void displayAdvance() {
+    private void displayAdvance() {
         player.getGraphics().putString(3, 18, "Writing hash table in memory -", SGR.BOLD);
         player.getGraphics().putString(43, 18, "[DONE]", SGR.BOLD);
         player.getGraphics().putString(34, 18, time2 + "s  ", SGR.BOLD, SGR.ITALIC);
         player.getGraphics().putString(50,22, "Type the password to advance", SGR.BOLD, SGR.ITALIC);
+    }
+    public void setInProgress(boolean inProgress) {
+        this.inProgress = inProgress;
     }
 }
