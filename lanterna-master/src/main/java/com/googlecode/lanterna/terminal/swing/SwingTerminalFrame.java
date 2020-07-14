@@ -29,6 +29,8 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.terminal.TerminalResizeListener;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Set;
@@ -108,10 +110,10 @@ public class SwingTerminalFrame extends JFrame implements IOSafeTerminal {
         this.swingTerminal = swingTerminal;
         this.autoCloseTriggers = EnumSet.copyOf(Arrays.asList(autoCloseTriggers));
         this.disposed = false;
-        ImageIcon img = new ImageIcon("lanterna-master\\src\\icons\\pwdIcon.png");
+        ImageIcon img = new ImageIcon(this.getClass().getResource("/pwdIcon.png"));
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(swingTerminal, BorderLayout.CENTER);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.BLACK); //This will reduce white flicker when resizing the window
         setResizable(false);
         setIconImage(img.getImage());

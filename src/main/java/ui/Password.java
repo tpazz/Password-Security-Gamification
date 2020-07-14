@@ -2,6 +2,7 @@ package ui;
 
 import Player.Player;
 import algorithms.MD5;
+import com.googlecode.lanterna.Symbols;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.gui2.*;
@@ -28,10 +29,10 @@ public class Password extends UI_Helper {
         Label lbl2 = new Label("Confirm password:")
                 .setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.CENTER, GridLayout.Alignment.CENTER));
         TextBox tb = new TextBox(new TerminalSize(20,1))
-                .setMask('•')
+                .setMask(Symbols.BULLET)
                 .setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.CENTER, GridLayout.Alignment.CENTER));
         TextBox tb2 = new TextBox(new TerminalSize(20,1))
-                .setMask('•')
+                .setMask(Symbols.BULLET)
                 .setLayoutData(GridLayout.createLayoutData(GridLayout.Alignment.CENTER, GridLayout.Alignment.CENTER));
         Button ok = new Button("OK", () -> {
             if (tb.getText().equals("")) {

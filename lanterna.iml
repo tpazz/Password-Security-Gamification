@@ -20,6 +20,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="Maven: me.gosimple:nbvcxz:1.4.3" level="project" />
+    <orderEntry type="library" name="Maven: me.gosimple:nbvcxz:1.4.3" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.lanterna:lanterna:3.0.2" level="project" />
   </component>
 </module>

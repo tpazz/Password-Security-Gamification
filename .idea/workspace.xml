@@ -7,62 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4da83a4-5446-4b65-84bf-1b798be6cf70" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/lanterna_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lanterna-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lanterna-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lanterna-master/src/icons/pwdIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/lanterna-master/src/main/resources/pwdIcon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lanterna-master/src/main/java/com/googlecode/lanterna/terminal/swing/SwingTerminalFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/lanterna-master/src/main/java/com/googlecode/lanterna/terminal/swing/SwingTerminalFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lanterna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lanterna.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/lanterna_jar/lanterna.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/lanterna_jar/lanterna.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionaries/1mmc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Generate/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generate/Generate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player/progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/progress.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metadata/Progress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Achievements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Achievements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Terminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$17.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$18.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$20.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Player/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/MD5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/metadata/Progress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Achievements.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$20.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$21.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generate/Generate_helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithms/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/MD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithms/MD5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/metadata/Progress.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/metadata/Progress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Achievements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Achievements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Password.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Store.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Terminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Terminal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/UI_Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +80,7 @@
     <session id="-92708938">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="40" />
+          <entry key="project.closed" value="41" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="5" />
@@ -104,60 +103,51 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="38" />
-          <entry key="java" value="114572" />
+          <entry key="java" value="114594" />
           <entry key="txt" value="816" />
-          <entry key="xml" value="37" />
+          <entry key="xml" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="114572" />
+          <entry key="JAVA" value="114594" />
           <entry key="PLAIN_TEXT" value="854" />
-          <entry key="XML" value="37" />
+          <entry key="XML" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="MF" value="1" />
+          <entry key="bat" value="1" />
           <entry key="html" value="1" />
           <entry key="java" value="110" />
+          <entry key="png" value="1" />
           <entry key="tmp" value="1" />
           <entry key="txt" value="36" />
-          <entry key="xml" value="3" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
+          <entry key="Image" value="1" />
           <entry key="JAVA" value="110" />
           <entry key="Manifest" value="1" />
-          <entry key="PLAIN_TEXT" value="37" />
-          <entry key="XML" value="3" />
+          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40014958">
+    <splitter split-orientation="horizontal" split-proportion="0.4357798">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="116" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+                <state relative-caret-position="5911">
+                  <caret line="263" column="43" selection-start-line="263" selection-start-column="43" selection-end-line="263" selection-end-column="43" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -180,8 +170,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3174">
-                  <caret line="145" column="120" selection-start-line="145" selection-start-column="120" selection-end-line="145" selection-end-column="120" />
+                <state relative-caret-position="358">
+                  <caret line="117" column="56" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -190,10 +180,19 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/snames.txt">
+            <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+                <state relative-caret-position="3266">
+                  <caret line="149" selection-start-line="149" selection-end-line="149" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/MD5.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="322">
+                  <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -207,14 +206,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="198" column="73" selection-start-line="198" selection-start-column="73" selection-end-line="198" selection-end-column="74" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="138">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Password.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1426">
+                  <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -233,48 +247,6 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="621">
-                  <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Password.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/ui/UI_Helper.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="2093">
@@ -289,17 +261,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="34" selection-start-line="34" selection-end-line="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="229218">
-                  <caret line="9966" column="5" selection-start-line="9966" selection-start-column="5" selection-end-line="9966" selection-end-column="5" />
+                <state relative-caret-position="299">
+                  <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
                 </state>
               </provider>
             </entry>
@@ -307,8 +270,40 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pom.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+                <state relative-caret-position="115">
+                  <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/stuff2.bat">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lanterna-master/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="46">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="46">
+                  <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -316,8 +311,20 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+                <state relative-caret-position="156">
+                  <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="667">
+                  <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -325,8 +332,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5704">
-                  <caret line="252" column="79" selection-start-line="252" selection-start-column="79" selection-end-line="252" selection-end-column="79" />
+                <state relative-caret-position="5037">
+                  <caret line="223" column="83" selection-start-line="223" selection-start-column="83" selection-end-line="223" selection-end-column="83" />
                 </state>
               </provider>
             </entry>
@@ -403,20 +410,21 @@
         <option value="$PROJECT_DIR$/src/main/java/Dictionaries/surnames.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Dictionaries/first-names.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Dictionaries/jobs.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/metadata/Progress.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithms/Algorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Menu.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Achievements.java" />
         <option value="$PROJECT_DIR$/src/main/java/Generate/Generate.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/UI_Helper.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Store.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Password.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player/progress.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Terminal.java" />
         <option value="$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metadata/Progress.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Password.java" />
+        <option value="$PROJECT_DIR$/lanterna-master/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Menu.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -450,6 +458,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -459,92 +469,20 @@
             </path>
             <path>
               <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Dictionaries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Generate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Hash_Tables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="metadata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Player" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="password-game_lanterna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-game_lanterna" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="1mmc&#9;FILE&#9;file://C:/Users/theop/OneDrive/Documents/GitHub/password-game_lanterna/src/main/java/Dictionaries/private/10mmc.txt&#10;&quot;00000000&quot;&#9;null&#9;null&#10;00000000&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587509382298" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588082259560" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lanterna-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -557,6 +495,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\theop\OneDrive\Documents\GitHub\password-game_lanterna\lanterna-master\src\main\resources" />
       <recent name="C:\Users\theop\OneDrive\Documents\GitHub\password-game_lanterna\src\main\java\Player" />
     </key>
   </component>
@@ -762,13 +701,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="860545000" />
+    <option name="totallyTimeSpent" value="871772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14460154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1651671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -777,7 +716,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.21428572" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18543956" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19642857" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20879121" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -786,7 +725,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3299566" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.17582418" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.17582418" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49930266" weight="0.24966443" />
@@ -849,29 +788,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Request.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/graphics/TextGraphics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5765">
-          <caret line="400" column="83" selection-start-line="400" selection-start-column="83" selection-end-line="400" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/espanol.txt" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/gui2/Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="227" column="9" lean-forward="true" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/terminal/AbstractTerminal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
@@ -930,13 +846,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Time.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Hashes.java" />
-    <entry file="file://$PROJECT_DIR$/lanterna-master/target/site/jacoco/com.googlecode.lanterna.terminal.swing/SwingTerminalImplementation.java.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lanterna-master/target/site/jacoco/com.googlecode.lanterna.terminal.swing/SwingTerminalImplementation.java.html" />
     <entry file="file://$PROJECT_DIR$/lanterna-master/src/main/java/com/googlecode/lanterna/terminal/swing/SwingTerminalFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -1019,18 +929,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Store.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1426">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="5911">
+          <caret line="263" column="43" selection-start-line="263" selection-start-column="43" selection-end-line="263" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1070,45 +977,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Terminal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="198" column="73" selection-start-line="198" selection-start-column="73" selection-end-line="198" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Player/progress.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Password.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Achievements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        <state relative-caret-position="667">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1122,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dictionaries/10kmc.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229218">
@@ -1138,22 +1015,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Generate/Generate_helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5704">
-          <caret line="252" column="79" selection-start-line="252" selection-start-column="79" selection-end-line="252" selection-end-column="79" />
+        <state relative-caret-position="5037">
+          <caret line="223" column="83" selection-start-line="223" selection-start-column="83" selection-end-line="223" selection-end-column="83" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lanterna-master/src/main/resources/pwdIcon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metadata/Progress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="117" column="56" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/lanterna/lanterna/3.0.1/lanterna-3.0.1-sources.jar!/com/googlecode/lanterna/Symbols.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lanterna-master/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stuff2.bat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="156">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Password.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="115">
+          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1168,7 +1095,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

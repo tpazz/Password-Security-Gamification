@@ -14,7 +14,7 @@ public class Menu extends UI_Helper {
                 .addAction("Terminal", () -> {
                     try {
                         p.writeProgress(0,0.0f,p.getPurchaced(),p.getColour(),p.getAchievements());
-                        Terminal.start(p); } catch (Exception e) { e.printStackTrace(); } })
+                        Terminal.start(p); } catch (Exception e) { System.out.println(e); } })
                 .addAction("Store", () -> {
                     try {
                         Store.start(p,0);
