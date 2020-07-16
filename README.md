@@ -8,9 +8,9 @@ Gamification is a recent technique that has emerged in the last decade and has p
 #### Practical
 The aim of this project is to combine the benefits of gamification with password security in order to reinforce the value and practice of strong passwords. If you would like to take part, please carry out the following instructions:
 
- 1. Read through the [Information Sheet](Information_Sheet.pdf) and complete the [Consent Form](Consent_Form.pdf)
+ 1. Read through the [Information Sheet](readme/Information_Sheet.pdf) and complete the [Consent Form](readme/Consent_Form.pdf)
  2. Complete the [Pre-game questionnaire](https://forms.gle/yEsgoV8erPifGp4E7)
- 3. Download and play the [game](PasswordGamification.jar) on your local machine
+ 3. Download and play the [game](readme/PasswordGamification.jar) on your local machine
     * To start the game, simply double-click the jar file once it has finished downloading
     * Mac users will have to allow opening of unsigned apps
     * If the game does not start by double-clicking the jar file, make sure you have [Java](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html) installed on your platform
@@ -20,6 +20,6 @@ The aim of this project is to combine the benefits of gamification with password
  
  ------
  
- #### This research has been concluded. The paper can be viewed [here](Research_Paper.pdf).
+ #### This research has been concluded. The paper can be viewed [here](readme/Research_Paper.pdf).
  
  
