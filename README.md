@@ -17,3 +17,9 @@ The aim of this project is to combine the benefits of gamification with password
  4. Complete the [Post-game questionnaire](https://forms.gle/yrPyKKybU4wmvyHZ7)
  
  ### Thank you!
+ 
+ ------
+ 
+ #### This research has been concluded. The paper can be viewed [here](Research_Paper.pdf).
+ 
+ 
