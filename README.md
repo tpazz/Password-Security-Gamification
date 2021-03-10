@@ -22,4 +22,15 @@ The aim of this project is to combine the benefits of gamification with password
  
  #### This research has been concluded. The paper can be viewed [here](readme/Research_Paper.pdf).
  
+ ## Screenshots
  
+ <p align="middle">
+  <img src="menu.PNG" width="450" />
+  <img src="store.PNG" width="450" />
+  <img src="example1.PNG" width="450" /> 
+  <img src="example2.PNG" width="450" />
+  <img src="achievements.PNG" width="450" />
+  <img src="passwordStrength.PNG" width="450" />
+  <img src="strength1.PNG" width="450" />
+  <img src="strength2.PNG" width="450" />
+</p>
