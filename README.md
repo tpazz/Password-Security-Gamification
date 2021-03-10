@@ -25,12 +25,12 @@ The aim of this project is to combine the benefits of gamification with password
  ## Screenshots
  
  <p align="middle">
-  <img src="menu.PNG" width="450" />
-  <img src="store.PNG" width="450" />
-  <img src="example1.PNG" width="450" /> 
-  <img src="example2.PNG" width="450" />
-  <img src="achievements.PNG" width="450" />
-  <img src="passwordStrength.PNG" width="450" />
-  <img src="strength1.PNG" width="450" />
-  <img src="strength2.PNG" width="450" />
+  <img src="menu.PNG" width="420" />
+  <img src="store.PNG" width="420" />
+  <img src="example1.PNG" width="420" /> 
+  <img src="example2.PNG" width="420" />
+  <img src="achievements.PNG" width="420" />
+  <img src="passwordStrength.PNG" width="420" />
+  <img src="strength1.PNG" width="420" />
+  <img src="strength2.PNG" width="420" />
 </p>
